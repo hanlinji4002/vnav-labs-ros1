@@ -13,7 +13,7 @@ fi
 $L/scripts/sim_ctl.sh restart window || exit 1
 rviz -d $L/rviz/lab3_demo.rviz > $G/rviz_demo.log 2>&1 & RV=$!
 sleep 5   # let RViz open before take-off
-roslaunch controller_pkg traj_tracking.launch > $G/launch_demo.log 2>&1 & P=$!
+roslaunch controller_pkg traj_tracking.launch smooth_start:=true > $G/launch_demo.log 2>&1 & P=$!
 stop() {
   kill -INT $P 2>/dev/null; sleep 3; kill -TERM $P 2>/dev/null; wait $P 2>/dev/null
   kill $RV 2>/dev/null; $L/scripts/sim_ctl.sh stop; exit 0

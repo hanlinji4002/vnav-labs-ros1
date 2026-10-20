@@ -33,7 +33,7 @@ echo "capture ${w}x${h}+${x1}+${y}  (rviz ${x1},${y1} h${h1}; sim ${x2},${y2} ${
 nice -n 10 ffmpeg -y -loglevel error -f x11grab -draw_mouse 0 -framerate 15 -video_size ${w}x${h} -i :0.0+${x1},${y} -t $dur \
   -c:v libx264 -preset ultrafast -crf 23 -pix_fmt yuv420p $V/lab3_rviz_sim_side_by_side.mp4 & FF=$!
 sleep 1
-roslaunch controller_pkg traj_tracking.launch > $G/launch_sbs.log 2>&1 & P=$!
+roslaunch controller_pkg traj_tracking.launch smooth_start:=true > $G/launch_sbs.log 2>&1 & P=$!
 python3 $L/scripts/flight_log.py --mode circle --duration $((dur-2)) --warmup 10 --out $L/results/flight/record_sbs > $V/record_sbs_metrics.txt
 wait $FF
 ffmpeg -y -loglevel error -f x11grab -draw_mouse 0 -video_size ${w}x${h} -i :0.0+${x1},${y} -frames:v 1 $V/rviz_sim_side_by_side.png

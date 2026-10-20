@@ -1,7 +1,10 @@
 
 <launch>
-  <!-- Launch desired trajectory -->
-  <node name="traj_publisher" pkg="controller_pkg" type="traj_publisher"/>
+  <!-- Launch desired trajectory (smooth_start:=true for a gentle take-off onto the circle) -->
+  <arg name="smooth_start" default="false"/>
+  <node name="traj_publisher" pkg="controller_pkg" type="traj_publisher">
+    <param name="smooth_start" value="$(arg smooth_start)"/>
+  </node>
 
   <!-- Launch our controller -->
   <node name="controller_node" pkg="controller_pkg" type="controller_node"/>
