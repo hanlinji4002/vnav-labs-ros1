@@ -17,8 +17,8 @@
 ## 相对 MIT 原版的改动
 
 1. `controller_node.cpp`：补全 PART 1–5（订阅、发布、期望/当前状态、误差、期望姿态、力和力矩、桨速分配 `F2W`）。控制循环用 `ros::WallTimer`（1 kHz）：bridge 打开了 `use_sim_time`，而 `/clock` 只有 50 Hz，仿真时间的 `ros::Timer` 实际只能约 100 Hz 成对发指令，仿真器在指令稀疏时推力偏小（悬停低约 6 cm）。
-2. `traj_tracking.launch`：增益 `kx=10, kv=5, kr=30, komega=2.5`（原为全 1）；新增参数 `smooth_start`。
-3. `traj_publisher.cpp`：新增平稳起飞（`smooth_start:=true`，默认关闭，关闭时与原版完全一样）。参考轨迹从重生点出发，3 s 爬升到 2 m，8 s 内螺旋展开到半径 5 m 的圆上、速度平滑加到 2.5 m/s，起始偏航等于重生偏航；起飞时最大倾角从 89.5° 降到 9.5°，最大机体角速度从 401°/s 降到 29°/s。录屏脚本用它。
+2. `traj_tracking.launch`：增益 `kx=10, kv=5, kr=30, komega=2.5`（原为全 1），可用 `kr:=12` 这样的参数临时覆盖；新增参数 `smooth_start`。
+3. `traj_publisher.cpp`：新增平稳起飞（`smooth_start:=true`，默认关闭，关闭时与原版完全一样）。参考轨迹从无人机当前的位置和偏航出发（读一条 `/current_state`；仿真器刚启动时偏航是 −46.8°，重生后是 −166°），3 s 爬升到 2 m，8 s 内螺旋展开到半径 5 m 的圆上、速度平滑加到 2.5 m/s；起飞时最大倾角从 89.5° 降到约 10°，不再原地掉头。
 4. `tesse-ros-bridge`：两个节点脚本的 shebang 改为 `python3`；在 `cv_bridge` 之前先 `import cv2`（aarch64 上否则报 `initialization of cv_bridge_boost raised unreported exception`）。
 5. tesse-interface 不用 `pip install`，通过 `env.sh` 的 `PYTHONPATH` 引用（它依赖的 `enum34` 会覆盖 Python 3 的 `enum`）。
 
@@ -66,5 +66,6 @@ rviz -d ~/Desktop/LAB3/vnav_ws/src/controller_pkg/rviz/lab3.rviz
 | `gain_sweep.sh` | 13 组增益扫描 |
 | `compare_runs.sh` | 指令频率与推力的开环测试；仿真时间定时器对照 |
 | `omegad_run.sh` | 保留 Ω_d 项的变体对照 |
-| `record_rviz.sh`、`record_sbs.sh` | RViz 录屏；RViz + 仿真器窗口并排录屏（平稳起飞） |
-| `takeoff_test.sh [秒] [launch 参数]` | 量起飞的最大倾角、机体角速度、桨速（如 `takeoff_test.sh 20 smooth_start:=true`） |
+| `record_rviz.sh`、`record_sbs.sh` | RViz 录屏；RViz + 仿真器窗口并排录屏（平稳起飞，`kr:=12`：仿真器窗口软件渲染时 CPU 吃紧，kr=30 会有小幅抖动） |
+| `takeoff_test.sh [秒] [launch 参数]` | 量起飞的偏航变化、最大倾角、机体角速度、桨速和姿态抖动（如 `takeoff_test.sh 20 smooth_start:=true`） |
+| `window_test.sh [秒] [launch 参数]` | 同样的测量，但用带窗口、刚重启的仿真器（和录屏条件相同） |

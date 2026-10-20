@@ -2,6 +2,9 @@
 #include <tf/transform_broadcaster.h>
 #include <std_msgs/String.h>
 #include <trajectory_msgs/MultiDOFJointTrajectoryPoint.h>
+#include <nav_msgs/Odometry.h>
+#include <ros/topic.h>
+#include <tf/transform_datatypes.h>
 #include <sstream>
 #include <iostream>
 
@@ -14,12 +17,13 @@
 
 #define TFOUTPUT 1
 
-// Smooth take-off (param ~smooth_start, off by default): the reference starts at the spawn point,
-// climbs to 2 m and spirals out onto the circle while the speed ramps up; the yaw starts at the
-// spawn yaw (-166 deg), so the drone never has to jump to a reference 5 m away.
-static const double T_RAMP = 8.0;                 // s, radius and speed ramp
-static const double T_CLIMB = 3.0;                // s, 0.7 m -> 2 m
-static const double THETA0 = 166.0 * PI / 180.0;  // start phase, yaw = -phase
+// Smooth take-off (param ~smooth_start, off by default): the reference starts at the drone's
+// current pose, climbs to 2 m and spirals out onto the circle while the speed ramps up; its yaw
+// starts at the drone's yaw, so the drone never has to jump to a reference 5 m away or turn.
+static const double T_RAMP = 8.0;           // s, radius and speed ramp
+static const double T_CLIMB = 3.0;          // s, climb to 2 m
+static tf::Vector3 P0(0, 0, 0.7);           // start position (read from /current_state)
+static double THETA0 = 166.0 * PI / 180.0;  // start phase, yaw = -phase (read from /current_state)
 
 // quintic smoothstep (velocity and acceleration continuous at both ends) and its integral
 static double ramp(double s) { s = std::min(std::max(s, 0.0), 1.0); return s * s * s * (10.0 - 15.0 * s + 6.0 * s * s); }
@@ -31,9 +35,12 @@ static double smoothPhase(double t, double timeScale) {
     return THETA0 + (0.5 * T_RAMP + (t - T_RAMP)) / timeScale;
 }
 
+// blend from the start position onto the circle
 static tf::Vector3 smoothPosition(double t, double R, double timeScale) {
-    double th = smoothPhase(t, timeScale), r = R * ramp(t / T_RAMP);
-    return tf::Vector3(r * sin(th), r * cos(th), 0.7 + 1.3 * ramp(t / T_CLIMB));
+    double th = smoothPhase(t, timeScale), b = ramp(t / T_RAMP);
+    return tf::Vector3((1 - b) * P0.x() + R * b * sin(th),
+                       (1 - b) * P0.y() + R * b * cos(th),
+                       P0.z() + (2.0 - P0.z()) * ramp(t / T_CLIMB));
 }
 
 int main(int argc, char **argv)
@@ -44,7 +51,16 @@ int main(int argc, char **argv)
     ros::Rate loop_rate(500);
     bool smooth_start = false;
     ros::NodeHandle("~").param("smooth_start", smooth_start, false);
-    if (smooth_start) ros::Time::waitForValid();   // sim time: wait for /clock so t starts at 0
+    if (smooth_start) {
+        ros::Time::waitForValid();   // sim time: wait for /clock so t starts at 0
+        // start from the drone's actual pose: its yaw differs after a fresh start and after a respawn
+        nav_msgs::OdometryConstPtr s0 = ros::topic::waitForMessage<nav_msgs::Odometry>("current_state", n, ros::Duration(10.0));
+        if (s0) {
+            P0 = tf::Vector3(s0->pose.pose.position.x, s0->pose.pose.position.y, s0->pose.pose.position.z);
+            THETA0 = -tf::getYaw(s0->pose.pose.orientation);
+        }
+        ROS_INFO("smooth start from (%.2f, %.2f, %.2f), yaw %.1f deg", P0.x(), P0.y(), P0.z(), -THETA0 * 180.0 / PI);
+    }
     ros::Time start(ros::Time::now());
 
 #if TFOUTPUT

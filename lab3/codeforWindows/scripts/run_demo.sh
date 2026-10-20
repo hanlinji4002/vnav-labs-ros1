@@ -1,8 +1,8 @@
 #!/bin/bash
-# 一键演示：仿真器（带窗口）+ RViz + 控制器。run_demo.sh [circle|hover]，Ctrl-C 结束并全部关闭
+# 一键演示：仿真器（带窗口）+ RViz + 控制器。run_demo.sh [circle|hover] [roslaunch 参数，如 kr:=12]，Ctrl-C 结束并全部关闭
 source ~/LAB3/env.sh
 L=~/LAB3; G=$L/results/logs; mkdir -p $G
-mode=${1:-circle}
+mode=${1:-circle}; shift
 TP=$L/vnav_ws/src/controller_pkg/src/traj_publisher.cpp
 want=0; [ "$mode" = hover ] && want=1
 if ! grep -q "^#define STATIC_POSE $want" $TP; then
@@ -13,7 +13,7 @@ fi
 $L/scripts/sim_ctl.sh restart window || exit 1
 rviz -d $L/rviz/lab3_demo.rviz > $G/rviz_demo.log 2>&1 & RV=$!
 sleep 5   # let RViz open before take-off
-roslaunch controller_pkg traj_tracking.launch smooth_start:=true > $G/launch_demo.log 2>&1 & P=$!
+roslaunch controller_pkg traj_tracking.launch smooth_start:=true "$@" > $G/launch_demo.log 2>&1 & P=$!
 stop() {
   kill -INT $P 2>/dev/null; sleep 3; kill -TERM $P 2>/dev/null; wait $P 2>/dev/null
   kill $RV 2>/dev/null; $L/scripts/sim_ctl.sh stop; exit 0

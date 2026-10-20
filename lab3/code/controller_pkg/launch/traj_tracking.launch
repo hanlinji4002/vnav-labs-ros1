@@ -9,10 +9,14 @@
   <!-- Launch our controller -->
   <node name="controller_node" pkg="controller_pkg" type="controller_node"/>
 
-  <!-- Controller gains -->
-  <param name="kx" type="double" value="10" />
-  <param name="kv" type="double" value="5" />
-  <param name="kr" type="double" value="30" />
-  <param name="komega" type="double" value="2.5" />
+  <!-- Controller gains (tuned values as defaults; can be overridden, e.g. kr:=16) -->
+  <arg name="kx" default="10"/>
+  <arg name="kv" default="5"/>
+  <arg name="kr" default="30"/>
+  <arg name="komega" default="2.5"/>
+  <param name="kx" type="double" value="$(arg kx)" />
+  <param name="kv" type="double" value="$(arg kv)" />
+  <param name="kr" type="double" value="$(arg kr)" />
+  <param name="komega" type="double" value="$(arg komega)" />
 
 </launch>

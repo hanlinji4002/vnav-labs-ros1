@@ -59,9 +59,10 @@ glxinfo -B | grep -i renderer
 ~/LAB3/scripts/run_demo.sh            # 跟踪圆轨迹；hover = 悬停测试
 ```
 
-会依次打开 Unity 仿真器窗口（左上角显示帧率）和 RViz，然后平稳起飞：3 s 爬升到 2 m，8 s 内螺旋展开到圆上（`smooth_start:=true`）。按 `Ctrl-C` 结束，所有程序会一起关掉。
+会依次打开 Unity 仿真器窗口（左上角显示帧率）和 RViz，然后平稳起飞：从无人机当前的位置和朝向出发，3 s 爬升到 2 m，8 s 内螺旋展开到圆上（`smooth_start:=true`）。按 `Ctrl-C` 结束，所有程序会一起关掉。
 
 - 仿真窗口更大：`SIM_W=1280 SIM_H=720 ~/LAB3/scripts/run_demo.sh`
+- 画面有小幅抖动（电脑忙、仿真器渲染占满 CPU 时会出现）：`~/LAB3/scripts/run_demo.sh circle kr:=12`
 - RViz 配置 `~/LAB3/rviz/lab3_demo.rviz`：无面板、60 fps。窗口可以用鼠标拖动、缩放，两个窗口左右并排即可。
 
 ## 5. 录屏

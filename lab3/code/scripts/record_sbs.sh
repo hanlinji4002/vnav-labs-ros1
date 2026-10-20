@@ -30,13 +30,14 @@ x2=$(geo $sid "Absolute upper-left X"); y2=$(geo $sid "Absolute upper-left Y"); 
 y=$(( y1 < y2 ? y1 : y2 )); b1=$((y1+h1)); b2=$((y2+h2)); b=$(( b1 > b2 ? b1 : b2 ))
 w=$(( (x2 + w2 - x1) / 2 * 2 )); h=$(( (b - y) / 2 * 2 ))
 echo "capture ${w}x${h}+${x1}+${y}  (rviz ${x1},${y1} h${h1}; sim ${x2},${y2} ${w2}x${h2})"
-nice -n 10 ffmpeg -y -loglevel error -f x11grab -draw_mouse 0 -framerate 15 -video_size ${w}x${h} -i :0.0+${x1},${y} -t $dur \
-  -c:v libx264 -preset ultrafast -crf 23 -pix_fmt yuv420p $V/lab3_rviz_sim_side_by_side.mp4 & FF=$!
+nice -n 10 ffmpeg -nostdin -y -loglevel error -f x11grab -draw_mouse 0 -framerate 15 -video_size ${w}x${h} -i :0.0+${x1},${y} -t $dur \
+  -c:v libx264 -preset ultrafast -crf 23 -pix_fmt yuv420p $V/lab3_rviz_sim_side_by_side.mp4 2> $G/ffmpeg_sbs.log & FF=$!
 sleep 1
-roslaunch controller_pkg traj_tracking.launch smooth_start:=true > $G/launch_sbs.log 2>&1 & P=$!
+roslaunch controller_pkg traj_tracking.launch smooth_start:=true kr:=12 > $G/launch_sbs.log 2>&1 & P=$!
+python3 $L/scripts/takeoff_check.py $((dur-2)) $L/results/flight/record_sbs_attitude.csv > $V/record_sbs_shake.txt 2>&1 &
 python3 $L/scripts/flight_log.py --mode circle --duration $((dur-2)) --warmup 10 --out $L/results/flight/record_sbs > $V/record_sbs_metrics.txt
 wait $FF
-ffmpeg -y -loglevel error -f x11grab -draw_mouse 0 -video_size ${w}x${h} -i :0.0+${x1},${y} -frames:v 1 $V/rviz_sim_side_by_side.png
+ffmpeg -nostdin -y -loglevel error -f x11grab -draw_mouse 0 -video_size ${w}x${h} -i :0.0+${x1},${y} -frames:v 1 $V/rviz_sim_side_by_side.png
 kill -INT $P; wait $P 2>/dev/null
 python3 $L/scripts/reset_drone.py > /dev/null
 pkill -P $INH 2>/dev/null; kill $RV $INH 2>/dev/null
