@@ -1,0 +1,106 @@
+LAB3 Deliverable 2 - Modelling and Control of UAVs
+==================================================
+
+
+A. Structure of quadrotors
+--------------------------
+
+Question: quadrotor (b) is quadrotor (a) with propellers 3 and 4 swapped and
+their rotation reversed. Show that (b) cannot track a trajectory in position
+[x, y, z] and yaw Psi.
+
+Setup (top view of the handout figure): x_B to the right, y_B up, z_B out of
+the page, l = d / sqrt(2). Propeller positions:
+
+    rho_1 = (-l,  l, 0)    rho_2 = (-l, -l, 0)
+    rho_3 = ( l, -l, 0)    rho_4 = ( l,  l, 0)
+
+With u_i = w_i |w_i| (w_i = propeller speed), propeller i produces
+  - the thrust              c_f u_i e3,
+  - the moment              rho_i x (c_f u_i e3) = c_f u_i (rho_iy, -rho_ix, 0),
+  - the drag (yaw) torque   s_i c_d u_i e3,
+where s_i = +1 for a propeller turning clockwise seen from above and -1 for
+counter-clockwise (the opposite sign convention only flips the last row and
+does not change any rank). Stacking [f, tau_x, tau_y, tau_z]^T = F u
+(lecture notes eq. 6.9):
+
+        [ c_f      c_f      c_f      c_f    ]
+    F = [ c_f l   -c_f l   -c_f l    c_f l  ]  = D H,   D = diag(c_f, c_f l, c_f l, c_d)
+        [ c_f l    c_f l   -c_f l   -c_f l  ]
+        [ s_1 c_d  s_2 c_d  s_3 c_d  s_4 c_d]
+
+Quadrotor (a): propellers 1, 3 counter-clockwise, 2, 4 clockwise,
+s = (-1, 1, -1, 1):
+
+          [  1   1   1   1 ]
+    H_a = [  1  -1  -1   1 ]
+          [  1   1  -1  -1 ]
+          [ -1   1  -1   1 ]
+
+The rows of H_a are mutually orthogonal and each has norm 2, so
+H_a H_a^T = 4 I, det H_a = +-16 and rank F_a = 4. Every wrench is reachable:
+u = F_a^-1 [f, tau]^T.
+
+Quadrotor (b): propellers 3 and 4 reversed, s = (-1, 1, 1, -1). The last row
+of H_b is (-1, 1, 1, -1) = -(1, -1, -1, 1), exactly minus the second row. Hence
+
+    tau_z = -(c_d / (c_f l)) tau_x     for every input u,     rank F_b = 3
+
+(the first three rows are still independent, so the rank is exactly 3).
+
+Consequence: tracking (x, y, z, Psi) needs, at every instant, the total thrust
+(for z), two independent tilting torques (for x and y, through the attitude)
+and an independent yaw torque (for Psi): four independent wrench components,
+as the geometric controller computes them (Lee et al., eqs. 15-16). For (b)
+the reachable wrenches form only a 3-dimensional subspace of R^4. For example
+[mg, 0, 0, tau_z] with tau_z != 0 (turn the heading while hovering) is not
+reachable, and every roll torque used to move along y_B produces a yaw torque
+that cannot be cancelled. So quadrotor (b) cannot track an arbitrary position
+and yaw trajectory.
+
+Numerical check (c_f = 1e-3, c_d = 1e-5, d = 0.3 m):
+  smallest singular value of F_a = 2.0e-5    (rank 4)
+  smallest singular value of F_b = 3.6e-21   (numerically zero, rank 3)
+  best reachable wrench for [9.81, 0, 0, 1e-3] with F_b keeps only 0.2 % of the
+  yaw torque.
+
+
+B. Control of quadrotors
+------------------------
+
+Question: the drag force in the body frame is F^b = A (v^b)^2 with
+A = diag(0.1, 0.1, 0.2) and (v^b)^2 = [-v_x|v_x|, -v_y|v_y|, -v_z|v_z|]^T.
+How can it be used to improve the tracking of the controller of Lee et al.?
+
+Model: with the body velocity v^b = R^T v, the drag always opposes the motion
+and adds to the translational dynamics (world frame, z up):
+
+    m dv/dt = -m g e3 + f R e3 + R F^b(R^T v)
+
+The controller sets the thrust vector f R e3 equal to
+
+    F_des = -k_x e_x - k_v e_v + m g e3 + m a_d,
+
+so with drag the error dynamics become m de_v/dt = -k_x e_x - k_v e_v + R F^b:
+the drag is a disturbance that the PD terms must fight with a steady error.
+
+Compensation: the model is known, so cancel it in the desired force:
+
+    F_des' = -k_x e_x - k_v e_v + m g e3 + m a_d - R A (R^T v)^2
+
+and use F_des' wherever F_des was used:
+  - b3d = F_des' / ||F_des'||   (the desired attitude tilts into the airflow),
+  - f   = F_des' . (R e3)       (total thrust).
+The part of the drag along b3 is supplied by the thrust magnitude, the part
+normal to b3 by the extra tilt, and the error dynamics return to
+m de_v/dt = -k_x e_x - k_v e_v, for which the stability proof of Lee et al.
+holds. If the measured velocity is noisy, the desired one can be used instead,
+-R_d A (R_d^T v_d)^2, as a pure feed-forward term; any model error then stays
+a bounded disturbance that the PD terms reject.
+
+Expected benefit on the lab circle (speed 2.5 m/s, mostly along x_B or y_B):
+the drag is about 0.1 * 2.5^2 = 0.63 N, 6 % of the weight, against the motion.
+Without compensation the PD terms must supply it from a steady error, roughly
+0.63 / k_x = 6 cm of lag for k_x = 10. With compensation this error vanishes
+and lower gains are enough. (This drag model acts at the centre of mass, so it
+adds no moment; a drag moment would be compensated the same way in the torque.)

@@ -1,0 +1,74 @@
+LAB3 Deliverable 1 - Transformations in Practice
+================================================
+
+Headers (ROS 1 Noetic):
+  #include <tf2/LinearMath/Quaternion.h>
+  #include <tf2/utils.h>
+  #include <tf2_geometry_msgs/tf2_geometry_msgs.h>
+  #include <tf2_eigen/tf2_eigen.h>
+
+All answers were compiled against ROS Noetic and run on a test rotation
+(roll -0.3, pitch 0.2, yaw 0.7 rad), whose quaternion is
+(x, y, z, w) = (-0.173525, 0.041742, 0.351368, 0.919069).
+
+
+A. Message vs. tf
+-----------------
+
+Q1. An incoming geometry_msgs::Quaternion quat_msg holds the pose of the robot.
+    Save it in the already defined tf2::Quaternion quat_tf (one line of C++).
+
+A1. tf2::fromMsg(quat_msg, quat_tf);
+
+    tf2_geometry_msgs overloads fromMsg for each message type; it copies
+    x, y, z, w into the tf2 quaternion. tf2::convert(quat_msg, quat_tf) is
+    equivalent (it calls the same overload).
+    Test: quat_tf = (-0.173525, 0.041742, 0.351368, 0.919069), same as the message.
+
+
+Q2. The newest rotation estimate is in tf2::Quaternion quat_tf. Convert it to a
+    geometry_msgs::Quaternion named quat_msg (one line of C++).
+
+A2. geometry_msgs::Quaternion quat_msg = tf2::toMsg(quat_tf);
+
+    toMsg is the inverse of fromMsg and returns the message type.
+    Test: quat_msg = (-0.173525, 0.041742, 0.351368, 0.919069).
+
+
+Q3. Which member function gives only the scalar value of a tf2::Quaternion?
+
+A3. quat_tf.getW()        (or its alias quat_tf.w())
+
+    tf2::Quaternion stores (x, y, z, w); w = cos(theta/2) is the scalar part,
+    getX(), getY(), getZ() return the vector part.
+    Test: w = 0.919069 (a rotation by theta = 46.4 deg).
+
+
+B. Conversion
+-------------
+
+Q4. Extract the yaw of a tf2::Quaternion quat_t with one function call.
+
+A4. double yaw = tf2::getYaw(quat_t);        // tf2/utils.h
+
+    getYaw returns the yaw of the Z-Y-X (yaw-pitch-roll) Euler angles,
+    yaw = atan2(2(wz + xy), 1 - 2(y^2 + z^2)), so it is correct even when
+    roll and pitch are not zero.
+    Test: 0.700000 rad.
+
+
+Q5. Convert a geometry_msgs::Quaternion quat_msg to an Eigen 3x3 matrix
+    (about two function calls).
+
+A5. Eigen::Quaterniond q;
+    tf2::fromMsg(quat_msg, q);
+    Eigen::Matrix3d R = q.toRotationMatrix();
+
+    tf2_eigen provides fromMsg into an Eigen::Quaterniond, and
+    toRotationMatrix() evaluates
+
+        R(q) = [ 1-2(y^2+z^2)   2(xy-wz)       2(xz+wy)
+                 2(xy+wz)       1-2(x^2+z^2)   2(yz-wx)
+                 2(xz-wy)       2(yz+wx)       1-2(x^2+y^2) ]
+
+    Test: max |R - R_ref| = 0, where R_ref = tf2::Matrix3x3 of the same quaternion.
