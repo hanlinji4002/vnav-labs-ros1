@@ -1,0 +1,38 @@
+<launch>
+  <!-- optional faster race. a_lim / j_lim / down_lim > 0: segment times chosen for the shortest
+       race with peak |acc| <= a_lim, |jerk| <= j_lim and downward acc <= down_lim;
+       runout > 0: stop that many metres after the last gate, so it is passed at speed.
+       Defaults: the run that passes gate 11 after 10.26 s (headless, all gates within 18 cm) -->
+  <arg name="v_max" default="10.0"/>
+  <arg name="a_max" default="12.0"/>
+  <arg name="publish_rate" default="100.0"/>
+  <arg name="control_hz" default="1000"/>
+  <arg name="a_lim" default="20"/>
+  <arg name="j_lim" default="0"/>
+  <arg name="down_lim" default="6"/>
+  <arg name="runout" default="5"/>
+  <arg name="dump_file" default=""/>
+  <arg name="kx" default="10"/>
+  <arg name="kv" default="5"/>
+  <arg name="kr" default="30"/>
+  <arg name="komega" default="2.5"/>
+
+  <node name="trajectory_generation_fast_node" pkg="trajectory_generation_fast" type="trajectory_generation_fast_node" output="screen">
+    <param name="v_max" value="$(arg v_max)"/>
+    <param name="a_max" value="$(arg a_max)"/>
+    <param name="publish_rate" value="$(arg publish_rate)"/>
+    <param name="a_lim" value="$(arg a_lim)"/>
+    <param name="j_lim" value="$(arg j_lim)"/>
+    <param name="down_lim" value="$(arg down_lim)"/>
+    <param name="runout" value="$(arg runout)"/>
+    <param name="dump_file" value="$(arg dump_file)"/>
+  </node>
+
+  <node name="controller_node" pkg="controller_pkg" type="controller_node" />
+
+  <param name="kx" type="double" value="$(arg kx)" />
+  <param name="kv" type="double" value="$(arg kv)" />
+  <param name="kr" type="double" value="$(arg kr)" />
+  <param name="komega" type="double" value="$(arg komega)" />
+  <param name="control_hz" type="double" value="$(arg control_hz)" />
+</launch>

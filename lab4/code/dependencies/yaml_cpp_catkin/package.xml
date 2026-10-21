@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>yaml_cpp_catkin</name>
+  <version>0.6.2</version>
+  <description>Catkin wrapper of the system yaml-cpp (libyaml-cpp-dev).</description>
+  <maintainer email="evan@example.com">evan</maintainer>
+  <license>MIT</license>
+  <buildtool_depend>catkin</buildtool_depend>
+</package>

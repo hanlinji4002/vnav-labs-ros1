@@ -1,0 +1,51 @@
+LAB4 Deliverable 1 - Single-segment trajectory optimization
+===========================================================
+
+Problem (minimum velocity, r = 1):
+    min_P  integral_0^1 (P'(t))^2 dt    s.t.  P(0) = 0,  P(1) = 1.
+Because P(0) = 0, P(t) = p1 t + p2 t^2 + ... + pn t^n has no constant term.
+With P'(t) = sum_i i p_i t^(i-1):
+    integral_0^1 (P')^2 dt = p^T Q p,   Q_ij = i j / (i + j - 1),
+and P(1) = 1 is  A p = b  with  A = [1 1 ... 1],  b = 1.
+All QPs were solved from their KKT conditions (2 Q p + A^T lambda = 0, A p = b)
+and checked with exact fractions (SymPy) and a numerical KKT solve
+(lab4/code/checks/verify_math.py).
+
+
+1. Degree 1, P(t) = p1 t
+   P(1) = 1 leaves no freedom: p1 = 1, P(t) = t.
+   Cost = integral_0^1 1 dt = 1.
+
+2. Degree 2, P(t) = p2 t^2 + p1 t, p = [p1, p2]^T
+   (a) integral_0^1 (p1 + 2 p2 t)^2 dt = p1^2 + 2 p1 p2 + (4/3) p2^2, so
+           Q = [ 1    1  ]
+               [ 1   4/3 ]
+   (b) A = [1 1],  b = 1.
+   (c) p* is proportional to Q^-1 [1, 1]^T. Since Q [1, 0]^T = [1, 1]^T,
+       p* = [1, 0]^T:  P(t) = t,  cost = 1.
+       Allowing degree 2 does not lower the cost; the best quadratic is the line.
+
+3. Degree 3, P(t) = p3 t^3 + p2 t^2 + p1 t, p = [p1, p2, p3]^T
+   (a)     Q = [ 1    1    1  ]
+               [ 1   4/3  3/2 ]
+               [ 1   3/2  9/5 ]
+       A = [1 1 1],  b = 1.
+   (b) The first column of Q is [1, 1, 1]^T again, so p* = [1, 0, 0]^T:
+       P(t) = t,  cost = 1.
+       This agrees with the Euler-Lagrange result: for r = 1 the optimum satisfies
+       P'' = 0, i.e. it is a polynomial of degree 2r - 1 = 1. A higher degree cannot
+       do better.
+
+4. With the extra constraint P'(1) = -2 (extra row of A: [1 2 3 ...], b = -2)
+   (a) Degree 2: p1 + p2 = 1 and p1 + 2 p2 = -2 give p1 = 4, p2 = -3; nothing is
+       left to optimise.
+           P(t) = -3 t^2 + 4 t,   cost = integral_0^1 (4 - 6t)^2 dt = 4.
+   (b) Degree 3: A = [[1 1 1], [1 2 3]], b = [1, -2]^T. The 5x5 KKT system gives
+           p* = [1/4, 9/2, -15/4]^T,
+           P(t) = -(15/4) t^3 + (9/2) t^2 + (1/4) t,
+           cost = 17/8 = 2.125,
+       about half of (a).
+   The slope constraint is incompatible with the straight line, and every extra
+   degree lowers the cost: degrees n = 2..8 give 4, 2.125, 1.6, 1.375, 1.2571,
+   1.1875, 1.1429, which match 1 + 9/(n^2 - 1) (9 = (-2 - 1)^2). The cost tends to
+   1, the value without the slope constraint.

@@ -1,0 +1,37 @@
+LAB4 Deliverable 2 - Multi-segment trajectory optimization
+==========================================================
+
+1. Minimum snap (r = 4) with k segments
+
+   By the Euler-Lagrange equation P^(2r) = 0, each segment is a polynomial of
+   degree 2r - 1 = 7 with 8 coefficients, so there are 8k unknowns and 8k
+   independent constraints are needed. The k + 1 waypoints are the start, the end
+   and k - 1 intermediate points.
+
+   - Waypoint constraints: 2k.
+     Every segment starts and ends at its two waypoints, P_j(0) = w_(j-1) and
+     P_j(T_j) = w_j. An intermediate waypoint gives two equations (end of one
+     segment, start of the next); the start and the end waypoint one each.
+   - Fixed derivative constraints: 2(r - 1) = 6.
+     Velocity, acceleration and jerk are prescribed at the start and at the end
+     (usually zero for a vehicle at rest).
+   - Free derivative (continuity) constraints: (2r - 2)(k - 1) = 6(k - 1).
+     At each intermediate waypoint the derivatives of order 1..6 are not
+     prescribed but must be continuous: P_j^(m)(T_j) = P_(j+1)^(m)(0), m = 1..6.
+
+   Total: 2k + 6 + 6(k - 1) = 8k, equal to the number of unknowns.
+   Example k = 3: 6 + 6 + 12 = 24 = 8 * 3.
+
+2. General r, k segments
+
+   Each segment has degree 2r - 1 and 2r coefficients: 2rk unknowns.
+   - waypoint constraints:         2k
+   - fixed derivative constraints: 2(r - 1)        (orders 1..r-1 at both ends)
+   - free derivative constraints:  (2r - 2)(k - 1) (continuity of orders 1..2r-2)
+   2k + 2(r - 1) + (2r - 2)(k - 1) = 2rk.
+
+   For r = 1 (minimum velocity) only the 2k waypoint constraints remain and the
+   trajectory is the polygon through the waypoints. If an end derivative of order m
+   is left free instead of fixed, the Euler-Lagrange condition replaces it by the
+   natural boundary condition P^(2r-1-m) = 0 at that end, so the count still closes.
+   Checked for several (r, k) in lab4/code/checks/verify_math.py.

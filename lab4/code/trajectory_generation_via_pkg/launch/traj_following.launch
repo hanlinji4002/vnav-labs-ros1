@@ -1,0 +1,31 @@
+<launch>
+  <!-- final race settings (about 40 s); the template values are v_max 8, a_max 4, 5 Hz -->
+  <arg name="v_max" default="10.0"/>
+  <arg name="a_max" default="12.0"/>
+  <arg name="publish_rate" default="100.0"/>
+  <arg name="control_hz" default="1000"/>
+  <!-- controller gains: lab 3 values except kr 30 -> 16 (less shake, see report) -->
+  <arg name="kx" default="10"/>
+  <arg name="kv" default="5"/>
+  <arg name="kr" default="16"/>
+  <arg name="komega" default="2.5"/>
+
+  <!-- Launch trajectory generation node -->
+  <node name="trajectory_generation_node" pkg="trajectory_generation_via" type="trajectory_generation_via_node" output="screen">
+    <param name="v_max" value="$(arg v_max)"/>
+    <param name="a_max" value="$(arg a_max)"/>
+    <param name="publish_rate" value="$(arg publish_rate)"/>
+    <!-- via point between gate 9 and gate 10: [after_gate, x, y, z] -->
+    <rosparam param="via_points">[9, -45.5, 6.5, 2.51]</rosparam>
+  </node>
+
+  <!-- Launch our controller -->
+  <node name="controller_node" pkg="controller_pkg" type="controller_node" />
+
+  <!-- Controller gains -->
+  <param name="kx" type="double" value="$(arg kx)" />
+  <param name="kv" type="double" value="$(arg kv)" />
+  <param name="kr" type="double" value="$(arg kr)" />
+  <param name="komega" type="double" value="$(arg komega)" />
+  <param name="control_hz" type="double" value="$(arg control_hz)" />
+</launch>
