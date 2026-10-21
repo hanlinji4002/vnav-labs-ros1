@@ -4,9 +4,9 @@ Labs of MIT 16.485 *Visual Navigation for Autonomous Vehicles*, done with ROS 1 
 
 ## LAB3: 3D Trajectory Following
 
-Geometric tracking controller on SE(3) (Lee et al., 2010) for a simulated quadrotor that follows a circle of radius 5 m at 2.5 m/s in the TESSE simulator. Left: RViz; right: simulator window (preview at 3× speed, click for the full video).
+Geometric tracking controller on SE(3) (Lee et al., 2010) for a simulated quadrotor that follows a circle of radius 5 m at 2.5 m/s in the TESSE simulator. Left: RViz; right: simulator window (preview at 4× speed, click for the full video).
 
-[![LAB3 flight: RViz and the TESSE simulator](lab3/results/lab3_flight_preview.gif)](lab3/results/lab3_rviz_sim_side_by_side.mp4)
+[![LAB3 flight: RViz and the TESSE simulator](lab3/results/lab3_flight.gif)](lab3/results/lab3_rviz_sim_side_by_side.mp4)
 
 Full video (40 s): [`lab3/results/lab3_rviz_sim_side_by_side.mp4`](lab3/results/lab3_rviz_sim_side_by_side.mp4)
 
