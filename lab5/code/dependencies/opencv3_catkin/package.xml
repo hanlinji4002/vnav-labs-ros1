@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>opencv3_catkin</name>
+  <version>0.1.0</version>
+  <description>System OpenCV 4.2 plus the xfeatures2d parts missing from the Ubuntu packages (SIFT, SURF, BRIEF).</description>
+  <maintainer email="evan@example.com">evan</maintainer>
+  <license>BSD</license>
+  <buildtool_depend>catkin</buildtool_depend>
+</package>

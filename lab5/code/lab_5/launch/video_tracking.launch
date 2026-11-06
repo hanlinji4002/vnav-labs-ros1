@@ -1,0 +1,25 @@
+<launch>
+  <!-- (OPTIONAL) Put in the path to the dataset as a default value for the argument -->
+  <arg name="path_to_dataset" />
+  <arg name="descriptor" default="SIFT" />
+  <!-- Frame 100 is saved as <save_prefix><figure>.png -->
+  <arg name="save_prefix" default="$(env HOME)/Desktop/LAB5/results/figures/video_$(arg descriptor)_" />
+  <!-- Tracker parameters, e.g. params:="{nfeatures: 1500, matcher: flann}" -->
+  <arg name="params" default="{}" />
+  <!-- Bag playback speed: slow trackers must not fall behind, skipped frames change the statistics -->
+  <arg name="rate" default="1.0" />
+
+  <node name="lab_5" pkg="lab_5" type="track_features" output="screen">
+    <param name="img1_path" type="string" value="$(find lab_5)/images/box.png"/>
+    <param name="img2_path" type="string" value="$(find lab_5)/images/box_in_scene.png"/>
+    <param name="mode" type="int" value="1"/>
+    <param name="descriptor" type="string" value="$(arg descriptor)"/>
+    <param name="save_prefix" type="string" value="$(arg save_prefix)" />
+    <rosparam subst_value="true">$(arg params)</rosparam>
+
+    <remap from="/images_topic" to="/camera/color/image_raw"/>
+  </node>
+  <!-- required: the launch ends with the bag, the tracker then prints its statistics -->
+  <node name="rosbag" pkg="rosbag" type="play" output="screen" required="true"
+  args="--clock -d 3 -r $(arg rate) $(arg path_to_dataset)  /tesse/left_cam/rgb/image_raw:=/camera/color/image_raw" />
+</launch>

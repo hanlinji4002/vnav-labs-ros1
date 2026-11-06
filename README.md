@@ -34,3 +34,19 @@ Minimum-snap trajectories through the 12 gates of a race course (`mav_trajectory
 | [`lab4/codeforRacing`](lab4/codeforRacing) | Racing version: time allocation under acceleration limits and run-out after the last gate |
 | [`lab4/deliverable12answer`](lab4/deliverable12answer) | Answers to Deliverables 1 and 2 |
 | [`lab4/results`](lab4/results) | Flight videos |
+
+## LAB5: Feature Tracking
+
+Keypoint detection, description and matching with SIFT, SURF, ORB and FAST+BRIEF, and Harris corners tracked with Lucas-Kanade, on a pair of images and on two rosbags (a real 30 fps camera and the TESSE simulator); dense Farneback optical flow as the optional part. Green: inliers after RANSAC, red: outliers.
+
+![SIFT matches between box.png and box_in_scene.png](lab5/results/figures/box_SIFT_inliers_outliers.png)
+
+- Pair of images: SIFT keeps 82 inliers out of 102 matches that pass the ratio test (80.4 %); the handout example has 78 of 93.
+- Video: between consecutive frames every method keeps 85-99 % inliers. On the real bag ORB has the most inliers (687 per frame pair) and LK the highest ratio (99.3 %).
+
+| Folder | Content |
+|---|---|
+| [`lab5/lab5要求.md`](lab5/lab5要求.md) | Requirements of the lab |
+| [`lab5/code`](lab5/code) | Code (the five trackers, optical flow, SIFT/SURF/BRIEF built on the system OpenCV 4.2, scripts) for an Apple-silicon Mac (Ubuntu 20.04 arm64 virtual machine) |
+| [`lab5/deliverable12answer`](lab5/deliverable12answer) | Answers to Deliverables 1 and 2 |
+| [`lab5/results`](lab5/results) | Figures, statistics tables and answers to Deliverables 3-8 |

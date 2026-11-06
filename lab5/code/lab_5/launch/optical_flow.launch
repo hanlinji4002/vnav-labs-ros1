@@ -1,0 +1,13 @@
+<launch>
+  <arg name="path_to_dataset" />
+  <!-- Frame 100 next to its flow -->
+  <arg name="save_path" default="$(env HOME)/Desktop/LAB5/results/figures/farneback.png" />
+  <arg name="rate" default="1.0" />
+
+  <node name="self_flow" pkg="lab_5" type="self_flow" output="screen">
+    <param name="save_path" type="string" value="$(arg save_path)" />
+    <remap from="/images_topic" to="/camera/color/image_raw"/>
+  </node>
+  <node name="rosbag" pkg="rosbag" type="play" output="screen" required="true"
+  args="--clock -d 3 -r $(arg rate) $(arg path_to_dataset)  /tesse/left_cam/rgb/image_raw:=/camera/color/image_raw" />
+</launch>

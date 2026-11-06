@@ -1,0 +1,77 @@
+LAB5 Deliverable 1 - Practice with Perspective Projection
+=========================================================
+
+Camera model: f = 1, principal point (0,0), s_x = s_y = 1, zero skew, so a point
+(X,Y,Z) projects to (u,v) = (X/Z, Y/Z). A pixel (u,v) back-projects to the ray
+lambda * m, with m = (u, v, 1), lambda > 0.
+
+A pixel belongs to the projection of the sphere exactly when its ray hits the
+sphere. The boundary of the projection is made of the rays tangent to the sphere.
+
+
+1. Sphere centred at (0, 0, d)
+------------------------------
+
+Expected shape: by symmetry around the optical axis, a circle centred at (0,0).
+
+Put the ray into the sphere equation |lambda*m - c|^2 = r^2, c = (0,0,d):
+
+    lambda^2 (u^2 + v^2 + 1) - 2 lambda d + d^2 - r^2 = 0
+
+The ray is tangent when this quadratic in lambda has a double root:
+
+    d^2 = (u^2 + v^2 + 1)(d^2 - r^2)
+
+which gives
+
+    u^2 + v^2 = r^2 / (d^2 - r^2)
+
+The projection is a circle centred at the principal point with radius
+
+    rho = r / sqrt(d^2 - r^2)
+
+and its interior (a filled disk) for the rays that cross the sphere. d > r + 1
+gives d^2 > r^2, so the radius is real and the whole sphere is in front of the
+camera. Note rho > r/d: the apparent radius is larger than the naive r/d, because
+the tangent points are closer to the camera than the sphere centre.
+
+
+2. Sphere centred at an arbitrary c = (a, b, C)
+-----------------------------------------------
+
+The same double-root condition, for any c outside the sphere, gives
+
+    (c . m)^2 = (m . m)(|c|^2 - r^2)
+
+that is, with k = |c|^2 - r^2 > 0,
+
+    (a u + b v + C)^2 = k (u^2 + v^2 + 1)
+
+This is quadratic in (u,v), so the projection is a conic: the cone of tangent rays
+cut by the image plane. Its type comes from the determinant of the (u,v) quadratic
+part, which equals k (C^2 - r^2):
+
+    C^2 > r^2 (sphere entirely in front of the plane Z = 0)  ->  ellipse
+    C^2 = r^2 (sphere tangent to the plane Z = 0)            ->  parabola
+    C^2 < r^2 (sphere crossing the plane Z = 0)              ->  hyperbola
+
+For the usual ellipse case, let rho0 = sqrt(a^2 + b^2) and use the axes x along
+the radial direction (a,b)/rho0 and y perpendicular to it. Completing the square:
+
+    (C^2 - r^2)(x - x0)^2 + k y^2 = r^2 k / (C^2 - r^2)
+
+    centre           x0  = rho0 C / (C^2 - r^2), y0 = 0
+    radial semi-axis A_r = r sqrt(k) / (C^2 - r^2)
+    other semi-axis  A_t = r / sqrt(C^2 - r^2)
+    ratio            A_r / A_t = sqrt(k / (C^2 - r^2)) >= 1
+
+So a sphere off the optical axis projects to an ellipse whose major axis points
+away from the principal point. It gets more elongated as the sphere moves away from
+the axis, and for a = b = 0 it reduces to the circle of part 1 (k = C^2 - r^2,
+A_r = A_t = rho). The ellipse centre is also not the projection (a/C, b/C) of the
+sphere centre: x0 = (rho0/C) * C^2/(C^2 - r^2) lies further out.
+
+Numeric check: with sampled tangent rays, for (r,d) = (1,3), (0.5,2), (2,3.5) the
+measured radius equals the formula, and for c = (1,0.5,4), r = 1 and c = (2,-1,3),
+r = 1.5 the tangent rays satisfy the conic (residual 1e-14), with the centre above
+and the major axis along (a,b).

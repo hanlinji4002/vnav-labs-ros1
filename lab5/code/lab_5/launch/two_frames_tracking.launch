@@ -1,0 +1,16 @@
+<launch>
+  <arg name="descriptor" default="SIFT" />
+  <!-- Figures are saved as <save_prefix><figure>.png -->
+  <arg name="save_prefix" default="$(env HOME)/Desktop/LAB5/results/figures/box_$(arg descriptor)_" />
+  <!-- Tracker parameters, e.g. params:="{nfeatures: 1500, matcher: flann}" -->
+  <arg name="params" default="{}" />
+
+  <node name="lab_5" pkg="lab_5" type="track_features" output="screen" required="true">
+    <param name="img1_path" type="string" value="$(find lab_5)/images/box.png"/>
+    <param name="img2_path" type="string" value="$(find lab_5)/images/box_in_scene.png"/>
+    <param name="mode" type="int" value="0"/>
+    <param name="descriptor" type="string" value="$(arg descriptor)" />
+    <param name="save_prefix" type="string" value="$(arg save_prefix)" />
+    <rosparam subst_value="true">$(arg params)</rosparam>
+  </node>
+</launch>

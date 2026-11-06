@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>glog_catkin</name>
+  <version>0.1.0</version>
+  <description>Catkin wrapper of the system glog (libgoogle-glog-dev).</description>
+  <maintainer email="evan@example.com">evan</maintainer>
+  <license>BSD</license>
+  <buildtool_depend>catkin</buildtool_depend>
+</package>

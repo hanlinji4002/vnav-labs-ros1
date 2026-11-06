@@ -1,0 +1,59 @@
+LAB5 Deliverable 2 - Vanishing Points
+=====================================
+
+Camera model: f = 1, principal point (0,0), s_x = s_y = 1, zero skew, so
+(X,Y,Z) projects to (x,y) = (X/Z, Y/Z), the homogeneous pixel (X, Y, Z).
+
+A 3D line is p(lambda) = p0 + lambda u, with p0 = (p0x, p0y, p0z) and the unit
+direction u = (ux, uy, uz). Parallel lines share u and differ in p0.
+
+
+1. Vanishing point
+------------------
+
+The projection of a point on the line is
+
+    x(lambda) = (p0x + lambda ux) / (p0z + lambda uz)
+    y(lambda) = (p0y + lambda uy) / (p0z + lambda uz)
+
+If uz != 0, let lambda go to infinity:
+
+    v = (x, y) = (ux / uz, uy / uz)
+
+The limit depends only on the direction u and not on p0, so all parallel lines with
+direction u go through this same pixel: v is their vanishing point. In homogeneous
+coordinates v = (ux, uy, uz), that is, v is the image of the ray through the optical
+centre parallel to the lines.
+
+Geometric check: a 3D line and the optical centre span a plane with normal
+n = p0 x u, and the image of the line is this plane cut with the image plane, so
+n is also the homogeneous image line. Two parallel lines give n1 = p01 x u and
+n2 = p02 x u, and they intersect at
+
+    n1 x n2 = (p01 x u) x (p02 x u) = [(p01 x u) . p02] u
+
+because (p01 x u) . u = 0. Thus the intersection is u again, as a homogeneous point.
+The scalar is zero only if the two lines are coplanar with the optical centre, and
+then they have the same image line.
+
+
+2. When parallel lines stay parallel in the image
+-------------------------------------------------
+
+Claim: two parallel 3D lines (not coplanar with the optical centre) have parallel
+images if and only if uz = 0, i.e. the lines are parallel to the image plane.
+
+If uz = 0: every point of the line has depth Z = p0z, so
+
+    (x, y) = (p0x, p0y) / p0z + lambda (ux, uy) / p0z
+
+which is a straight image line of direction (ux, uy), independent of p0. Lines with
+the same u therefore have the same image direction: they are parallel. In homogeneous
+terms they meet at (ux, uy, 0), a point at infinity.
+
+If uz != 0: by part 1 both image lines pass through the finite pixel (ux/uz, uy/uz).
+Two different lines through a common finite point intersect, so they are not parallel.
+
+Numeric check: for u along (0.3,-0.2,0.9) and two different p0, the projections at
+lambda = 1e8 converge to (ux/uz, uy/uz) = (0.3333,-0.2222), n1 x n2 is a multiple of
+u; for u = (0.6,0.8,0) the image line normals are equal and n1 x n2 has zero z.

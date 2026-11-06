@@ -1,0 +1,137 @@
+LAB5 answers, Deliverables 3-8
+==============================
+
+Tables: results/stats/tables.md (built by scripts/make_tables.py from results/logs).
+Figures: results/figures.
+Software: ROS Noetic, OpenCV 4.2 plus SIFT, SURF and BRIEF compiled from opencv_contrib 4.2.0.
+
+
+Deliverable 3 - Feature Descriptors (SIFT)
+------------------------------------------
+Keypoints on both images: box_SIFT_keypoints_1.png, box_SIFT_keypoints_2.png.
+
+
+Deliverable 4 - Descriptor-based Feature Matching
+-------------------------------------------------
+SIFT descriptors have 128 dimensions (float).
+Matches before the ratio test: box_SIFT_matches.png (604 matches, many false).
+After Match1.distance < 0.8 * Match2.distance: box_SIFT_good_matches.png (102 matches,
+with far fewer outliers).
+
+
+Deliverable 5 - Keypoint Matching Quality
+-----------------------------------------
+Inliers (green) and outliers (red): box_SIFT_inliers_outliers.png.
+
+  Statistics                SIFT
+  # of Keypoints in Img 1   604
+  # of Keypoints in Img 2   969
+  # of Matches              604
+  # of Good Matches         102
+  # of Inliers              82
+  Inlier Ratio              80.4%
+
+Close to the handout example (603, 969, 603, 93, 78, 83.9%).
+
+
+Deliverable 6.a - Pair of frames
+--------------------------------
+  Statistics                SIFT    SURF    ORB     FAST+BRIEF
+  # of Keypoints in Img 1   604     997     3141    2266
+  # of Keypoints in Img 2   969     1822    4362    3653
+  # of Matches              604     997     3141    2266
+  # of Good Matches         102     133     120     41
+  # of Inliers              82      85      80      17
+  Inlier Ratio              80.4%   63.9%   66.7%   41.5%
+
+What was tried and what worked best:
+- ORB levels: 1 pyramid level (skeleton) gave 7 inliers, 8 levels gave 28, both with 500
+  features. The box changes scale between the images, so the pyramid is needed.
+- ORB features: 500 / 2000 / 5000 gave 28 / 56 / 80 inliers, at ratios 93% / 76% / 67%.
+  5000 was kept, since the handout asks for the largest number of inliers.
+- Matcher for binary descriptors: FLANN with an LSH index found the same number of good
+  matches and inliers as the brute-force Hamming matcher, but took longer (ORB 500: 11.5
+  vs 8.1 ms, FAST: 56.5 vs 15.0 ms). Brute force was kept.
+- FAST threshold 5 / 10 / 30 gave 13 / 17 / 7 inliers. 10 was kept.
+- SURF Hessian threshold 50 / 100 / 400 gave 89 / 85 / 74 inliers, at ratios 60% / 64% /
+  64%. The default 100 was kept: 4 more inliers at a lower ratio is not a real gain.
+- SIFT contrast threshold 0.02 added keypoints but no inliers (82 for both).
+
+SIFT, SURF and ORB handle this pair. FAST+BRIEF does not: BRIEF is neither scale nor
+rotation invariant, and box_FAST_inliers_outliers.png shows that even many of its 17
+"inliers" are wrong. RANSAC on the fundamental matrix only requires a point to be within
+3 px of an epipolar line, so wrong matches can pass by chance.
+
+
+Deliverable 6.b - Real datasets
+-------------------------------
+Average over all frame pairs. Every run processed all frames (1583 and 1385 pairs). Bags
+were played slower when needed, because skipped frames would change the statistics.
+
+30fps_424x240_2018-10-01-18-35-06.bag
+  Statistics                SIFT    SURF    ORB     FAST+BRIEF  Harris+LK
+  # of Keypoints in Img 1   403.6   467.0   952.0   826.8       374.4
+  # of Keypoints in Img 2   403.6   466.9   951.8   826.7       367.8
+  # of Matches              403.6   467.0   952.0   826.8       367.8
+  # of Good Matches         258.4   334.1   698.6   633.5       -
+  # of Inliers              249.0   319.8   686.6   606.9       365.2
+  Inlier Ratio              95.7%   95.3%   98.1%   95.1%       99.3%
+  Time per pair (ms)        28.4    25.0    13.0    8.1         6.6
+
+vnav-lab5-smooth-trajectory.bag
+  Statistics                SIFT    SURF    ORB     FAST+BRIEF  Harris+LK
+  # of Keypoints in Img 1   147.9   1192.9  813.2   568.4       156.5
+  # of Keypoints in Img 2   147.8   1191.8  812.2   567.8       152.5
+  # of Matches              147.9   1192.9  813.2   568.4       152.5
+  # of Good Matches         92.6    715.3   449.4   392.1       -
+  # of Inliers              80.5    610.7   404.6   356.7       143.5
+  Inlier Ratio              86.3%   85.5%   90.0%   90.6%       94.7%
+  Time per pair (ms)        81.6    85.2    20.1    6.8         12.3
+
+Times are from the VM and only useful as relative values: they also depend on the playback
+speed (ORB took 7.8 ms per pair at full speed and 13.0 ms at half speed on the 30fps bag).
+For descriptor methods a pair means detecting and describing both frames.
+
+Conclusions:
+- Between consecutive video frames the motion is small, so all methods reach high inlier
+  ratios (95-99% and 85-95%), and FAST+BRIEF, poor on the box pair, works well here.
+- Number of features: this depends on the scene. On the real 30fps bag ORB and FAST lead
+  (952, 827 keypoints). On the low-texture simulated bag SURF finds the most (1193) and
+  SIFT the fewest (148).
+- Speed: SIFT and SURF are the slowest, about 2-4 times slower than ORB and 3-12 times
+  slower than FAST+BRIEF in these runs.
+- Use: SIFT and SURF suit large viewpoint and scale changes, such as the box pair or
+  recognising a place again, when time is not critical. ORB is a good compromise for
+  real-time use, since it stays scale and rotation invariant. FAST+BRIEF suits fast
+  frame-to-frame tracking with little rotation in the image plane.
+
+
+Deliverable 7 - Lucas-Kanade tracker
+------------------------------------
+Implementation: Harris corners (goodFeaturesToTrack, up to 1000, at least 10 px apart),
+tracked with calcOpticalFlowPyrLK. Outlier tracks are dropped and new corners added.
+Tracks at frame 100: 30fps_LK_tracks.png, smooth_LK_tracks.png. Entry: Harris+LK column above.
+
+Assumptions of the LK tracker:
+- Brightness constancy: a feature keeps its intensity between frames.
+- Small motion: a feature moves little between frames (the pyramid extends this range).
+- Spatial coherence: all pixels in the window around a feature move together.
+
+Comparison with the descriptor methods:
+- LK has the highest inlier ratio on both bags (99.3%, 94.7%) and is the fastest on the 30fps
+  bag, because it searches near the old position and computes no descriptors. Its ratio is
+  also helped by the implementation: tracks found to be outliers do not continue.
+- It keeps fewer points than ORB and FAST+BRIEF. On the simulated bag only 156 corners are
+  available, about as few as SIFT.
+- It has no good-matches column, since there is no descriptor distance to apply a ratio to.
+- It only works while its assumptions hold. It cannot match a wide-baseline pair like the box
+  images, or find a feature again after losing it, which descriptor methods can do.
+
+
+Deliverable 8 (optional) - Optical flow
+---------------------------------------
+Farneback dense flow in src/self_flow.cpp, run with optical_flow.launch on both bags.
+Frame 100 next to its flow: farneback_30fps.png, farneback_smooth.png. Hue is the direction of
+motion, brightness the magnitude (full brightness at 10 px). The flow is reliable on textured
+regions and edges, while uniform walls show little or unreliable flow, which is the aperture
+problem.
