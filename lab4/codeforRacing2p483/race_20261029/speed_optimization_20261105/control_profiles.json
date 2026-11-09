@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "scope": "Race-phase controller gains only, layered on the verified preview20_xy configuration. Prehover gains, release thresholds, simulator inertia, force model, gates, clocks and the race judge are unchanged. Profiles are hypotheses until an actual 12-gate flight passes every check.",
+  "base_profile": "preview20_xy",
+  "observed_motivation": "Three independent 1.26 preview20_xy flights (3.2555, 3.2604, 3.2508 s) show repeatable gate offsets up to 0.68 m with a 36/12 position loop (natural frequency 6 rad/s). A stiffer, still critically damped, position loop and a faster attitude loop are the remaining in-bounds controller levers.",
+  "profiles": {
+    "xy20_pos50": {
+      "ros_private_parameters": {
+        "omega_d_limit": 7.0,
+        "omega_d_filter_tau": 0.01,
+        "use_attitude_preview": true,
+        "kx": 50.0,
+        "kv": 14.0
+      },
+      "reference_private_parameters": {
+        "attitude_preview_s": 0.02,
+        "preview_vertical_weight": 0.0
+      },
+      "reference_entry": "attitude_optimization_20261030/preview_reference.py",
+      "hypothesis": "Position loop 50/14 (natural frequency 7.07 rad/s, damping ratio 0.99) reduces steady tracking lag without changing the attitude loop.",
+      "actual_flight_validated": false
+    },
+    "xy20_att75": {
+      "ros_private_parameters": {
+        "omega_d_limit": 7.0,
+        "omega_d_filter_tau": 0.01,
+        "use_attitude_preview": true,
+        "kr": 75.0,
+        "komega": 5.0
+      },
+      "reference_private_parameters": {
+        "attitude_preview_s": 0.02,
+        "preview_vertical_weight": 0.0
+      },
+      "reference_entry": "attitude_optimization_20261030/preview_reference.py",
+      "hypothesis": "Attitude loop 75/5 shortens the force-direction lag that the attitude analysis measured at 27.5 degrees mean; the unchanged 7 rad/s feedforward cap still bounds the nominal rate request.",
+      "actual_flight_validated": false
+    },
+    "xy20_pos50_att75": {
+      "ros_private_parameters": {
+        "omega_d_limit": 7.0,
+        "omega_d_filter_tau": 0.01,
+        "use_attitude_preview": true,
+        "kx": 50.0,
+        "kv": 14.0,
+        "kr": 75.0,
+        "komega": 5.0
+      },
+      "reference_private_parameters": {
+        "attitude_preview_s": 0.02,
+        "preview_vertical_weight": 0.0
+      },
+      "reference_entry": "attitude_optimization_20261030/preview_reference.py",
+      "hypothesis": "Both loops stiffer together; only selected if each single change is at least neutral in actual gate margins.",
+      "actual_flight_validated": false
+    },
+    "preview20_xy_sync": {
+      "ros_private_parameters": {
+        "omega_d_limit": 7.0,
+        "omega_d_filter_tau": 0.01,
+        "use_attitude_preview": true,
+        "control_on_state": true,
+        "state_wait_ms": 8.0
+      },
+      "reference_private_parameters": {
+        "attitude_preview_s": 0.02,
+        "preview_vertical_weight": 0.0
+      },
+      "reference_entry": "attitude_optimization_20261030/preview_reference.py",
+      "hypothesis": "Identical control law and gains to preview20_xy; the rotor command is issued once per simulator step as soon as that step's reference has arrived (8 ms watchdog), instead of a free-running 1 kHz wall timer whose phase relative to the 50 Hz physics step is random. Aim: reduce run-to-run gate-offset spread.",
+      "actual_flight_validated": false
+    },
+    "modphys14_kr90": {
+      "ros_private_parameters": {
+        "omega_d_limit": 14.0,
+        "omega_d_filter_tau": 0.01,
+        "use_attitude_preview": true,
+        "kr": 90.0,
+        "komega": 4.0
+      },
+      "reference_private_parameters": {
+        "attitude_preview_s": 0.02,
+        "preview_vertical_weight": 0.0
+      },
+      "reference_entry": "attitude_optimization_20261030/preview_reference.py",
+      "hypothesis": "MODIFIED PHYSICS STUDY ONLY (requires --modified-physics 14): with the Unity angular speed cap raised to 14 rad/s the surrogate prefers a stiffer attitude loop kR=90 (komega unchanged; komega>4 is unstable at 50 Hz feedback). Not an official-physics configuration.",
+      "actual_flight_validated": false
+    },
+    "modphys14_kr60": {
+      "ros_private_parameters": {
+        "omega_d_limit": 14.0,
+        "omega_d_filter_tau": 0.01,
+        "use_attitude_preview": true
+      },
+      "reference_private_parameters": {
+        "attitude_preview_s": 0.02,
+        "preview_vertical_weight": 0.0
+      },
+      "reference_entry": "attitude_optimization_20261030/preview_reference.py",
+      "hypothesis": "MODIFIED PHYSICS STUDY ONLY: same gains as preview20_xy, feedforward rate cap raised to the modified 14 rad/s.",
+      "actual_flight_validated": false
+    }
+  },
+  "physical_rate_cap_changed": false,
+  "actual_flight_validated": false
+}

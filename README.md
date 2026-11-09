@@ -26,6 +26,7 @@ Minimum-snap trajectories through the 12 gates of a race course (`mav_trajectory
 
 - Stable final run, 40.9 s: [`lab4/results/lab4_stable_rviz_sim.mp4`](lab4/results/lab4_stable_rviz_sim.mp4). With v<sub>max</sub> = 10 m/s, a<sub>max</sub> = 12 m/s<sup>2</sup> and the desired state published at 100 Hz, the drone passes every gate within 1.7 cm of its centre. One via point between gates 9 and 10 keeps it 3.0 m from the wall in that turn.
 - Racing run (optional extra credit), 10.2 s: [`lab4/results/lab4_racing_rviz_sim.mp4`](lab4/results/lab4_racing_rviz_sim.mp4). Segment times are chosen under acceleration limits, with a 5 m run-out after the last gate. The drone passes all 12 gates and reaches 15 m/s (MIT record: 10.3 s).
+- Later optimization round on this branch: pre-hover release, 20 ms horizontal attitude preview and a closed-loop surrogate search over gate offsets and segment times bring the official-physics run to 3.195 s. A 14 rad/s physics variant (four bytes in `globalgamemanagers`, restored after every run) reaches 2.483 s; it is **not comparable** with official-physics results. Code and evidence: [`lab4/codeforRacing2p483`](lab4/codeforRacing2p483).
 
 | Folder | Content |
 |---|---|
@@ -34,6 +35,7 @@ Minimum-snap trajectories through the 12 gates of a race course (`mav_trajectory
 | [`lab4/codeforRacing`](lab4/codeforRacing) | Racing version: time allocation under acceleration limits and run-out after the last gate |
 | [`lab4/deliverable12answer`](lab4/deliverable12answer) | Answers to Deliverables 1 and 2 |
 | [`lab4/results`](lab4/results) | Flight videos |
+| [`lab4/codeforRacing2p483`](lab4/codeforRacing2p483) | 2.483 s racing round: pre-hover release, attitude preview, surrogate search, timer/HUD and run evidence (14 rad/s physics variant, disclosed) |
 
 ## LAB5: Feature Tracking
 

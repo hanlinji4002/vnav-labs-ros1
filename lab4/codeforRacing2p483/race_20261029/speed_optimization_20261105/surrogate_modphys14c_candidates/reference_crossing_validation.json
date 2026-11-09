@@ -1,0 +1,1420 @@
+{
+  "passed": true,
+  "candidates": [
+    {
+      "name": "modphys14c_t2805",
+      "passed": true,
+      "scope": "Analytic degree-9 reference roots, not actual flight",
+      "ordered_first_forward_crossings": [
+        {
+          "gate": 0,
+          "reference_time_s": 5.677302497881074,
+          "race_time_s": 0.6773024978810741,
+          "horizontal_m": 0.19603765592712907,
+          "vertical_m": -0.36539129424380956,
+          "forward_mps": 27.401005309705134,
+          "segment": 0
+        },
+        {
+          "gate": 1,
+          "reference_time_s": 5.905299040483086,
+          "race_time_s": 0.9052990404830858,
+          "horizontal_m": -0.23595236914168544,
+          "vertical_m": 0.39999999999992664,
+          "forward_mps": 33.32037754496064,
+          "segment": 1
+        },
+        {
+          "gate": 2,
+          "reference_time_s": 6.126179230930847,
+          "race_time_s": 1.1261792309308474,
+          "horizontal_m": 0.2495072196247762,
+          "vertical_m": -0.02405609106602391,
+          "forward_mps": 41.80403786557246,
+          "segment": 2
+        },
+        {
+          "gate": 3,
+          "reference_time_s": 6.362150217047831,
+          "race_time_s": 1.362150217047831,
+          "horizontal_m": 0.4000000000011605,
+          "vertical_m": 0.341389840168167,
+          "forward_mps": 39.374560521715125,
+          "segment": 3
+        },
+        {
+          "gate": 4,
+          "reference_time_s": 6.608609359840772,
+          "race_time_s": 1.6086093598407722,
+          "horizontal_m": 0.34988640336621657,
+          "vertical_m": -0.08237488276271465,
+          "forward_mps": 29.71023394807833,
+          "segment": 4
+        },
+        {
+          "gate": 5,
+          "reference_time_s": 6.839501566096005,
+          "race_time_s": 1.8395015660960048,
+          "horizontal_m": 0.04339301210193458,
+          "vertical_m": -0.3999999999997028,
+          "forward_mps": 19.051130992877678,
+          "segment": 5
+        },
+        {
+          "gate": 6,
+          "reference_time_s": 7.12936586242444,
+          "race_time_s": 2.1293658624244403,
+          "horizontal_m": -0.35340188539235484,
+          "vertical_m": 0.06134566365038552,
+          "forward_mps": 26.989992303369323,
+          "segment": 6
+        },
+        {
+          "gate": 7,
+          "reference_time_s": 7.340879171864499,
+          "race_time_s": 2.340879171864499,
+          "horizontal_m": 0.05329949595360298,
+          "vertical_m": -0.24133736730562205,
+          "forward_mps": 24.681225360733745,
+          "segment": 7
+        },
+        {
+          "gate": 8,
+          "reference_time_s": 7.647046877220574,
+          "race_time_s": 2.647046877220574,
+          "horizontal_m": -0.3488372189915843,
+          "vertical_m": 0.28234898528081676,
+          "forward_mps": 22.35318281846723,
+          "segment": 8
+        },
+        {
+          "gate": 9,
+          "reference_time_s": 7.898805194353642,
+          "race_time_s": 2.8988051943536415,
+          "horizontal_m": 0.39999999999960417,
+          "vertical_m": -0.40000000000001545,
+          "forward_mps": 31.531964837065548,
+          "segment": 9
+        },
+        {
+          "gate": 10,
+          "reference_time_s": 8.200115675887268,
+          "race_time_s": 3.2001156758872673,
+          "horizontal_m": 0.29130624639418995,
+          "vertical_m": 0.2313345313132107,
+          "forward_mps": 35.58785541279891,
+          "segment": 10
+        },
+        {
+          "gate": 11,
+          "reference_time_s": 8.481808200449446,
+          "race_time_s": 3.481808200449447,
+          "horizontal_m": 0.2762715685599442,
+          "vertical_m": 0.12103474351772414,
+          "forward_mps": 24.132273890812964,
+          "segment": 11
+        }
+      ],
+      "all_forward_roots": [
+        [
+          {
+            "gate": 0,
+            "reference_time_s": 5.677302497881074,
+            "race_time_s": 0.6773024978810741,
+            "horizontal_m": 0.19603765592712907,
+            "vertical_m": -0.36539129424380956,
+            "forward_mps": 27.401005309705134,
+            "segment": 0
+          },
+          {
+            "gate": 0,
+            "reference_time_s": 7.345607238441618,
+            "race_time_s": 2.3456072384416173,
+            "horizontal_m": -32.89878555176602,
+            "vertical_m": 0.6625005365688068,
+            "forward_mps": 20.140516117495366,
+            "segment": 8
+          }
+        ],
+        [
+          {
+            "gate": 1,
+            "reference_time_s": 5.905299040483086,
+            "race_time_s": 0.9052990404830858,
+            "horizontal_m": -0.23595236914168544,
+            "vertical_m": 0.39999999999992664,
+            "forward_mps": 33.32037754496064,
+            "segment": 1
+          }
+        ],
+        [
+          {
+            "gate": 2,
+            "reference_time_s": 6.126179230930847,
+            "race_time_s": 1.1261792309308474,
+            "horizontal_m": 0.2495072196247762,
+            "vertical_m": -0.02405609106602391,
+            "forward_mps": 41.80403786557246,
+            "segment": 2
+          }
+        ],
+        [
+          {
+            "gate": 3,
+            "reference_time_s": 6.362150217047831,
+            "race_time_s": 1.362150217047831,
+            "horizontal_m": 0.4000000000011605,
+            "vertical_m": 0.341389840168167,
+            "forward_mps": 39.374560521715125,
+            "segment": 3
+          }
+        ],
+        [
+          {
+            "gate": 4,
+            "reference_time_s": 6.608609359840772,
+            "race_time_s": 1.6086093598407722,
+            "horizontal_m": 0.34988640336621657,
+            "vertical_m": -0.08237488276271465,
+            "forward_mps": 29.71023394807833,
+            "segment": 4
+          },
+          {
+            "gate": 4,
+            "reference_time_s": 7.928767485968315,
+            "race_time_s": 2.928767485968315,
+            "horizontal_m": 28.139198964605797,
+            "vertical_m": -0.5125973719492629,
+            "forward_mps": 23.35274011181923,
+            "segment": 10
+          }
+        ],
+        [
+          {
+            "gate": 5,
+            "reference_time_s": 6.839501566096005,
+            "race_time_s": 1.8395015660960048,
+            "horizontal_m": 0.04339301210193458,
+            "vertical_m": -0.3999999999997028,
+            "forward_mps": 19.051130992877678,
+            "segment": 5
+          }
+        ],
+        [
+          {
+            "gate": 6,
+            "reference_time_s": 7.12936586242444,
+            "race_time_s": 2.1293658624244403,
+            "horizontal_m": -0.35340188539235484,
+            "vertical_m": 0.06134566365038552,
+            "forward_mps": 26.989992303369323,
+            "segment": 6
+          }
+        ],
+        [
+          {
+            "gate": 7,
+            "reference_time_s": 6.056194955806269,
+            "race_time_s": 1.0561949558062693,
+            "horizontal_m": 31.87530638223334,
+            "vertical_m": -0.8797900255430586,
+            "forward_mps": 30.636971775655113,
+            "segment": 2
+          },
+          {
+            "gate": 7,
+            "reference_time_s": 7.340879171864499,
+            "race_time_s": 2.340879171864499,
+            "horizontal_m": 0.05329949595360298,
+            "vertical_m": -0.24133736730562205,
+            "forward_mps": 24.681225360733745,
+            "segment": 7
+          }
+        ],
+        [
+          {
+            "gate": 8,
+            "reference_time_s": 7.647046877220574,
+            "race_time_s": 2.647046877220574,
+            "horizontal_m": -0.3488372189915843,
+            "vertical_m": 0.28234898528081676,
+            "forward_mps": 22.35318281846723,
+            "segment": 8
+          }
+        ],
+        [
+          {
+            "gate": 9,
+            "reference_time_s": 7.898805194353642,
+            "race_time_s": 2.8988051943536415,
+            "horizontal_m": 0.39999999999960417,
+            "vertical_m": -0.40000000000001545,
+            "forward_mps": 31.531964837065548,
+            "segment": 9
+          }
+        ],
+        [
+          {
+            "gate": 10,
+            "reference_time_s": 8.200115675887268,
+            "race_time_s": 3.2001156758872673,
+            "horizontal_m": 0.29130624639418995,
+            "vertical_m": 0.2313345313132107,
+            "forward_mps": 35.58785541279891,
+            "segment": 10
+          }
+        ],
+        [
+          {
+            "gate": 11,
+            "reference_time_s": 8.481808200449446,
+            "race_time_s": 3.481808200449447,
+            "horizontal_m": 0.2762715685599442,
+            "vertical_m": 0.12103474351772414,
+            "forward_mps": 24.132273890812964,
+            "segment": 11
+          }
+        ]
+      ],
+      "endpoint_rest_max_abs_by_derivative": {
+        "1": 7.738015823831935e-11,
+        "2": 5.691178534133472e-10,
+        "3": 3.562305674648283e-09,
+        "4": 1.8814245049619115e-08
+      },
+      "actual_flight_validated": false
+    },
+    {
+      "name": "modphys14c_t2708",
+      "passed": true,
+      "scope": "Analytic degree-9 reference roots, not actual flight",
+      "ordered_first_forward_crossings": [
+        {
+          "gate": 0,
+          "reference_time_s": 5.66514675402917,
+          "race_time_s": 0.6651467540291693,
+          "horizontal_m": 0.17957993879333944,
+          "vertical_m": -0.33986023442817803,
+          "forward_mps": 28.48755656660399,
+          "segment": 0
+        },
+        {
+          "gate": 1,
+          "reference_time_s": 5.881475500180557,
+          "race_time_s": 0.8814755001805574,
+          "horizontal_m": -0.3090969386566631,
+          "vertical_m": 0.2424503184922906,
+          "forward_mps": 35.396704488427545,
+          "segment": 1
+        },
+        {
+          "gate": 2,
+          "reference_time_s": 6.0937217801991235,
+          "race_time_s": 1.0937217801991235,
+          "horizontal_m": 0.3463310046765657,
+          "vertical_m": 0.059485263292359036,
+          "forward_mps": 42.52958984283953,
+          "segment": 2
+        },
+        {
+          "gate": 3,
+          "reference_time_s": 6.323513616030109,
+          "race_time_s": 1.3235136160301084,
+          "horizontal_m": 0.33237139167837426,
+          "vertical_m": 0.2543747057602821,
+          "forward_mps": 41.21453657687896,
+          "segment": 3
+        },
+        {
+          "gate": 4,
+          "reference_time_s": 6.565834085185466,
+          "race_time_s": 1.565834085185466,
+          "horizontal_m": 0.3901320383712701,
+          "vertical_m": -0.10471701892733876,
+          "forward_mps": 28.668064075558124,
+          "segment": 4
+        },
+        {
+          "gate": 5,
+          "reference_time_s": 6.7986995950760996,
+          "race_time_s": 1.7986995950760998,
+          "horizontal_m": 0.1965640437406222,
+          "vertical_m": -0.3649789813628348,
+          "forward_mps": 18.819152410825307,
+          "segment": 5
+        },
+        {
+          "gate": 6,
+          "reference_time_s": 7.083235620611331,
+          "race_time_s": 2.083235620611331,
+          "horizontal_m": -0.34580355195330537,
+          "vertical_m": 0.13171531108862,
+          "forward_mps": 28.731271979951014,
+          "segment": 6
+        },
+        {
+          "gate": 7,
+          "reference_time_s": 7.269473562718865,
+          "race_time_s": 2.269473562718865,
+          "horizontal_m": 0.06775378823632061,
+          "vertical_m": 0.02357622600183351,
+          "forward_mps": 27.763663122540713,
+          "segment": 7
+        },
+        {
+          "gate": 8,
+          "reference_time_s": 7.550909000302452,
+          "race_time_s": 2.5509090003024526,
+          "horizontal_m": -0.39999999999868835,
+          "vertical_m": 0.3074271332766658,
+          "forward_mps": 23.009831438024104,
+          "segment": 8
+        },
+        {
+          "gate": 9,
+          "reference_time_s": 7.802667317435477,
+          "race_time_s": 2.802667317435477,
+          "horizontal_m": 0.30730298903818776,
+          "vertical_m": -0.37139337275597795,
+          "forward_mps": 32.920168920622395,
+          "segment": 9
+        },
+        {
+          "gate": 10,
+          "reference_time_s": 8.068650552725448,
+          "race_time_s": 3.0686505527254475,
+          "horizontal_m": 0.2821708208475631,
+          "vertical_m": 0.16323518967980855,
+          "forward_mps": 37.36570798177366,
+          "segment": 10
+        },
+        {
+          "gate": 11,
+          "reference_time_s": 8.373051073423834,
+          "race_time_s": 3.3730510734238353,
+          "horizontal_m": 0.3794079491977618,
+          "vertical_m": 0.3616480417449104,
+          "forward_mps": 23.557001369192584,
+          "segment": 11
+        }
+      ],
+      "all_forward_roots": [
+        [
+          {
+            "gate": 0,
+            "reference_time_s": 5.66514675402917,
+            "race_time_s": 0.6651467540291693,
+            "horizontal_m": 0.17957993879333944,
+            "vertical_m": -0.33986023442817803,
+            "forward_mps": 28.48755656660399,
+            "segment": 0
+          },
+          {
+            "gate": 0,
+            "reference_time_s": 7.273545141815885,
+            "race_time_s": 2.2735451418158847,
+            "horizontal_m": -32.888680708354165,
+            "vertical_m": 0.9288265287735902,
+            "forward_mps": 22.086185426487642,
+            "segment": 8
+          }
+        ],
+        [
+          {
+            "gate": 1,
+            "reference_time_s": 5.881475500180557,
+            "race_time_s": 0.8814755001805574,
+            "horizontal_m": -0.3090969386566631,
+            "vertical_m": 0.2424503184922906,
+            "forward_mps": 35.396704488427545,
+            "segment": 1
+          }
+        ],
+        [
+          {
+            "gate": 2,
+            "reference_time_s": 6.0937217801991235,
+            "race_time_s": 1.0937217801991235,
+            "horizontal_m": 0.3463310046765657,
+            "vertical_m": 0.059485263292359036,
+            "forward_mps": 42.52958984283953,
+            "segment": 2
+          }
+        ],
+        [
+          {
+            "gate": 3,
+            "reference_time_s": 6.323513616030109,
+            "race_time_s": 1.3235136160301084,
+            "horizontal_m": 0.33237139167837426,
+            "vertical_m": 0.2543747057602821,
+            "forward_mps": 41.21453657687896,
+            "segment": 3
+          }
+        ],
+        [
+          {
+            "gate": 4,
+            "reference_time_s": 6.565834085185466,
+            "race_time_s": 1.565834085185466,
+            "horizontal_m": 0.3901320383712701,
+            "vertical_m": -0.10471701892733876,
+            "forward_mps": 28.668064075558124,
+            "segment": 4
+          },
+          {
+            "gate": 4,
+            "reference_time_s": 7.826764280175405,
+            "race_time_s": 2.826764280175405,
+            "horizontal_m": 27.909346229912543,
+            "vertical_m": -0.4851354444897109,
+            "forward_mps": 26.144773829050038,
+            "segment": 10
+          }
+        ],
+        [
+          {
+            "gate": 5,
+            "reference_time_s": 6.7986995950760996,
+            "race_time_s": 1.7986995950760998,
+            "horizontal_m": 0.1965640437406222,
+            "vertical_m": -0.3649789813628348,
+            "forward_mps": 18.819152410825307,
+            "segment": 5
+          }
+        ],
+        [
+          {
+            "gate": 6,
+            "reference_time_s": 7.083235620611331,
+            "race_time_s": 2.083235620611331,
+            "horizontal_m": -0.34580355195330537,
+            "vertical_m": 0.13171531108862,
+            "forward_mps": 28.731271979951014,
+            "segment": 6
+          }
+        ],
+        [
+          {
+            "gate": 7,
+            "reference_time_s": 6.023843268327229,
+            "race_time_s": 1.0238432683272292,
+            "horizontal_m": 31.912312741038367,
+            "vertical_m": -0.8657022941039054,
+            "forward_mps": 32.429042457491335,
+            "segment": 2
+          },
+          {
+            "gate": 7,
+            "reference_time_s": 7.269473562718865,
+            "race_time_s": 2.269473562718865,
+            "horizontal_m": 0.06775378823632061,
+            "vertical_m": 0.02357622600183351,
+            "forward_mps": 27.763663122540713,
+            "segment": 7
+          }
+        ],
+        [
+          {
+            "gate": 8,
+            "reference_time_s": 7.550909000302452,
+            "race_time_s": 2.5509090003024526,
+            "horizontal_m": -0.39999999999868835,
+            "vertical_m": 0.3074271332766658,
+            "forward_mps": 23.009831438024104,
+            "segment": 8
+          }
+        ],
+        [
+          {
+            "gate": 9,
+            "reference_time_s": 7.802667317435477,
+            "race_time_s": 2.802667317435477,
+            "horizontal_m": 0.30730298903818776,
+            "vertical_m": -0.37139337275597795,
+            "forward_mps": 32.920168920622395,
+            "segment": 9
+          }
+        ],
+        [
+          {
+            "gate": 10,
+            "reference_time_s": 8.068650552725448,
+            "race_time_s": 3.0686505527254475,
+            "horizontal_m": 0.2821708208475631,
+            "vertical_m": 0.16323518967980855,
+            "forward_mps": 37.36570798177366,
+            "segment": 10
+          }
+        ],
+        [
+          {
+            "gate": 11,
+            "reference_time_s": 8.373051073423834,
+            "race_time_s": 3.3730510734238353,
+            "horizontal_m": 0.3794079491977618,
+            "vertical_m": 0.3616480417449104,
+            "forward_mps": 23.557001369192584,
+            "segment": 11
+          }
+        ]
+      ],
+      "endpoint_rest_max_abs_by_derivative": {
+        "1": 2.625250651517207e-11,
+        "2": 3.2685117085940856e-10,
+        "3": 2.884121779292161e-09,
+        "4": 1.9187137139925885e-08
+      },
+      "actual_flight_validated": false
+    },
+    {
+      "name": "modphys14c_t2678",
+      "passed": true,
+      "scope": "Analytic degree-9 reference roots, not actual flight",
+      "ordered_first_forward_crossings": [
+        {
+          "gate": 0,
+          "reference_time_s": 5.645956772175696,
+          "race_time_s": 0.6459567721756954,
+          "horizontal_m": 0.053668336298657415,
+          "vertical_m": -0.3890842036319686,
+          "forward_mps": 28.73296321261184,
+          "segment": 0
+        },
+        {
+          "gate": 1,
+          "reference_time_s": 5.86228551832706,
+          "race_time_s": 0.8622855183270604,
+          "horizontal_m": -0.4000000000002066,
+          "vertical_m": 0.23204650502506663,
+          "forward_mps": 33.98957262935242,
+          "segment": 1
+        },
+        {
+          "gate": 2,
+          "reference_time_s": 6.0816583549561525,
+          "race_time_s": 1.0816583549561525,
+          "horizontal_m": 0.346331004677001,
+          "vertical_m": 0.07694315821823494,
+          "forward_mps": 42.412512293531194,
+          "segment": 2
+        },
+        {
+          "gate": 3,
+          "reference_time_s": 6.309297147944843,
+          "race_time_s": 1.3092971479448425,
+          "horizontal_m": 0.3412814529624138,
+          "vertical_m": 0.19849889542089771,
+          "forward_mps": 42.221994968407856,
+          "segment": 3
+        },
+        {
+          "gate": 4,
+          "reference_time_s": 6.541678248025976,
+          "race_time_s": 1.5416782480259756,
+          "horizontal_m": 0.4000000000015831,
+          "vertical_m": -0.08233375389274666,
+          "forward_mps": 30.059836428159244,
+          "segment": 4
+        },
+        {
+          "gate": 5,
+          "reference_time_s": 6.773949233677415,
+          "race_time_s": 1.7739492336774154,
+          "horizontal_m": 0.21538887461234246,
+          "vertical_m": -0.3649789813624893,
+          "forward_mps": 18.98954168161533,
+          "segment": 5
+        },
+        {
+          "gate": 6,
+          "reference_time_s": 7.0578334856365625,
+          "race_time_s": 2.057833485636563,
+          "horizontal_m": -0.3515049039868021,
+          "vertical_m": 0.1595389506990288,
+          "forward_mps": 28.326227585011974,
+          "segment": 6
+        },
+        {
+          "gate": 7,
+          "reference_time_s": 7.246953727205728,
+          "race_time_s": 2.2469537272057276,
+          "horizontal_m": 0.11346664140906336,
+          "vertical_m": -0.10359167736067709,
+          "forward_mps": 27.35352576739006,
+          "segment": 7
+        },
+        {
+          "gate": 8,
+          "reference_time_s": 7.531411558657131,
+          "race_time_s": 2.5314115586571306,
+          "horizontal_m": -0.39999999999837776,
+          "vertical_m": 0.19614789725175763,
+          "forward_mps": 23.367824721580714,
+          "segment": 8
+        },
+        {
+          "gate": 9,
+          "reference_time_s": 7.783169875790155,
+          "race_time_s": 2.783169875790155,
+          "horizontal_m": 0.2993522090856814,
+          "vertical_m": -0.37139337275598816,
+          "forward_mps": 34.04189967364951,
+          "segment": 9
+        },
+        {
+          "gate": 10,
+          "reference_time_s": 8.035485942940815,
+          "race_time_s": 3.0354859429408148,
+          "horizontal_m": 0.3382099786022067,
+          "vertical_m": 0.12607308832788844,
+          "forward_mps": 38.89098572058989,
+          "segment": 10
+        },
+        {
+          "gate": 11,
+          "reference_time_s": 8.323855287734267,
+          "race_time_s": 3.323855287734267,
+          "horizontal_m": 0.40000000000013797,
+          "vertical_m": 0.3999999999999111,
+          "forward_mps": 26.064720531030446,
+          "segment": 11
+        }
+      ],
+      "all_forward_roots": [
+        [
+          {
+            "gate": 0,
+            "reference_time_s": 5.645956772175696,
+            "race_time_s": 0.6459567721756954,
+            "horizontal_m": 0.053668336298657415,
+            "vertical_m": -0.3890842036319686,
+            "forward_mps": 28.73296321261184,
+            "segment": 0
+          },
+          {
+            "gate": 0,
+            "reference_time_s": 7.250308660460167,
+            "race_time_s": 2.2503086604601674,
+            "horizontal_m": -32.83046515355649,
+            "vertical_m": 0.7980355306563407,
+            "forward_mps": 21.85868390205191,
+            "segment": 8
+          }
+        ],
+        [
+          {
+            "gate": 1,
+            "reference_time_s": 5.86228551832706,
+            "race_time_s": 0.8622855183270604,
+            "horizontal_m": -0.4000000000002066,
+            "vertical_m": 0.23204650502506663,
+            "forward_mps": 33.98957262935242,
+            "segment": 1
+          }
+        ],
+        [
+          {
+            "gate": 2,
+            "reference_time_s": 6.0816583549561525,
+            "race_time_s": 1.0816583549561525,
+            "horizontal_m": 0.346331004677001,
+            "vertical_m": 0.07694315821823494,
+            "forward_mps": 42.412512293531194,
+            "segment": 2
+          }
+        ],
+        [
+          {
+            "gate": 3,
+            "reference_time_s": 6.309297147944843,
+            "race_time_s": 1.3092971479448425,
+            "horizontal_m": 0.3412814529624138,
+            "vertical_m": 0.19849889542089771,
+            "forward_mps": 42.221994968407856,
+            "segment": 3
+          }
+        ],
+        [
+          {
+            "gate": 4,
+            "reference_time_s": 6.541678248025976,
+            "race_time_s": 1.5416782480259756,
+            "horizontal_m": 0.4000000000015831,
+            "vertical_m": -0.08233375389274666,
+            "forward_mps": 30.059836428159244,
+            "segment": 4
+          },
+          {
+            "gate": 4,
+            "reference_time_s": 7.805648195113257,
+            "race_time_s": 2.8056481951132572,
+            "horizontal_m": 27.868727072560972,
+            "vertical_m": -0.4888365196979487,
+            "forward_mps": 27.729722187341103,
+            "segment": 10
+          }
+        ],
+        [
+          {
+            "gate": 5,
+            "reference_time_s": 6.773949233677415,
+            "race_time_s": 1.7739492336774154,
+            "horizontal_m": 0.21538887461234246,
+            "vertical_m": -0.3649789813624893,
+            "forward_mps": 18.98954168161533,
+            "segment": 5
+          }
+        ],
+        [
+          {
+            "gate": 6,
+            "reference_time_s": 7.0578334856365625,
+            "race_time_s": 2.057833485636563,
+            "horizontal_m": -0.3515049039868021,
+            "vertical_m": 0.1595389506990288,
+            "forward_mps": 28.326227585011974,
+            "segment": 6
+          }
+        ],
+        [
+          {
+            "gate": 7,
+            "reference_time_s": 6.01031024528695,
+            "race_time_s": 1.0103102452869508,
+            "horizontal_m": 31.933082624220674,
+            "vertical_m": -0.8381230634959587,
+            "forward_mps": 31.492239096638155,
+            "segment": 2
+          },
+          {
+            "gate": 7,
+            "reference_time_s": 7.246953727205728,
+            "race_time_s": 2.2469537272057276,
+            "horizontal_m": 0.11346664140906336,
+            "vertical_m": -0.10359167736067709,
+            "forward_mps": 27.35352576739006,
+            "segment": 7
+          }
+        ],
+        [
+          {
+            "gate": 8,
+            "reference_time_s": 7.531411558657131,
+            "race_time_s": 2.5314115586571306,
+            "horizontal_m": -0.39999999999837776,
+            "vertical_m": 0.19614789725175763,
+            "forward_mps": 23.367824721580714,
+            "segment": 8
+          }
+        ],
+        [
+          {
+            "gate": 9,
+            "reference_time_s": 7.783169875790155,
+            "race_time_s": 2.783169875790155,
+            "horizontal_m": 0.2993522090856814,
+            "vertical_m": -0.37139337275598816,
+            "forward_mps": 34.04189967364951,
+            "segment": 9
+          }
+        ],
+        [
+          {
+            "gate": 10,
+            "reference_time_s": 8.035485942940815,
+            "race_time_s": 3.0354859429408148,
+            "horizontal_m": 0.3382099786022067,
+            "vertical_m": 0.12607308832788844,
+            "forward_mps": 38.89098572058989,
+            "segment": 10
+          }
+        ],
+        [
+          {
+            "gate": 11,
+            "reference_time_s": 8.323855287734267,
+            "race_time_s": 3.323855287734267,
+            "horizontal_m": 0.40000000000013797,
+            "vertical_m": 0.3999999999999111,
+            "forward_mps": 26.064720531030446,
+            "segment": 11
+          }
+        ]
+      ],
+      "endpoint_rest_max_abs_by_derivative": {
+        "1": 2.8180812345247665e-11,
+        "2": 2.2147655579872209e-10,
+        "3": 1.4656770980136736e-09,
+        "4": 8.827966569924089e-09
+      },
+      "actual_flight_validated": false
+    },
+    {
+      "name": "modphys14c_t2610",
+      "passed": true,
+      "scope": "Analytic degree-9 reference roots, not actual flight",
+      "ordered_first_forward_crossings": [
+        {
+          "gate": 0,
+          "reference_time_s": 5.646880122040094,
+          "race_time_s": 0.6468801220400936,
+          "horizontal_m": -0.08022838343655447,
+          "vertical_m": -0.3702645984699142,
+          "forward_mps": 26.46955286859952,
+          "segment": 0
+        },
+        {
+          "gate": 1,
+          "reference_time_s": 5.867151199819279,
+          "race_time_s": 0.8671511998192795,
+          "horizontal_m": -0.39999999999951147,
+          "vertical_m": 0.15136481632262688,
+          "forward_mps": 35.86241643924334,
+          "segment": 1
+        },
+        {
+          "gate": 2,
+          "reference_time_s": 6.072883568849038,
+          "race_time_s": 1.0728835688490386,
+          "horizontal_m": 0.39999999999977365,
+          "vertical_m": 0.13435165768922008,
+          "forward_mps": 44.57047533046479,
+          "segment": 2
+        },
+        {
+          "gate": 3,
+          "reference_time_s": 6.287609068409892,
+          "race_time_s": 1.287609068409892,
+          "horizontal_m": 0.28530887310328734,
+          "vertical_m": 0.3029484537833089,
+          "forward_mps": 44.03400865275277,
+          "segment": 3
+        },
+        {
+          "gate": 4,
+          "reference_time_s": 6.5219298992147685,
+          "race_time_s": 1.521929899214769,
+          "horizontal_m": 0.3954760690310053,
+          "vertical_m": -0.2539975953487934,
+          "forward_mps": 28.787918469556292,
+          "segment": 4
+        },
+        {
+          "gate": 5,
+          "reference_time_s": 6.765875382983438,
+          "race_time_s": 1.7658753829834377,
+          "horizontal_m": 0.14396179552063337,
+          "vertical_m": -0.3999999999997237,
+          "forward_mps": 20.390552343517466,
+          "segment": 5
+        },
+        {
+          "gate": 6,
+          "reference_time_s": 7.038474327750091,
+          "race_time_s": 2.038474327750091,
+          "horizontal_m": -0.33042735864662287,
+          "vertical_m": 0.0942941058564406,
+          "forward_mps": 28.923172388133814,
+          "segment": 6
+        },
+        {
+          "gate": 7,
+          "reference_time_s": 7.216833519860652,
+          "race_time_s": 2.2168335198606512,
+          "horizontal_m": 0.22610906726735294,
+          "vertical_m": -0.16258458657512165,
+          "forward_mps": 28.80748004364073,
+          "segment": 7
+        },
+        {
+          "gate": 8,
+          "reference_time_s": 7.484997884096061,
+          "race_time_s": 2.484997884096061,
+          "horizontal_m": -0.35806705835994274,
+          "vertical_m": -0.030694044951119714,
+          "forward_mps": 24.50440666695423,
+          "segment": 8
+        },
+        {
+          "gate": 9,
+          "reference_time_s": 7.737299378602076,
+          "race_time_s": 2.737299378602076,
+          "horizontal_m": 0.39999999999784913,
+          "vertical_m": -0.4000000000002544,
+          "forward_mps": 34.96241163008418,
+          "segment": 9
+        },
+        {
+          "gate": 10,
+          "reference_time_s": 7.980867139379761,
+          "race_time_s": 2.980867139379761,
+          "horizontal_m": 0.354154323336368,
+          "vertical_m": 0.14717025567286068,
+          "forward_mps": 40.345886351620635,
+          "segment": 10
+        },
+        {
+          "gate": 11,
+          "reference_time_s": 8.256401612278296,
+          "race_time_s": 3.256401612278297,
+          "horizontal_m": 0.36545193783833446,
+          "vertical_m": 0.2812102878532592,
+          "forward_mps": 27.797939016038004,
+          "segment": 11
+        }
+      ],
+      "all_forward_roots": [
+        [
+          {
+            "gate": 0,
+            "reference_time_s": 5.646880122040094,
+            "race_time_s": 0.6468801220400936,
+            "horizontal_m": -0.08022838343655447,
+            "vertical_m": -0.3702645984699142,
+            "forward_mps": 26.46955286859952,
+            "segment": 0
+          },
+          {
+            "gate": 0,
+            "reference_time_s": 7.218248969015296,
+            "race_time_s": 2.218248969015296,
+            "horizontal_m": -32.6908050473661,
+            "vertical_m": 0.7379077609864049,
+            "forward_mps": 22.931182027494007,
+            "segment": 8
+          }
+        ],
+        [
+          {
+            "gate": 1,
+            "reference_time_s": 5.867151199819279,
+            "race_time_s": 0.8671511998192795,
+            "horizontal_m": -0.39999999999951147,
+            "vertical_m": 0.15136481632262688,
+            "forward_mps": 35.86241643924334,
+            "segment": 1
+          }
+        ],
+        [
+          {
+            "gate": 2,
+            "reference_time_s": 6.072883568849038,
+            "race_time_s": 1.0728835688490386,
+            "horizontal_m": 0.39999999999977365,
+            "vertical_m": 0.13435165768922008,
+            "forward_mps": 44.57047533046479,
+            "segment": 2
+          }
+        ],
+        [
+          {
+            "gate": 3,
+            "reference_time_s": 6.287609068409892,
+            "race_time_s": 1.287609068409892,
+            "horizontal_m": 0.28530887310328734,
+            "vertical_m": 0.3029484537833089,
+            "forward_mps": 44.03400865275277,
+            "segment": 3
+          }
+        ],
+        [
+          {
+            "gate": 4,
+            "reference_time_s": 6.5219298992147685,
+            "race_time_s": 1.521929899214769,
+            "horizontal_m": 0.3954760690310053,
+            "vertical_m": -0.2539975953487934,
+            "forward_mps": 28.787918469556292,
+            "segment": 4
+          },
+          {
+            "gate": 4,
+            "reference_time_s": 7.760979862156574,
+            "race_time_s": 2.7609798621565744,
+            "horizontal_m": 27.969931985545117,
+            "vertical_m": -0.4869384524055791,
+            "forward_mps": 29.402286157927477,
+            "segment": 10
+          }
+        ],
+        [
+          {
+            "gate": 5,
+            "reference_time_s": 6.765875382983438,
+            "race_time_s": 1.7658753829834377,
+            "horizontal_m": 0.14396179552063337,
+            "vertical_m": -0.3999999999997237,
+            "forward_mps": 20.390552343517466,
+            "segment": 5
+          }
+        ],
+        [
+          {
+            "gate": 6,
+            "reference_time_s": 7.038474327750091,
+            "race_time_s": 2.038474327750091,
+            "horizontal_m": -0.33042735864662287,
+            "vertical_m": 0.0942941058564406,
+            "forward_mps": 28.923172388133814,
+            "segment": 6
+          }
+        ],
+        [
+          {
+            "gate": 7,
+            "reference_time_s": 6.004497234647401,
+            "race_time_s": 1.0044972346474004,
+            "horizontal_m": 31.95616536756133,
+            "vertical_m": -0.8498153379357776,
+            "forward_mps": 34.12244856509865,
+            "segment": 2
+          },
+          {
+            "gate": 7,
+            "reference_time_s": 7.216833519860652,
+            "race_time_s": 2.2168335198606512,
+            "horizontal_m": 0.22610906726735294,
+            "vertical_m": -0.16258458657512165,
+            "forward_mps": 28.80748004364073,
+            "segment": 7
+          }
+        ],
+        [
+          {
+            "gate": 8,
+            "reference_time_s": 7.484997884096061,
+            "race_time_s": 2.484997884096061,
+            "horizontal_m": -0.35806705835994274,
+            "vertical_m": -0.030694044951119714,
+            "forward_mps": 24.50440666695423,
+            "segment": 8
+          }
+        ],
+        [
+          {
+            "gate": 9,
+            "reference_time_s": 7.737299378602076,
+            "race_time_s": 2.737299378602076,
+            "horizontal_m": 0.39999999999784913,
+            "vertical_m": -0.4000000000002544,
+            "forward_mps": 34.96241163008418,
+            "segment": 9
+          }
+        ],
+        [
+          {
+            "gate": 10,
+            "reference_time_s": 7.980867139379761,
+            "race_time_s": 2.980867139379761,
+            "horizontal_m": 0.354154323336368,
+            "vertical_m": 0.14717025567286068,
+            "forward_mps": 40.345886351620635,
+            "segment": 10
+          }
+        ],
+        [
+          {
+            "gate": 11,
+            "reference_time_s": 8.256401612278296,
+            "race_time_s": 3.256401612278297,
+            "horizontal_m": 0.36545193783833446,
+            "vertical_m": 0.2812102878532592,
+            "forward_mps": 27.797939016038004,
+            "segment": 11
+          }
+        ]
+      ],
+      "endpoint_rest_max_abs_by_derivative": {
+        "1": 6.13568550312626e-11,
+        "2": 5.447203074038009e-10,
+        "3": 3.989360330895508e-09,
+        "4": 2.435784404182424e-08
+      },
+      "actual_flight_validated": false
+    },
+    {
+      "name": "modphys14c_t2491",
+      "passed": true,
+      "scope": "Analytic degree-9 reference roots, not actual flight",
+      "ordered_first_forward_crossings": [
+        {
+          "gate": 0,
+          "reference_time_s": 5.626016803132314,
+          "race_time_s": 0.6260168031323147,
+          "horizontal_m": -0.011533767275614615,
+          "vertical_m": -0.2743770300620145,
+          "forward_mps": 28.044460293225963,
+          "segment": 0
+        },
+        {
+          "gate": 1,
+          "reference_time_s": 5.842345549283701,
+          "race_time_s": 0.8423455492837013,
+          "horizontal_m": -0.27340317261068814,
+          "vertical_m": 0.27832018715195783,
+          "forward_mps": 36.092896670668274,
+          "segment": 1
+        },
+        {
+          "gate": 2,
+          "reference_time_s": 6.039276080765037,
+          "race_time_s": 1.0392760807650372,
+          "horizontal_m": 0.20316470004311488,
+          "vertical_m": 0.25632325557024416,
+          "forward_mps": 46.986266139416045,
+          "segment": 2
+        },
+        {
+          "gate": 3,
+          "reference_time_s": 6.244724495648043,
+          "race_time_s": 1.244724495648043,
+          "horizontal_m": 0.3291092960645833,
+          "vertical_m": 0.15846216596119378,
+          "forward_mps": 45.797987852288,
+          "segment": 3
+        },
+        {
+          "gate": 4,
+          "reference_time_s": 6.460798384688968,
+          "race_time_s": 1.4607983846889685,
+          "horizontal_m": 0.38245694264194796,
+          "vertical_m": -0.07402591662775793,
+          "forward_mps": 32.48682276743454,
+          "segment": 4
+        },
+        {
+          "gate": 5,
+          "reference_time_s": 6.706937212049716,
+          "race_time_s": 1.7069372120497166,
+          "horizontal_m": 0.09597510715725832,
+          "vertical_m": -0.3063570197417431,
+          "forward_mps": 22.825751762782456,
+          "segment": 5
+        },
+        {
+          "gate": 6,
+          "reference_time_s": 6.950814349671139,
+          "race_time_s": 1.9508143496711394,
+          "horizontal_m": 0.15361333472422167,
+          "vertical_m": 0.2635783226418713,
+          "forward_mps": 32.355984821349246,
+          "segment": 6
+        },
+        {
+          "gate": 7,
+          "reference_time_s": 7.113396901714697,
+          "race_time_s": 2.113396901714697,
+          "horizontal_m": 0.16191070109937317,
+          "vertical_m": -0.4000000000001269,
+          "forward_mps": 28.928370149886582,
+          "segment": 7
+        },
+        {
+          "gate": 8,
+          "reference_time_s": 7.381561265950084,
+          "race_time_s": 2.3815612659500838,
+          "horizontal_m": -0.40000000000040115,
+          "vertical_m": -0.045192422213720995,
+          "forward_mps": 23.16421567875196,
+          "segment": 8
+        },
+        {
+          "gate": 9,
+          "reference_time_s": 7.6333195830831215,
+          "race_time_s": 2.633319583083121,
+          "horizontal_m": 0.1931520486020981,
+          "vertical_m": -0.29593859636489794,
+          "forward_mps": 35.56883908878833,
+          "segment": 9
+        },
+        {
+          "gate": 10,
+          "reference_time_s": 7.8772280965796995,
+          "race_time_s": 2.8772280965796995,
+          "horizontal_m": 0.2872909216330781,
+          "vertical_m": 0.17530996392121745,
+          "forward_mps": 40.28128296834514,
+          "segment": 10
+        },
+        {
+          "gate": 11,
+          "reference_time_s": 8.117461608698557,
+          "race_time_s": 3.117461608698557,
+          "horizontal_m": 0.11270068738161121,
+          "vertical_m": 0.349943973391559,
+          "forward_mps": 31.922958503152902,
+          "segment": 11
+        }
+      ],
+      "all_forward_roots": [
+        [
+          {
+            "gate": 0,
+            "reference_time_s": 5.626016803132314,
+            "race_time_s": 0.6260168031323147,
+            "horizontal_m": -0.011533767275614615,
+            "vertical_m": -0.2743770300620145,
+            "forward_mps": 28.044460293225963,
+            "segment": 0
+          },
+          {
+            "gate": 0,
+            "reference_time_s": 7.1158964347376115,
+            "race_time_s": 2.1158964347376115,
+            "horizontal_m": -32.77727718042322,
+            "vertical_m": 0.4970425555718525,
+            "forward_mps": 22.32363880961303,
+            "segment": 8
+          }
+        ],
+        [
+          {
+            "gate": 1,
+            "reference_time_s": 5.842345549283701,
+            "race_time_s": 0.8423455492837013,
+            "horizontal_m": -0.27340317261068814,
+            "vertical_m": 0.27832018715195783,
+            "forward_mps": 36.092896670668274,
+            "segment": 1
+          }
+        ],
+        [
+          {
+            "gate": 2,
+            "reference_time_s": 6.039276080765037,
+            "race_time_s": 1.0392760807650372,
+            "horizontal_m": 0.20316470004311488,
+            "vertical_m": 0.25632325557024416,
+            "forward_mps": 46.986266139416045,
+            "segment": 2
+          }
+        ],
+        [
+          {
+            "gate": 3,
+            "reference_time_s": 6.244724495648043,
+            "race_time_s": 1.244724495648043,
+            "horizontal_m": 0.3291092960645833,
+            "vertical_m": 0.15846216596119378,
+            "forward_mps": 45.797987852288,
+            "segment": 3
+          }
+        ],
+        [
+          {
+            "gate": 4,
+            "reference_time_s": 6.460798384688968,
+            "race_time_s": 1.4607983846889685,
+            "horizontal_m": 0.38245694264194796,
+            "vertical_m": -0.07402591662775793,
+            "forward_mps": 32.48682276743454,
+            "segment": 4
+          },
+          {
+            "gate": 4,
+            "reference_time_s": 7.652404875670347,
+            "race_time_s": 2.6524048756703467,
+            "horizontal_m": 27.733661151361048,
+            "vertical_m": -0.4085934097698445,
+            "forward_mps": 28.532982668955427,
+            "segment": 10
+          }
+        ],
+        [
+          {
+            "gate": 5,
+            "reference_time_s": 6.706937212049716,
+            "race_time_s": 1.7069372120497166,
+            "horizontal_m": 0.09597510715725832,
+            "vertical_m": -0.3063570197417431,
+            "forward_mps": 22.825751762782456,
+            "segment": 5
+          }
+        ],
+        [
+          {
+            "gate": 6,
+            "reference_time_s": 6.950814349671139,
+            "race_time_s": 1.9508143496711394,
+            "horizontal_m": 0.15361333472422167,
+            "vertical_m": 0.2635783226418713,
+            "forward_mps": 32.355984821349246,
+            "segment": 6
+          }
+        ],
+        [
+          {
+            "gate": 7,
+            "reference_time_s": 5.978729285211773,
+            "race_time_s": 0.9787292852117728,
+            "horizontal_m": 31.803412843969028,
+            "vertical_m": -0.6476700106587501,
+            "forward_mps": 34.4707305425572,
+            "segment": 2
+          },
+          {
+            "gate": 7,
+            "reference_time_s": 7.113396901714697,
+            "race_time_s": 2.113396901714697,
+            "horizontal_m": 0.16191070109937317,
+            "vertical_m": -0.4000000000001269,
+            "forward_mps": 28.928370149886582,
+            "segment": 7
+          }
+        ],
+        [
+          {
+            "gate": 8,
+            "reference_time_s": 7.381561265950084,
+            "race_time_s": 2.3815612659500838,
+            "horizontal_m": -0.40000000000040115,
+            "vertical_m": -0.045192422213720995,
+            "forward_mps": 23.16421567875196,
+            "segment": 8
+          }
+        ],
+        [
+          {
+            "gate": 9,
+            "reference_time_s": 7.6333195830831215,
+            "race_time_s": 2.633319583083121,
+            "horizontal_m": 0.1931520486020981,
+            "vertical_m": -0.29593859636489794,
+            "forward_mps": 35.56883908878833,
+            "segment": 9
+          }
+        ],
+        [
+          {
+            "gate": 10,
+            "reference_time_s": 7.8772280965796995,
+            "race_time_s": 2.8772280965796995,
+            "horizontal_m": 0.2872909216330781,
+            "vertical_m": 0.17530996392121745,
+            "forward_mps": 40.28128296834514,
+            "segment": 10
+          }
+        ],
+        [
+          {
+            "gate": 11,
+            "reference_time_s": 8.117461608698557,
+            "race_time_s": 3.117461608698557,
+            "horizontal_m": 0.11270068738161121,
+            "vertical_m": 0.349943973391559,
+            "forward_mps": 31.922958503152902,
+            "segment": 11
+          }
+        ]
+      ],
+      "endpoint_rest_max_abs_by_derivative": {
+        "1": 1.4140909420554384e-11,
+        "2": 1.4847378194136363e-10,
+        "3": 1.6103187066650606e-09,
+        "4": 1.4474935308251666e-08
+      },
+      "actual_flight_validated": false
+    }
+  ]
+}

@@ -1,0 +1,134 @@
+{
+  "candidate": {
+    "candidate_set": "surrogate_modphys14c_candidates",
+    "candidate_set_path": "speed_optimization_20261105/surrogate_modphys14c_candidates",
+    "climb_end_time_s": 3.0,
+    "commanded_controller": {
+      "feedback_gains": [
+        36,
+        12,
+        90.0,
+        4.0
+      ],
+      "gain_schedule": "quintic 0.3s at race entry and terminal stop",
+      "hover_feedback_gains": [
+        4,
+        3,
+        12,
+        1
+      ],
+      "omega_d_filter_tau_s": 0.01,
+      "omega_d_limit_rad_s": 14.0
+    },
+    "control_overrides": {
+      "komega": 4.0,
+      "kr": 90.0,
+      "omega_d_filter_tau": 0.01,
+      "omega_d_limit": 14.0,
+      "use_attitude_preview": true
+    },
+    "control_profile": "modphys14_kr90",
+    "csv": "modphys14c_t2491.csv",
+    "csv_sha256": "4468fce4b01d05814d40b536c78edd3223d9dbf597eb2485a5e5151a84e4664f",
+    "family": "prehover_replanned",
+    "hover_release_time_s": 5.0,
+    "hover_target_ros_m": [
+      0.400042,
+      8.0,
+      2.42
+    ],
+    "metrics": {
+      "complete_reference_duration_s": 8.891270265926845,
+      "flight_result": null,
+      "nominal_first_gate_absolute_s": 5.626016803132314,
+      "nominal_first_to_last_gate_s": 2.4914448055662772,
+      "nominal_last_gate_absolute_s": 8.117461608698592,
+      "sampled_force_axis_rate_peak_rad_s": 24.750646834974226,
+      "sampled_peak_acceleration_mps2": 273.2618495279497,
+      "sampled_peak_speed_mps": 52.50658351804212
+    },
+    "name": "modphys14c_t2491",
+    "plan_family": "hover",
+    "race_start_time_s": 5.0,
+    "reference_overrides": {
+      "attitude_preview_s": 0.02,
+      "preview_vertical_weight": 0.0
+    },
+    "speed_factor": 1.455,
+    "speed_factor_semantics": "unique manifest selection ID; see declared_changes"
+  },
+  "centre_in_visual_hole_square": true,
+  "collision_messages_first_to_last": 0,
+  "data_errors": [],
+  "first_to_last_sim_s": 2.483193848840626,
+  "first_to_last_wall_estimate_s": 2.481984107403605,
+  "live_timer_sim_s": 2.483193874674189,
+  "live_timer_wall_estimate_s": 2.4831545064025704,
+  "modified_physics": {
+    "file": "lab4_Data/globalgamemanagers",
+    "max_angular_speed_rad_s": 14.0,
+    "note": "MODIFIED SIMULATOR PHYSICS: not comparable to official-physics results",
+    "original_restored": true,
+    "original_sha256": "57c1013b47567a6bacf3fc352f7161b573f430461cf073fcc2c319c0568d7d4a",
+    "patched_sha256": "d6ed730809b598e22517a91871c6ab87512ae336829f5cdd65003a4cd52a509d"
+  },
+  "no_nonfloor_preparation_contacts": true,
+  "official_judge_acceptance": null,
+  "official_physics": false,
+  "online_offline_agreement_within_30ms": true,
+  "ordered_12_gates": true,
+  "prehover_release_proof": {
+    "actual_sim_time_s": 9.46,
+    "effective_plan_time_s": 5.0,
+    "extra_wait_sim_s": 0.020000000000000462,
+    "hover_release_plan_s": 5.0,
+    "maximum_extra_wait_sim_s": 6.0,
+    "observer_monotonic_s": 1737.645725049,
+    "phase": "RACING",
+    "plan": "/home/labuser/lab4_gpu_20261023/race_20261029/speed_optimization_20261105/surrogate_modphys14c_candidates/modphys14c_t2491.csv",
+    "plan_sha256": "4468fce4b01d05814d40b536c78edd3223d9dbf597eb2485a5e5151a84e4664f",
+    "reference_start_sim_s": 4.44,
+    "release_sim_s": 9.46,
+    "stability": {
+      "actual": {
+        "angular_rate_rad_s": 0.00022889390289960134,
+        "inside_limits": true,
+        "position_error_m": 5.305101318528539e-05,
+        "speed_mps": 0.001324804121985595,
+        "stamp_sim_s": 9.46,
+        "tilt_deg": 0.001157305215295614
+      },
+      "data_errors": [],
+      "fresh": true,
+      "limits": {
+        "angular_rate_rad_s": 0.3,
+        "fresh_s": 0.12,
+        "hold_s": 0.7,
+        "position_m": 0.12,
+        "speed_mps": 0.25,
+        "tilt_deg": 8.0
+      },
+      "ready": true,
+      "sample_age_sim_s": 0.0,
+      "stable_sampled_span_s": 2.6000000000000005,
+      "target_ros_m": [
+        0.400042,
+        8.0,
+        2.42
+      ]
+    }
+  },
+  "preparation_collision_objects": {
+    "Floor_01": 38
+  },
+  "preserved_adapter_exit": 1,
+  "real_flight_replayed": false,
+  "rule": "ordered forward actual centre crossings: first gate to last gate",
+  "simulation_time_scale_changed": false,
+  "stable_hover_verified": true,
+  "terminal_hold_observed": true,
+  "timer_video_verified": true,
+  "valid_measured_run": true,
+  "visual_point_half_extent_m": 0.75,
+  "whole_body_clearance_verified": false
+}

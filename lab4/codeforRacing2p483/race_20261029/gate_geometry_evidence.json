@@ -1,0 +1,1396 @@
+{
+  "schema_version": 1,
+  "source_assets_untouched": [
+    {
+      "path": "LAB4/simulator/lab4/lab4_Data/level0",
+      "bytes": 10056,
+      "sha256": "697912ebfb558888c9714d00f02c5d992827ab40eb1efde1b0781e56fd6eb703"
+    },
+    {
+      "path": "LAB4/simulator/lab4/lab4_Data/level1",
+      "bytes": 206516,
+      "sha256": "6292649d7e1d09593c839133f3517e325430619ba31cd2d78e0269f8fc586003"
+    },
+    {
+      "path": "LAB4/simulator/lab4/lab4_Data/sharedassets1.assets",
+      "bytes": 42672,
+      "sha256": "4374756bcab0bbc962d18c664eda054493f6b52ff09646347611918bff3f3adf"
+    },
+    {
+      "path": "LAB4/simulator/lab4/lab4_Data/sharedassets1.assets.resS",
+      "bytes": 21155304,
+      "sha256": "fe2c4635f10a807e828e78b9c07be14549cf075882c8a4ef05ed432ad7811cbc"
+    },
+    {
+      "path": "LAB4/simulator/lab4/lab4_Data/Managed/Assembly-CSharp.dll",
+      "bytes": 98816,
+      "sha256": "b7f9c44bbf0cd550c98ed77dc6bd90de30397b0a7ad0cf67f315238d75951a9c"
+    }
+  ],
+  "method": {
+    "execution": "Read bytes with Python standard library only; no simulator, Docker, ROS or DLL execution. PNG is extracted from original texture bytes.",
+    "unity_version": "2019.3.9f1",
+    "serialized_file_version": 21,
+    "serialized_types": "Stripped type trees; class IDs/object table from Unity serialized metadata. Transform TRS hierarchy, BoxCollider and SpriteRenderer layouts decoded explicitly.",
+    "coordinate_conversion": "Unity (x,y,z) -> ROS (x,z,y); sprite X is negative gate horizontal, sprite Y is gate vertical.",
+    "raw_texture_export": "RGBA32 top mip, Sprite rect [0,0,513,513], PNG rows flipped from Unity bottom-up storage; original alpha statistics use raw resource pixel coordinates.",
+    "alpha_boundary_algorithm": "4-connected flood fill from center pixel, accepting alpha <= threshold. Half-open component bounding boxes are reported, not assumed entirely transparent rectangles. Alpha<=127 is the transparent side of the 50% alpha boundary."
+  },
+  "sprite": {
+    "asset_file": "sharedassets1.assets",
+    "sprite_path_id": 22,
+    "sprite_name": "RedSquare",
+    "texture_path_id": 13,
+    "texture_name": "RedSquare",
+    "texture_format_enum": 4,
+    "texture_format": "RGBA32",
+    "texture_width_px": 513,
+    "texture_height_px": 513,
+    "mip_count": 10,
+    "top_mip_resource_offset_bytes": 16956192,
+    "resource_total_size_bytes": 1402200,
+    "rect_px": [
+      0,
+      0,
+      513,
+      513
+    ],
+    "pixels_per_unit": 100,
+    "pivot_normalized": [
+      0.5,
+      0.5
+    ],
+    "sprite_child_local_scale": [
+      0.5,
+      0.5,
+      1
+    ],
+    "draw_mode": 0,
+    "flip_x": false,
+    "flip_y": false,
+    "full_image_world_width_height_m": [
+      2.565,
+      2.565
+    ]
+  },
+  "gates": [
+    {
+      "index": 0,
+      "scene_game_object_path_id": 172,
+      "root_transform_path_id": 648,
+      "root_local_scale": [
+        1,
+        1,
+        1
+      ],
+      "root_world_position_ros_m": [
+        0.4226200580596924,
+        3.165231704711914,
+        2.669999599456787
+      ],
+      "sprite_transform_path_id": 943,
+      "sprite_renderer_path_id": 1566,
+      "sprite_draw_mode": 0,
+      "sprite_world_basis_columns_unity": [
+        [
+          -0.4999999999999998,
+          0,
+          -2.2204460492503126e-16
+        ],
+        [
+          0,
+          0.5,
+          0
+        ],
+        [
+          4.440892098500625e-16,
+          0,
+          -0.9999999999999996
+        ]
+      ],
+      "sprite_world_scale_xyz": [
+        0.4999999999999998,
+        0.5,
+        0.9999999999999996
+      ],
+      "gate_normal_ros": [
+        4.440892098500627e-16,
+        -1,
+        0
+      ],
+      "gate_horizontal_axis_ros": [
+        1,
+        4.440892098500627e-16,
+        0
+      ],
+      "gate_vertical_axis_ros": [
+        0,
+        0,
+        1
+      ],
+      "component_class_id_counts": {
+        "4": 3,
+        "65": 1,
+        "114": 1,
+        "212": 1
+      },
+      "trigger": {
+        "path_id": 1531,
+        "is_trigger": true,
+        "enabled": true,
+        "local_size": [
+          4.667061805725098,
+          4.599999904632568,
+          0.20000000298023224
+        ],
+        "local_center": [
+          -0.040324825793504715,
+          0,
+          0
+        ],
+        "world_width_m": 2.333530902862548,
+        "world_height_m": 2.299999952316284,
+        "world_normal_thickness_m": 0.20000000298023216,
+        "world_center_ros_m": [
+          0.44278247095644474,
+          3.165231704711914,
+          2.669999599456787
+        ],
+        "center_offsets_in_gate_axes_m": {
+          "normal": 8.953910011989468e-18,
+          "horizontal": 0.020162412896752357,
+          "vertical": 0
+        }
+      },
+      "solid_collider_count_in_gate_subtree": 0
+    },
+    {
+      "index": 1,
+      "scene_game_object_path_id": 175,
+      "root_transform_path_id": 651,
+      "root_local_scale": [
+        1,
+        1,
+        1
+      ],
+      "root_world_position_ros_m": [
+        0.6700000166893005,
+        -4.309999942779541,
+        2.0399999618530273
+      ],
+      "sprite_transform_path_id": 944,
+      "sprite_renderer_path_id": 1567,
+      "sprite_draw_mode": 0,
+      "sprite_world_basis_columns_unity": [
+        [
+          -0.43128670963633925,
+          0,
+          0.25296595441098374
+        ],
+        [
+          0,
+          0.5,
+          0
+        ],
+        [
+          -0.5059319088219675,
+          0,
+          -0.8625734192726785
+        ]
+      ],
+      "sprite_world_scale_xyz": [
+        0.4999999999999999,
+        0.5,
+        0.9999999999999998
+      ],
+      "gate_normal_ros": [
+        -0.5059319088219676,
+        -0.8625734192726787,
+        0
+      ],
+      "gate_horizontal_axis_ros": [
+        0.8625734192726787,
+        -0.5059319088219676,
+        0
+      ],
+      "gate_vertical_axis_ros": [
+        0,
+        0,
+        1
+      ],
+      "component_class_id_counts": {
+        "4": 3,
+        "65": 1,
+        "114": 1,
+        "212": 1
+      },
+      "trigger": {
+        "path_id": 1530,
+        "is_trigger": true,
+        "enabled": true,
+        "local_size": [
+          4.667061805725098,
+          4.599999904632568,
+          0.20000000298023224
+        ],
+        "local_center": [
+          -0.040324825793504715,
+          0,
+          0
+        ],
+        "world_width_m": 2.3335309028625484,
+        "world_height_m": 2.299999952316284,
+        "world_normal_thickness_m": 0.20000000298023218,
+        "world_center_ros_m": [
+          0.6873915781224398,
+          -4.320200750822852,
+          2.0399999618530273
+        ],
+        "center_offsets_in_gate_axes_m": {
+          "normal": 9.540979117872439e-17,
+          "horizontal": 0.020162412896752427,
+          "vertical": 0
+        }
+      },
+      "solid_collider_count_in_gate_subtree": 0
+    },
+    {
+      "index": 2,
+      "scene_game_object_path_id": 384,
+      "root_transform_path_id": 860,
+      "root_local_scale": [
+        1,
+        1,
+        1
+      ],
+      "root_world_position_ros_m": [
+        -5.409999847412109,
+        -9.130000114440918,
+        2.880000114440918
+      ],
+      "sprite_transform_path_id": 953,
+      "sprite_renderer_path_id": 1571,
+      "sprite_draw_mode": 0,
+      "sprite_world_basis_columns_unity": [
+        [
+          0.017449416942155654,
+          0,
+          0.4996954250824982
+        ],
+        [
+          0,
+          0.5,
+          0
+        ],
+        [
+          -0.9993908501649964,
+          0,
+          0.03489883388431131
+        ]
+      ],
+      "sprite_world_scale_xyz": [
+        0.4999999999999997,
+        0.5,
+        0.9999999999999994
+      ],
+      "gate_normal_ros": [
+        -0.999390850164997,
+        0.03489883388431133,
+        0
+      ],
+      "gate_horizontal_axis_ros": [
+        -0.03489883388431133,
+        -0.999390850164997,
+        0
+      ],
+      "gate_vertical_axis_ros": [
+        0,
+        0,
+        1
+      ],
+      "component_class_id_counts": {
+        "4": 3,
+        "65": 1,
+        "114": 1,
+        "212": 1
+      },
+      "trigger": {
+        "path_id": 1525,
+        "is_trigger": true,
+        "enabled": true,
+        "local_size": [
+          4.667061805725098,
+          4.599999904632568,
+          0.20000000298023224
+        ],
+        "local_center": [
+          -0.040324825793504715,
+          0,
+          0
+        ],
+        "world_width_m": 2.3335309028625475,
+        "world_height_m": 2.299999952316284,
+        "world_normal_thickness_m": 0.20000000298023213,
+        "world_center_ros_m": [
+          -5.4107034921105,
+          -9.15015024540718,
+          2.880000114440918
+        ],
+        "center_offsets_in_gate_axes_m": {
+          "normal": -3.008661028647275e-16,
+          "horizontal": 0.02016241289675215,
+          "vertical": 0
+        }
+      },
+      "solid_collider_count_in_gate_subtree": 0
+    },
+    {
+      "index": 3,
+      "scene_game_object_path_id": 381,
+      "root_transform_path_id": 857,
+      "root_local_scale": [
+        0.5999999642372131,
+        1,
+        1
+      ],
+      "root_world_position_ros_m": [
+        -14.9399995803833,
+        -6.829999923706055,
+        2.8399999141693115
+      ],
+      "sprite_transform_path_id": 952,
+      "sprite_renderer_path_id": 1570,
+      "sprite_draw_mode": 0,
+      "sprite_world_basis_columns_unity": [
+        [
+          0.4447240801618621,
+          0,
+          0.22851803544618843
+        ],
+        [
+          0,
+          0.5,
+          0
+        ],
+        [
+          -0.2742216261905427,
+          0,
+          0.5336688643850895
+        ]
+      ],
+      "sprite_world_scale_xyz": [
+        0.4999999999999998,
+        0.5,
+        0.5999999642372129
+      ],
+      "gate_normal_ros": [
+        -0.4570360708923773,
+        0.8894481603237245,
+        0
+      ],
+      "gate_horizontal_axis_ros": [
+        -0.8894481603237246,
+        -0.4570360708923771,
+        0
+      ],
+      "gate_vertical_axis_ros": [
+        0,
+        0,
+        1
+      ],
+      "component_class_id_counts": {
+        "4": 3,
+        "65": 1,
+        "114": 1,
+        "212": 1
+      },
+      "trigger": {
+        "path_id": 1524,
+        "is_trigger": true,
+        "enabled": true,
+        "local_size": [
+          4.667061805725098,
+          4.599999904632568,
+          0.20000000298023224
+        ],
+        "local_center": [
+          -0.040324825793504715,
+          0,
+          0
+        ],
+        "world_width_m": 2.333530902862548,
+        "world_height_m": 2.299999952316284,
+        "world_normal_thickness_m": 0.11999999463558182,
+        "world_center_ros_m": [
+          -14.957933001442004,
+          -6.839214873676096,
+          2.8399999141693115
+        ],
+        "center_offsets_in_gate_axes_m": {
+          "normal": 9.540979117872439e-17,
+          "horizontal": 0.02016241289675224,
+          "vertical": 0
+        }
+      },
+      "solid_collider_count_in_gate_subtree": 0
+    },
+    {
+      "index": 4,
+      "scene_game_object_path_id": 453,
+      "root_transform_path_id": 929,
+      "root_local_scale": [
+        1,
+        1,
+        1
+      ],
+      "root_world_position_ros_m": [
+        -17.829999923706055,
+        1.3799999952316284,
+        2.6700000762939453
+      ],
+      "sprite_transform_path_id": 950,
+      "sprite_renderer_path_id": 1574,
+      "sprite_draw_mode": 0,
+      "sprite_world_basis_columns_unity": [
+        [
+          0.4999999999999998,
+          0,
+          0
+        ],
+        [
+          0,
+          0.5,
+          0
+        ],
+        [
+          0,
+          0,
+          0.9999999999999996
+        ]
+      ],
+      "sprite_world_scale_xyz": [
+        0.4999999999999998,
+        0.5,
+        0.9999999999999996
+      ],
+      "gate_normal_ros": [
+        0,
+        1,
+        0
+      ],
+      "gate_horizontal_axis_ros": [
+        -1,
+        0,
+        0
+      ],
+      "gate_vertical_axis_ros": [
+        0,
+        0,
+        1
+      ],
+      "component_class_id_counts": {
+        "4": 3,
+        "65": 1,
+        "114": 1,
+        "212": 1
+      },
+      "trigger": {
+        "path_id": 1526,
+        "is_trigger": true,
+        "enabled": true,
+        "local_size": [
+          4.667061805725098,
+          4.599999904632568,
+          0.20000000298023224
+        ],
+        "local_center": [
+          -0.040324825793504715,
+          0,
+          0
+        ],
+        "world_width_m": 2.333530902862548,
+        "world_height_m": 2.299999952316284,
+        "world_normal_thickness_m": 0.20000000298023216,
+        "world_center_ros_m": [
+          -17.850162336602807,
+          1.3799999952316284,
+          2.6700000762939453
+        ],
+        "center_offsets_in_gate_axes_m": {
+          "normal": 0,
+          "horizontal": 0.020162412896752357,
+          "vertical": 0
+        }
+      },
+      "solid_collider_count_in_gate_subtree": 0
+    },
+    {
+      "index": 5,
+      "scene_game_object_path_id": 452,
+      "root_transform_path_id": 928,
+      "root_local_scale": [
+        0.6000002026557922,
+        1,
+        1
+      ],
+      "root_world_position_ros_m": [
+        -20.200000762939453,
+        5.960000514984131,
+        2.669999599456787
+      ],
+      "sprite_transform_path_id": 949,
+      "sprite_renderer_path_id": 1573,
+      "sprite_draw_mode": 0,
+      "sprite_world_basis_columns_unity": [
+        [
+          -6.661340397682205e-17,
+          0,
+          0.4999999999999999
+        ],
+        [
+          0,
+          0.5,
+          0
+        ],
+        [
+          -0.6000002026557921,
+          0,
+          -2.220446049250313e-16
+        ]
+      ],
+      "sprite_world_scale_xyz": [
+        0.4999999999999999,
+        0.5,
+        0.6000002026557921
+      ],
+      "gate_normal_ros": [
+        -1,
+        -3.7007421654557967e-16,
+        0
+      ],
+      "gate_horizontal_axis_ros": [
+        1.3322680795364413e-16,
+        -1,
+        0
+      ],
+      "gate_vertical_axis_ros": [
+        0,
+        0,
+        1
+      ],
+      "component_class_id_counts": {
+        "4": 3,
+        "65": 1,
+        "114": 1,
+        "212": 1
+      },
+      "trigger": {
+        "path_id": 1527,
+        "is_trigger": true,
+        "enabled": true,
+        "local_size": [
+          4.667061805725098,
+          4.599999904632568,
+          0.20000000298023224
+        ],
+        "local_center": [
+          -0.040324825793504715,
+          0,
+          0
+        ],
+        "world_width_m": 2.3335309028625484,
+        "world_height_m": 2.299999952316284,
+        "world_normal_thickness_m": 0.12000004231929837,
+        "world_center_ros_m": [
+          -20.200000762939453,
+          5.9398381020873785,
+          2.669999599456787
+        ],
+        "center_offsets_in_gate_axes_m": {
+          "normal": 7.46158915643412e-18,
+          "horizontal": 0.020162412896752357,
+          "vertical": 0
+        }
+      },
+      "solid_collider_count_in_gate_subtree": 0
+    },
+    {
+      "index": 6,
+      "scene_game_object_path_id": 198,
+      "root_transform_path_id": 674,
+      "root_local_scale": [
+        0.6000002026557922,
+        1,
+        1
+      ],
+      "root_world_position_ros_m": [
+        -27.850000381469727,
+        6.470000743865967,
+        2.669999599456787
+      ],
+      "sprite_transform_path_id": 947,
+      "sprite_renderer_path_id": 1564,
+      "sprite_draw_mode": 0,
+      "sprite_world_basis_columns_unity": [
+        [
+          -6.661340397682205e-17,
+          0,
+          0.4999999999999999
+        ],
+        [
+          0,
+          0.5,
+          0
+        ],
+        [
+          -0.6000002026557921,
+          0,
+          -2.220446049250313e-16
+        ]
+      ],
+      "sprite_world_scale_xyz": [
+        0.4999999999999999,
+        0.5,
+        0.6000002026557921
+      ],
+      "gate_normal_ros": [
+        -1,
+        -3.7007421654557967e-16,
+        0
+      ],
+      "gate_horizontal_axis_ros": [
+        1.3322680795364413e-16,
+        -1,
+        0
+      ],
+      "gate_vertical_axis_ros": [
+        0,
+        0,
+        1
+      ],
+      "component_class_id_counts": {
+        "4": 3,
+        "65": 1,
+        "114": 1,
+        "212": 1
+      },
+      "trigger": {
+        "path_id": 1532,
+        "is_trigger": true,
+        "enabled": true,
+        "local_size": [
+          4.667061805725098,
+          4.599999904632568,
+          0.20000000298023224
+        ],
+        "local_center": [
+          -0.040324825793504715,
+          0,
+          0
+        ],
+        "world_width_m": 2.3335309028625484,
+        "world_height_m": 2.299999952316284,
+        "world_normal_thickness_m": 0.12000004231929837,
+        "world_center_ros_m": [
+          -27.850000381469727,
+          6.449838330969214,
+          2.669999599456787
+        ],
+        "center_offsets_in_gate_axes_m": {
+          "normal": 7.46158915643412e-18,
+          "horizontal": 0.020162412896752357,
+          "vertical": 0
+        }
+      },
+      "solid_collider_count_in_gate_subtree": 0
+    },
+    {
+      "index": 7,
+      "scene_game_object_path_id": 285,
+      "root_transform_path_id": 761,
+      "root_local_scale": [
+        0.600000262260437,
+        1,
+        1
+      ],
+      "root_world_position_ros_m": [
+        -32.45000076293945,
+        3.2799997329711914,
+        3.569999933242798
+      ],
+      "sprite_transform_path_id": 948,
+      "sprite_renderer_path_id": 1575,
+      "sprite_draw_mode": 0,
+      "sprite_world_basis_columns_unity": [
+        [
+          -0.46571870849309177,
+          0,
+          0.18195077510009808
+        ],
+        [
+          0,
+          0.5,
+          0
+        ],
+        [
+          -0.21834102555709714,
+          0,
+          -0.5588626944708943
+        ]
+      ],
+      "sprite_world_scale_xyz": [
+        0.49999999999999983,
+        0.5,
+        0.600000262260437
+      ],
+      "gate_normal_ros": [
+        -0.36390155020019593,
+        -0.9314374169861838,
+        0
+      ],
+      "gate_horizontal_axis_ros": [
+        0.9314374169861839,
+        -0.36390155020019627,
+        0
+      ],
+      "gate_vertical_axis_ros": [
+        0,
+        0,
+        1
+      ],
+      "component_class_id_counts": {
+        "4": 3,
+        "65": 1,
+        "114": 1,
+        "212": 1
+      },
+      "trigger": {
+        "path_id": 1522,
+        "is_trigger": true,
+        "enabled": true,
+        "local_size": [
+          4.667061805725098,
+          4.599999904632568,
+          0.20000000298023224
+        ],
+        "local_center": [
+          -0.040324825793504715,
+          0,
+          0
+        ],
+        "world_width_m": 2.333530902862548,
+        "world_height_m": 2.299999952316284,
+        "world_normal_thickness_m": 0.12000005424022753,
+        "world_center_ros_m": [
+          -32.431220737150696,
+          3.272662599662287,
+          3.569999933242798
+        ],
+        "center_offsets_in_gate_axes_m": {
+          "normal": 8.430756093247282e-16,
+          "horizontal": 0.020162412896749932,
+          "vertical": 0
+        }
+      },
+      "solid_collider_count_in_gate_subtree": 0
+    },
+    {
+      "index": 8,
+      "scene_game_object_path_id": 106,
+      "root_transform_path_id": 581,
+      "root_local_scale": [
+        0.6000001430511475,
+        1,
+        1
+      ],
+      "root_world_position_ros_m": [
+        -37.66999816894531,
+        -1.1699999570846558,
+        2.200000047683716
+      ],
+      "sprite_transform_path_id": 942,
+      "sprite_renderer_path_id": 1569,
+      "sprite_draw_mode": 0,
+      "sprite_world_basis_columns_unity": [
+        [
+          -0.33854079654081515,
+          0,
+          0.36795397684698317
+        ],
+        [
+          0,
+          0.5,
+          0
+        ],
+        [
+          -0.44154487748885685,
+          0,
+          -0.40624905270627704
+        ]
+      ],
+      "sprite_world_scale_xyz": [
+        0.49999999999999983,
+        0.5,
+        0.6000001430511472
+      ],
+      "gate_normal_ros": [
+        -0.7359079536939663,
+        -0.6770815930816306,
+        0
+      ],
+      "gate_horizontal_axis_ros": [
+        0.6770815930816305,
+        -0.7359079536939666,
+        0
+      ],
+      "gate_vertical_axis_ros": [
+        0,
+        0,
+        1
+      ],
+      "component_class_id_counts": {
+        "4": 3,
+        "65": 1,
+        "114": 1,
+        "212": 1
+      },
+      "trigger": {
+        "path_id": 1528,
+        "is_trigger": true,
+        "enabled": true,
+        "local_size": [
+          4.667061805725098,
+          4.599999904632568,
+          0.20000000298023224
+        ],
+        "local_center": [
+          -0.040324825793504715,
+          0,
+          0
+        ],
+        "world_width_m": 2.333530902862548,
+        "world_height_m": 2.299999952316284,
+        "world_normal_thickness_m": 0.12000003039836922,
+        "world_center_ros_m": [
+          -37.65634657030081,
+          -1.1848376371010376,
+          2.200000047683716
+        ],
+        "center_offsets_in_gate_axes_m": {
+          "normal": 1.6202317265623378e-15,
+          "horizontal": 0.02016241289675086,
+          "vertical": 0
+        }
+      },
+      "solid_collider_count_in_gate_subtree": 0
+    },
+    {
+      "index": 9,
+      "scene_game_object_path_id": 223,
+      "root_transform_path_id": 699,
+      "root_local_scale": [
+        1,
+        1,
+        1
+      ],
+      "root_world_position_ros_m": [
+        -44.959999084472656,
+        0.9899997711181641,
+        2.510287284851074
+      ],
+      "sprite_transform_path_id": 946,
+      "sprite_renderer_path_id": 1565,
+      "sprite_draw_mode": 0,
+      "sprite_world_basis_columns_unity": [
+        [
+          0.37962983316709753,
+          0,
+          0.32539389940427826
+        ],
+        [
+          0,
+          0.5,
+          0
+        ],
+        [
+          -0.6507877988085565,
+          0,
+          0.7592596663341951
+        ]
+      ],
+      "sprite_world_scale_xyz": [
+        0.4999999999999999,
+        0.5,
+        0.9999999999999998
+      ],
+      "gate_normal_ros": [
+        -0.6507877988085566,
+        0.7592596663341953,
+        0
+      ],
+      "gate_horizontal_axis_ros": [
+        -0.7592596663341953,
+        -0.6507877988085566,
+        0
+      ],
+      "gate_vertical_axis_ros": [
+        0,
+        0,
+        1
+      ],
+      "component_class_id_counts": {
+        "4": 3,
+        "65": 1,
+        "114": 1,
+        "212": 1
+      },
+      "trigger": {
+        "path_id": 1533,
+        "is_trigger": true,
+        "enabled": true,
+        "local_size": [
+          4.667061805725098,
+          4.599999904632568,
+          0.20000000298023224
+        ],
+        "local_center": [
+          -0.040324825793504715,
+          0,
+          0
+        ],
+        "world_width_m": 2.3335309028625484,
+        "world_height_m": 2.299999952316284,
+        "world_normal_thickness_m": 0.20000000298023218,
+        "world_center_ros_m": [
+          -44.97530759136114,
+          0.9768783188104173,
+          2.510287284851074
+        ],
+        "center_offsets_in_gate_axes_m": {
+          "normal": 7.632783294297951e-17,
+          "horizontal": 0.02016241289675249,
+          "vertical": 0
+        }
+      },
+      "solid_collider_count_in_gate_subtree": 0
+    },
+    {
+      "index": 10,
+      "scene_game_object_path_id": 182,
+      "root_transform_path_id": 658,
+      "root_local_scale": [
+        1,
+        1,
+        1
+      ],
+      "root_world_position_ros_m": [
+        -46.40999984741211,
+        9.770000457763672,
+        2.510287284851074
+      ],
+      "sprite_transform_path_id": 945,
+      "sprite_renderer_path_id": 1568,
+      "sprite_draw_mode": 0,
+      "sprite_world_basis_columns_unity": [
+        [
+          0.4356540624001524,
+          0,
+          -0.24536816809489367
+        ],
+        [
+          0,
+          0.5,
+          0
+        ],
+        [
+          0.49073633618978735,
+          0,
+          0.8713081248003048
+        ]
+      ],
+      "sprite_world_scale_xyz": [
+        0.4999999999999999,
+        0.5,
+        0.9999999999999998
+      ],
+      "gate_normal_ros": [
+        0.49073633618978746,
+        0.8713081248003051,
+        0
+      ],
+      "gate_horizontal_axis_ros": [
+        -0.8713081248003051,
+        0.49073633618978746,
+        0
+      ],
+      "gate_vertical_axis_ros": [
+        0,
+        0,
+        1
+      ],
+      "component_class_id_counts": {
+        "4": 3,
+        "65": 1,
+        "114": 1,
+        "212": 1
+      },
+      "trigger": {
+        "path_id": 1529,
+        "is_trigger": true,
+        "enabled": true,
+        "local_size": [
+          4.667061805725098,
+          4.599999904632568,
+          0.20000000298023224
+        ],
+        "local_center": [
+          -0.040324825793504715,
+          0,
+          0
+        ],
+        "world_width_m": 2.3335309028625484,
+        "world_height_m": 2.299999952316284,
+        "world_normal_thickness_m": 0.20000000298023218,
+        "world_center_ros_m": [
+          -46.42756752158463,
+          9.77989488639737,
+          2.510287284851074
+        ],
+        "center_offsets_in_gate_axes_m": {
+          "normal": 5.620504062164855e-16,
+          "horizontal": 0.020162412896752198,
+          "vertical": 0
+        }
+      },
+      "solid_collider_count_in_gate_subtree": 0
+    },
+    {
+      "index": 11,
+      "scene_game_object_path_id": 343,
+      "root_transform_path_id": 819,
+      "root_local_scale": [
+        0.6000001430511475,
+        1,
+        1
+      ],
+      "root_world_position_ros_m": [
+        -39.619998931884766,
+        14.969999313354492,
+        2.510287284851074
+      ],
+      "sprite_transform_path_id": 951,
+      "sprite_renderer_path_id": 1572,
+      "sprite_draw_mode": 0,
+      "sprite_world_basis_columns_unity": [
+        [
+          -0.08682412513117801,
+          0,
+          -0.4924038701058364
+        ],
+        [
+          0,
+          0.5,
+          0
+        ],
+        [
+          0.590884785004881,
+          0,
+          -0.10418897499799493
+        ]
+      ],
+      "sprite_world_scale_xyz": [
+        0.4999999999999999,
+        0.5,
+        0.6000001430511472
+      ],
+      "gate_normal_ros": [
+        0.9848077402116732,
+        -0.17364825026235586,
+        0
+      ],
+      "gate_horizontal_axis_ros": [
+        0.17364825026235606,
+        0.984807740211673,
+        0
+      ],
+      "gate_vertical_axis_ros": [
+        0,
+        0,
+        1
+      ],
+      "component_class_id_counts": {
+        "4": 3,
+        "65": 1,
+        "114": 1,
+        "212": 1
+      },
+      "trigger": {
+        "path_id": 1523,
+        "is_trigger": true,
+        "enabled": true,
+        "local_size": [
+          4.667061805725098,
+          4.599999904632568,
+          0.20000000298023224
+        ],
+        "local_center": [
+          -0.040324825793504715,
+          0,
+          0
+        ],
+        "world_width_m": 2.3335309028625484,
+        "world_height_m": 2.299999952316284,
+        "world_normal_thickness_m": 0.12000003039836922,
+        "world_center_ros_m": [
+          -39.61649776416418,
+          14.989855413636558,
+          2.510287284851074
+        ],
+        "center_offsets_in_gate_axes_m": {
+          "normal": -2.4494295480792516e-15,
+          "horizontal": 0.02016241289675263,
+          "vertical": 0
+        }
+      },
+      "solid_collider_count_in_gate_subtree": 0
+    }
+  ],
+  "visual_alpha_regions": [
+    {
+      "alpha_inclusive_max": 0,
+      "four_connected_center_component_pixels": 103036,
+      "bbox_pixel_edges_raw_texture_half_open": [
+        93,
+        101,
+        414,
+        422
+      ],
+      "bbox_world_width_height_m": [
+        1.605,
+        1.605
+      ],
+      "bbox_gate_horizontal_interval_m": [
+        -0.7875,
+        0.8175
+      ],
+      "bbox_gate_vertical_interval_m": [
+        -0.7775,
+        0.8275
+      ],
+      "bbox_is_not_a_guaranteed_filled_rectangle": true,
+      "touches_image_boundary": false
+    },
+    {
+      "alpha_inclusive_max": 127,
+      "four_connected_center_component_pixels": 156905,
+      "bbox_pixel_edges_raw_texture_half_open": [
+        54,
+        63,
+        452,
+        461
+      ],
+      "bbox_world_width_height_m": [
+        1.99,
+        1.99
+      ],
+      "bbox_gate_horizontal_interval_m": [
+        -0.9775,
+        1.0125
+      ],
+      "bbox_gate_vertical_interval_m": [
+        -0.9675,
+        1.0225
+      ],
+      "bbox_is_not_a_guaranteed_filled_rectangle": true,
+      "touches_image_boundary": false
+    },
+    {
+      "alpha_inclusive_max": 254,
+      "four_connected_center_component_pixels": 173888,
+      "bbox_pixel_edges_raw_texture_half_open": [
+        45,
+        53,
+        462,
+        470
+      ],
+      "bbox_world_width_height_m": [
+        2.085,
+        2.085
+      ],
+      "bbox_gate_horizontal_interval_m": [
+        -1.0275,
+        1.0575
+      ],
+      "bbox_gate_vertical_interval_m": [
+        -1.0175,
+        1.0675000000000001
+      ],
+      "bbox_is_not_a_guaranteed_filled_rectangle": true,
+      "touches_image_boundary": false
+    }
+  ],
+  "conservative_centered_point_region": {
+    "raw_pixel_centers_inclusive": [
+      106,
+      106,
+      406,
+      406
+    ],
+    "max_alpha_in_region": 0,
+    "half_extent_m": 0.75,
+    "applies_to": "point position in base-mip visual hole, not rotor/body swept volume and not collision geometry",
+    "recommended_new_waypoint_bounds_m": {
+      "horizontal": 0.4,
+      "vertical": 0.45
+    },
+    "tracking_error_budget_m": 0.15,
+    "resulting_point_offset_envelope_m": {
+      "horizontal": 0.55,
+      "vertical": 0.6
+    },
+    "remaining_margin_to_conservative_visual_square_m": {
+      "horizontal": 0.2,
+      "vertical": 0.15
+    }
+  },
+  "drone_collision_geometry": {
+    "source_asset": "level0",
+    "rigidbody_path_id": 42,
+    "rigidbody_game_object_path_id": 13,
+    "game_object_name": "tesse_aero_quadrotor_agent",
+    "root_transform_path_id": 27,
+    "root_local_scale": [2, 2, 2],
+    "root_initial_position_unity": [0, 0, 0],
+    "root_initial_quaternion_xyzw_unity": [0, 0.3826834261417389, 0, 0.9238795638084412],
+    "coordinate_convention": "Scaled body-local dimensions below do not include the changing rigidbody orientation. Unity local (x,y,z) -> ROS-convention body local (x,z,y). When using odometry, first verify the same orientation convention as the ROS bridge. Initial scene rotation must not be applied twice.",
+    "collider_count_in_level0": 3,
+    "all_on_same_rigidbody_game_object": true,
+    "colliders": [
+      {
+        "path_id": 43,
+        "class_id": 65,
+        "shape": "BoxCollider",
+        "enabled": true,
+        "is_trigger": false,
+        "local_size_unity_m": [0.5339634418487549, 0.095112144947052, 0.5342390537261963],
+        "local_center_unity_m": [0.0013871787814423442, -0.02005607634782791, 0.0012154579162597656],
+        "scaled_size_unity_axes_m": [1.0679268836975098, 0.190224289894104, 1.0684781074523926],
+        "scaled_size_ros_body_axes_m": [1.0679268836975098, 1.0684781074523926, 0.190224289894104],
+        "scaled_center_ros_body_m": [0.0027743575628846884, 0.0024309158325195312, -0.04011215269565582]
+      },
+      {
+        "path_id": 54,
+        "class_id": 136,
+        "shape": "CapsuleCollider",
+        "enabled": true,
+        "is_trigger": false,
+        "local_radius_m": 0.004000000189989805,
+        "local_total_height_m": 0.17499999701976776,
+        "local_axis_unity_enum": 2,
+        "local_center_unity_m": [-0.07999999821186066, -0.09600000083446503, 0],
+        "scaled_radius_m": 0.00800000037997961,
+        "scaled_total_height_m": 0.3499999940395355,
+        "scaled_axis_ros_body": [0, 1, 0],
+        "scaled_center_ros_body_m": [-0.1599999964237213, 0, -0.19200000166893005]
+      },
+      {
+        "path_id": 55,
+        "class_id": 136,
+        "shape": "CapsuleCollider",
+        "enabled": true,
+        "is_trigger": false,
+        "local_radius_m": 0.004000000189989805,
+        "local_total_height_m": 0.17499999701976776,
+        "local_axis_unity_enum": 2,
+        "local_center_unity_m": [0.07999999821186066, -0.09600000083446503, 0],
+        "scaled_radius_m": 0.00800000037997961,
+        "scaled_total_height_m": 0.3499999940395355,
+        "scaled_axis_ros_body": [0, 1, 0],
+        "scaled_center_ros_body_m": [0.1599999964237213, 0, -0.19200000166893005]
+      }
+    ],
+    "how_to_use_actual_pose": {
+      "box_world_vertices": "For all eight sign triples s, x = p + R*(c + s*half_size), using scaled ROS-body c and half_size. For each box edge with opposite signed distances n dot (x-g), linearly interpolate its gate-plane intersection, then resolve h dot (intersection-g) and v dot (intersection-g).",
+      "box_conservative_projection": "For a gate horizontal/vertical unit axis a, projected center is a dot (p+R*c-g), projected half-span is sum_i abs(a dot R*e_i)*half_size_i. This bounds the whole box projection, not only its gate-plane cross-section.",
+      "capsule_conservative_projection": "For unit gate axis a, center is p+R*c; projected half-span is radius + (total_height/2-radius)*abs(a dot R*axis).",
+      "time_requirement": "Interpolate position and quaternion consistently; a pose only at center-plane crossing is not a swept-volume clearance proof. To audit the whole crossing, examine poses from first body-plane contact through final departure, with conservative temporal sampling/interpolation error bounds.",
+      "limitation": "The gates have no solid frame collider. These collider shapes model the physical drone hull/landing gear used by Unity, not necessarily every visual mesh or propeller. Sprite alpha is a visual boundary, not collision geometry."
+    },
+    "point_vs_body_warning": "The main box has about 0.534 m horizontal half-size before attitude projection, and projection can be larger at diagonal heading/bank. Therefore actual center offsets around 0.54 m do not alone establish full-body clearance of the conservative +/-0.75 m transparent point square. Report ordered center-plane passage separately from full-body visual-hole clearance."
+  },
+  "trigger_behavior": {
+    "class": "color_change_upon_collision",
+    "method": "OnTriggerEnter",
+    "method_rva_hex": "0x2684",
+    "tag_comparison": "Player",
+    "field": "spriteAfterPassing",
+    "all_declared_fields": [
+      "public UnityEngine.Sprite spriteAfterPassing (FieldDef 26)"
+    ],
+    "all_declared_methods": [
+      "OnTriggerEnter (MethodDef 10, RVA 0x2684)",
+      ".ctor (MethodDef 11, RVA 0x2064)"
+    ],
+    "resolved_member_reference_tokens": {
+      "0x0a000013": "UnityEngine.Component.get_gameObject",
+      "0x0a000036": "UnityEngine.Object.get_name",
+      "0x0a000037": "UnityEngine.Debug.Log",
+      "0x0a000038": "UnityEngine.GameObject.CompareTag",
+      "0x0a00003a": "UnityEngine.SpriteRenderer.set_sprite",
+      "0x70000021": "#US literal Player"
+    },
+    "scene_drone_identity": {
+      "asset": "level0",
+      "game_object_path_id": 13,
+      "name": "tesse_aero_quadrotor_agent",
+      "serialized_tag_numeric": 6,
+      "active": true,
+      "caution": "The trigger method itself checks the string Player, not a drone class or this GameObject name. The object name appears in real trigger log stacks."
+    },
+    "configured_sprite": "GreenSquare (sharedassets1.assets pathID21)",
+    "actions": "Unconditionally Debug.Log(other.gameObject.name); if other.gameObject.CompareTag(\"Player\"), sets this.GetComponent<SpriteRenderer>().sprite = spriteAfterPassing. Log occurs before the tag check, so a log line alone does not prove the tag test passed.",
+    "readable_logs": {
+      "observed_file": "LAB4/竞速冲刺5秒/graphics_system/tesse.log",
+      "observed_message": "tesse_aero_quadrotor_agent",
+      "observed_stack_method": "color_change_upon_collision:OnTriggerEnter(Collider)",
+      "observed_original_source_line": "Assets/Scripts/color_change_upon_collision.cs:14 (path embedded in the official build)",
+      "does_not_log": [
+        "which gate was touched",
+        "gate sequence index",
+        "crossing direction",
+        "center-plane intersection time",
+        "elapsed race time"
+      ],
+      "no_counter_in_class": true,
+      "counting_warning": "A persistent log includes multiple runs and repeat entries; number of these messages is not a unique-gate count or race score. Entry logging is unconditional and does not itself certify that the Player tag branch ran."
+    },
+    "not_implemented_in_this_method": [
+      "gate ordering",
+      "crossing direction",
+      "center-plane intersection",
+      "aperture/clearance test",
+      "stopwatch or race scoring"
+    ],
+    "raw_method_IL_hex": "00036f1300000a6f3600000a283700000a00036f1300000a72210000706f3800000a0a062c1b0002281300000a6f0100002b0b07027b1a0000046f3a00000a00002a"
+  },
+  "competition_interpretation": {
+    "trigger_is_not_score": true,
+    "no_solid_frame_collider_in_the_12_gate_subtrees": true,
+    "warning": "A green gate can result from collider overlap without an ordered center-plane traversal or visually clearing the inner hole. No-between-collision telemetry does not prove visual gate-hole clearance.",
+    "official_MIT_lab_source": "https://vnav.mit.edu/labs_2023/lab4/exercises.html",
+    "official_page_summary": "Requests a video and rosbag of a complete fastest run; optional extra credit for fastest three teams. The page does not define an exact aperture tolerance, direction judge, or stopwatch origin. Human user currently permits non-center, free-heading ordered passage.",
+    "required_evidence": "Keep independent ordered plane-crossing audit, actual local offsets and the video; state the chosen point/visual-hole criterion separately from engine trigger behavior."
+  },
+  "output_checker_preview_png": {
+    "path": "LAB4/竞速冲刺5秒/gate_texture_alpha_checker.png",
+    "bytes": 33303,
+    "sha256": "6e88a0db7d14f28c150bf2d0fd38507d46baf0242919912df28eafe361fdd719",
+    "method": "Original texture RGBA alpha-composited over a neutral 20-pixel checkerboard for visibility; no AI generation or geometry editing. The separate crop PNG retains original alpha."
+  },
+  "output_png": {
+    "path": "LAB4/竞速冲刺5秒/gate_texture_crop.png",
+    "bytes": 23063,
+    "sha256": "5817a8fffe574d81274dbc30a290c8a6bb5b9ddd7d18582dc092b5d59a541818",
+    "pixel_source": "Original Sprite rect/top mip; unmodified RGBA except vertical row order for PNG orientation."
+  }
+}

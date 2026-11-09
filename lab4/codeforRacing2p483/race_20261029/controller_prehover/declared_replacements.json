@@ -1,0 +1,134 @@
+[
+  {
+    "original_line_range_zero_based": [
+      11,
+      11
+    ],
+    "new_line_range_zero_based": [
+      11,
+      12
+    ],
+    "old": "",
+    "new": "#include \"prehover_gain_schedule.hpp\"\n"
+  },
+  {
+    "original_line_range_zero_based": [
+      41,
+      41
+    ],
+    "new_line_range_zero_based": [
+      42,
+      49
+    ],
+    "old": "",
+    "new": "    pnh_.param(\"prehover_kr\", prehover_kr_, 12.0);\n    pnh_.param(\"prehover_komega\", prehover_kw_, 1.0);\n    pnh_.param(\"prehover_kx\", prehover_kx_, 4.0);\n    pnh_.param(\"prehover_kv\", prehover_kv_, 3.0);\n    pnh_.param(\"hover_release_t\", hover_release_t_, 5.0);\n    pnh_.param(\"gain_transition_s\", gain_transition_s_, 0.3);\n    pnh_.param(\"race_end_plan_s\", race_end_plan_s_, 60.0);\n"
+  },
+  {
+    "original_line_range_zero_based": [
+      65,
+      65
+    ],
+    "new_line_range_zero_based": [
+      73,
+      75
+    ],
+    "old": "",
+    "new": "    schedule_pub_ = pnh_.advertise<geometry_msgs::Vector3Stamped>(\"gain_schedule\", 10);\n    position_schedule_pub_ = pnh_.advertise<geometry_msgs::Vector3Stamped>(\"pos_gain_schedule\", 10);\n"
+  },
+  {
+    "original_line_range_zero_based": [
+      92,
+      92
+    ],
+    "new_line_range_zero_based": [
+      102,
+      106
+    ],
+    "old": "",
+    "new": "    const double scheduled[] = {prehover_kr_, prehover_kw_, prehover_kx_, prehover_kv_, gain_transition_s_, race_end_plan_s_};\n    for (double v : scheduled) if (!std::isfinite(v) || v <= 0) return false;\n    if (!std::isfinite(hover_release_t_) || hover_release_t_ < 0 ||\n        race_end_plan_s_ < hover_release_t_+2*gain_transition_s_) return false;\n"
+  },
+  {
+    "original_line_range_zero_based": [
+      121,
+      121
+    ],
+    "new_line_range_zero_based": [
+      135,
+      137
+    ],
+    "old": "",
+    "new": "    const double plan_time = msg.time_from_start.toSec();\n    if (!std::isfinite(plan_time) || plan_time < 0) return;\n"
+  },
+  {
+    "original_line_range_zero_based": [
+      139,
+      139
+    ],
+    "new_line_range_zero_based": [
+      155,
+      156
+    ],
+    "old": "",
+    "new": "    desired_plan_time_ = plan_time;\n"
+  },
+  {
+    "original_line_range_zero_based": [
+      298,
+      298
+    ],
+    "new_line_range_zero_based": [
+      315,
+      320
+    ],
+    "old": "",
+    "new": "    const lab4_prehover::Gains gains = lab4_prehover::scheduledGains(\n        desired_plan_time_, hover_release_t_, gain_transition_s_, race_end_plan_s_,\n        prehover_kr_, prehover_kw_, kr_, kw_);\n    const lab4_prehover::PositionGains position_gains = lab4_prehover::scheduledPositionGains(\n        gains.race_weight, prehover_kx_, prehover_kv_, kx_, kv_);\n"
+  },
+  {
+    "original_line_range_zero_based": [
+      299,
+      300
+    ],
+    "new_line_range_zero_based": [
+      321,
+      322
+    ],
+    "old": "        -kx_ * (x_ - xd_) - kv_ * (v_ - vd_) + mass_ * gravity_ * e3 + mass_ * ad_;\n",
+    "new": "        -position_gains.kx * (x_ - xd_) - position_gains.kv * (v_ - vd_) + mass_ * gravity_ * e3 + mass_ * ad_;\n"
+  },
+  {
+    "original_line_range_zero_based": [
+      362,
+      362
+    ],
+    "new_line_range_zero_based": [
+      384,
+      396
+    ],
+    "old": "",
+    "new": "    const ros::Time gain_stamp = ros::Time::now();\n    if (gain_stamp != previous_gain_stamp_) {\n      geometry_msgs::Vector3Stamped sample;\n      sample.header.stamp = gain_stamp;\n      sample.header.frame_id = \"kr_komega_race_weight\";\n      sample.vector.x = gains.kr; sample.vector.y = gains.komega; sample.vector.z = gains.race_weight;\n      schedule_pub_.publish(sample);\n      sample.header.frame_id = \"kx_kv_race_weight\";\n      sample.vector.x = position_gains.kx; sample.vector.y = position_gains.kv;\n      position_schedule_pub_.publish(sample);\n      previous_gain_stamp_ = gain_stamp;\n    }\n"
+  },
+  {
+    "original_line_range_zero_based": [
+      363,
+      364
+    ],
+    "new_line_range_zero_based": [
+      397,
+      398
+    ],
+    "old": "        -kr_ * eR - kw_ * eomega + omega_.cross(inertia_ * omega_)\n",
+    "new": "        -gains.kr * eR - gains.komega * eomega + omega_.cross(inertia_ * omega_)\n"
+  },
+  {
+    "original_line_range_zero_based": [
+      380,
+      380
+    ],
+    "new_line_range_zero_based": [
+      414,
+      420
+    ],
+    "old": "",
+    "new": "  ros::Publisher schedule_pub_;\n  ros::Publisher position_schedule_pub_;\n  ros::Time previous_gain_stamp_;\n  double prehover_kr_, prehover_kw_, hover_release_t_, gain_transition_s_, race_end_plan_s_;\n  double prehover_kx_, prehover_kv_;\n  double desired_plan_time_ = 0.0;\n"
+  }
+]

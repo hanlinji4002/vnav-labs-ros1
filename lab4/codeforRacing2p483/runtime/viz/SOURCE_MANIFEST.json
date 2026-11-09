@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "purpose": "Optional genuine RViz visualization; two source files are byte-identical to the local GitHub checkout",
+  "original_source_root": ".",
+  "files": [
+    {
+      "path": "runtime/viz/lab4_viz.py",
+      "source_relative_path": "GitHub仓库整理/vnav-labs-ros1/lab4/code/scripts/lab4_viz.py",
+      "bytes": 2832,
+      "mode_octal": "0755",
+      "sha256": "a0f6cdbfead8ebba87b6ae00aca0e7ebb9dcf9d84f5ca0975652211f11939833"
+    },
+    {
+      "path": "runtime/viz/lab4_sbs.rviz",
+      "source_relative_path": "GitHub仓库整理/vnav-labs-ros1/lab4/code/rviz/lab4_sbs.rviz",
+      "bytes": 5524,
+      "mode_octal": "0644",
+      "sha256": "7034e671b41c1dcc46b2f1e7f40d00290078913b9db25e056698accf5823d37e"
+    }
+  ],
+  "additional_runtime_ros_packages": ["ros-noetic-rviz", "ros-noetic-visualization-msgs"],
+  "original_configuration_limits": {
+    "rviz_frame_rate": 15,
+    "marker_default_side_m": 2.0,
+    "marker_is_measured_aperture": false
+  },
+  "core_v1_archive_changed": false,
+  "new_platform_env_or_trial_adapter_changed": false,
+  "capture_guidance": "README_CAPTURE.txt; guidance is researched, not target-machine tested"
+}
