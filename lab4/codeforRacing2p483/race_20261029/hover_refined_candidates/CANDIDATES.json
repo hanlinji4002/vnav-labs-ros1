@@ -1,0 +1,59 @@
+{
+  "baseline_metadata_sha256": "bd89bcb04047ffbf7e9b0a30408d5b06d382d58b8bebd7831573c9bd7d40ad55",
+  "baseline_sha256": "e1883baf87bba068a60445275db3e70d00999303eac137dcc0b0d83486c7dad2",
+  "candidates": [
+    {
+      "climb_end_time_s": 3.0,
+      "csv": "prehover_speed_1p240.csv",
+      "csv_sha256": "61881088f1cb3950232c0641cee1b7d77de5db90f144cda7dd4e86f3d053c0d1",
+      "family": "prehover_replanned",
+      "hover_release_time_s": 5.0,
+      "hover_target_ros_m": [
+        0.400042,
+        8.0,
+        2.42
+      ],
+      "metrics": {
+        "complete_reference_duration_s": 9.770160409763282,
+        "flight_result": null,
+        "nominal_first_gate_absolute_s": 5.671750506216769,
+        "nominal_first_to_last_gate_s": 3.3121204615242554,
+        "nominal_last_gate_absolute_s": 8.983870967741025,
+        "sampled_force_axis_rate_peak_rad_s": 10.239098314987434,
+        "sampled_peak_acceleration_mps2": 147.03670426315486,
+        "sampled_peak_speed_mps": 37.29527085237834
+      },
+      "name": "prehover_speed_1p240",
+      "race_start_time_s": 5.0,
+      "speed_factor": 1.24
+    },
+    {
+      "climb_end_time_s": 3.0,
+      "csv": "prehover_speed_1p260.csv",
+      "csv_sha256": "9702becf501d57fda320dcb2d9a0a109bec217b1e3b10ec3171a8067bbe0cc92",
+      "family": "prehover_replanned",
+      "hover_release_time_s": 5.0,
+      "hover_target_ros_m": [
+        0.400042,
+        8.0,
+        2.42
+      ],
+      "metrics": {
+        "complete_reference_duration_s": 9.694443577862277,
+        "flight_result": null,
+        "nominal_first_gate_absolute_s": 5.661087799768884,
+        "nominal_first_to_last_gate_s": 3.2595471208651396,
+        "nominal_last_gate_absolute_s": 8.920634920634024,
+        "sampled_force_axis_rate_peak_rad_s": 10.585595628400736,
+        "sampled_peak_acceleration_mps2": 151.8179496533893,
+        "sampled_peak_speed_mps": 37.896753246535525
+      },
+      "name": "prehover_speed_1p260",
+      "race_start_time_s": 5.0,
+      "speed_factor": 1.26
+    }
+  ],
+  "family": "prehover_replanned",
+  "generation_only_not_actual_flight": true,
+  "reused_planner_sha256": "ec3765b8276161966a92060b38d3a9b7781a348676f1c538d01a60c1a2bdb37a"
+}

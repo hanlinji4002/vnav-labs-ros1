@@ -1,0 +1,34 @@
+{
+ "original_path": "LAB4/竞速冲刺5秒/controller_candidate/src/controller_sprint_node.cpp",
+ "original_sha256": "55c0fa1490704a9eacd727b51ae0318853df3f12caa4ea94e83a2de5788be970",
+ "new_source": "LAB4/Windows_GPU_迁移/race_20261029/controller_prehover/src/controller_prehover_node.cpp",
+ "new_source_sha256": "352d877bdcae4dcd7e88d2241a51e0fed89dec76e2c4f4002daadfcc675dd406",
+ "new_header_sha256": "81c86bfc3cb03d0f8da21abcf7fb8e7446a4a908fbb036edaf1ab84cf693a42b",
+ "original_source_unchanged": true,
+ "only_declared_gain_schedule_changes": false,
+ "declared_replacement_blocks": 11,
+ "reconstruction_method": "reverse indexed line replacements exactly reconstruct original bytes",
+ "main_ros_node_name": "controller_sprint",
+ "new_package": "controller_prehover",
+ "new_executable": "controller_prehover_node",
+ "telemetry_topics": [
+  "/controller_sprint/gain_schedule",
+  "/controller_sprint/pos_gain_schedule"
+ ],
+ "hover_gains_kx_kv_kr_kw": [
+  4,
+  3,
+  12,
+  1
+ ],
+ "race_gains_kx_kv_kr_kw": [
+  36,
+  12,
+  60,
+  4
+ ],
+ "new_header_sha256_before_20261105_clamp": "06bdbbfa373a51806463aafeb53410278884b6d8ddfabd47be8f2ca527a73ec5",
+ "header_change_20261105": "smoothWeight output clamped to [0,1]; fixes controller exit \"invalid position schedule range\" when time_from_start is a few ns below race_end_plan_s. No gain values changed.",
+ "new_source_sha256_after_sync_mode_20261105": "1963d8a683cc681a183cbdf0d555791f1ccd2a445d0cadaa31b8246b71e6b616",
+ "source_change_20261105_evening": "Added optional synchronous control (private params control_on_state=false, state_wait_ms=8): when enabled, one command per simulator step triggered by the reference arrival after a state, with a watchdog. Default off reproduces the previous free-running 1 kHz behaviour; verified by verify3209_newbin_20261105_01 (3.1989 s). The only_declared_gain_schedule_changes claim no longer holds for this file."
+}

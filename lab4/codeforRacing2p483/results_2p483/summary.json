@@ -1,0 +1,341 @@
+{
+  "schema_version": 1,
+  "status": "PLANE_SEQUENCE_COMPLETE_APERTURE_UNVERIFIED",
+  "competition_pass": null,
+  "physical_clearance_verified": false,
+  "timing": {
+    "basis": "simulated time only; bag record time is not wall time",
+    "trajectory_start_sim_s": 4.4400000010000005,
+    "trajectory_start_estimate_count": 438,
+    "trajectory_start_estimate_span_s": 0.04872973399999925,
+    "first_gate_plane_sim_s": 10.085781700202988,
+    "last_gate_plane_sim_s": 12.568975549043614,
+    "start_to_first_gate_sim_s": 5.6457816992029874,
+    "start_to_last_gate_sim_s": 8.128975548043613,
+    "first_to_last_gate_sim_s": 2.483193848840626,
+    "planned_duration_s": 8.891270265,
+    "terminal_hold_observed": true,
+    "planned_duration_source": "terminal time_from_start hold (inferred)",
+    "max_recorded_time_from_start_s": 8.891270265,
+    "planning_log_durations_s": [],
+    "note": "The start is desired-state receive sim time minus time_from_start, not an independently observed lift-off or official start signal.",
+    "target_s": 5.0,
+    "within_target_start_to_last_sim": false
+  },
+  "wall_telemetry": {
+    "source": "explicit monotonic telemetry, not bag record time",
+    "samples": 1459,
+    "issues": [],
+    "wall_elapsed_s": 29.20144060000007,
+    "sim_elapsed_s": 29.2,
+    "real_time_factor_sim_per_wall": 0.9999506668174423,
+    "race_wall_elapsed_estimate_s": 8.136007306567308,
+    "race_wall_estimate_note": "Interpolated from telemetry; callback/network delay and telemetry sampling remain.",
+    "first_to_last_gate_wall_elapsed_estimate_s": 2.481984107403605
+  },
+  "plane_sequence": {
+    "complete": true,
+    "credited_count": 12,
+    "uncredited_gate_indices": [],
+    "no_forward_plane_crossing_gate_indices": []
+  },
+  "aperture_screen": {
+    "configured": false,
+    "screen_pass": null,
+    "horizontal_half_width_m": null,
+    "vertical_half_width_m": null,
+    "vehicle_safety_margin_m": null,
+    "gates": [
+      {
+        "gate": 0,
+        "ordered_forward_crossing": true,
+        "sim_time_s": 10.085781700202988,
+        "horizontal_offset_m": 0.056228034495740445,
+        "vertical_offset_m": -0.3868982603461495,
+        "intersection_world_m": [
+          0.4788481344957405,
+          3.165232,
+          2.2831017396538504
+        ],
+        "sample_interval_s": 0.01999999899999949,
+        "horizontal_clearance_after_margin_m": null,
+        "vertical_clearance_after_margin_m": null,
+        "within_assumed_clearance": null
+      },
+      {
+        "gate": 1,
+        "ordered_forward_crossing": true,
+        "sim_time_s": 10.302963976951952,
+        "horizontal_offset_m": 0.040484537824359075,
+        "vertical_offset_m": 0.20666521443342534,
+        "intersection_world_m": [
+          0.7049208865343116,
+          -4.330482418961385,
+          2.2466652144334254
+        ],
+        "sample_interval_s": 0.019999999999999574,
+        "horizontal_clearance_after_margin_m": null,
+        "vertical_clearance_after_margin_m": null,
+        "within_assumed_clearance": null
+      },
+      {
+        "gate": 2,
+        "ordered_forward_crossing": true,
+        "sim_time_s": 10.515698768996772,
+        "horizontal_offset_m": 0.08073775147785033,
+        "vertical_offset_m": -0.33944878271901047,
+        "intersection_world_m": [
+          -5.412817653924699,
+          -9.210688570070733,
+          2.5405512172809894
+        ],
+        "sample_interval_s": 0.01999999899999949,
+        "horizontal_clearance_after_margin_m": null,
+        "vertical_clearance_after_margin_m": null,
+        "within_assumed_clearance": null
+      },
+      {
+        "gate": 3,
+        "ordered_forward_crossing": true,
+        "sim_time_s": 10.70334295909309,
+        "horizontal_offset_m": 0.43077979018129203,
+        "vertical_offset_m": 0.3243298420629275,
+        "intersection_world_m": [
+          -15.323156283729931,
+          -7.026881918588036,
+          3.1643298420629273
+        ],
+        "sample_interval_s": 0.020000001000001433,
+        "horizontal_clearance_after_margin_m": null,
+        "vertical_clearance_after_margin_m": null,
+        "within_assumed_clearance": null
+      },
+      {
+        "gate": 4,
+        "ordered_forward_crossing": true,
+        "sim_time_s": 10.930690544242271,
+        "horizontal_offset_m": 0.027045560037343826,
+        "vertical_offset_m": -0.04804126355982996,
+        "intersection_world_m": [
+          -17.857045560037346,
+          1.3800000000000001,
+          2.62195873644017
+        ],
+        "sample_interval_s": 0.019999999999999574,
+        "horizontal_clearance_after_margin_m": null,
+        "vertical_clearance_after_margin_m": null,
+        "within_assumed_clearance": null
+      },
+      {
+        "gate": 5,
+        "ordered_forward_crossing": true,
+        "sim_time_s": 11.169830030569791,
+        "horizontal_offset_m": 0.07261148166226139,
+        "vertical_offset_m": -0.27856312519051585,
+        "intersection_world_m": [
+          -20.2,
+          5.887389518337739,
+          2.391436874809484
+        ],
+        "sample_interval_s": 0.01999999899999949,
+        "horizontal_clearance_after_margin_m": null,
+        "vertical_clearance_after_margin_m": null,
+        "within_assumed_clearance": null
+      },
+      {
+        "gate": 6,
+        "ordered_forward_crossing": true,
+        "sim_time_s": 11.409084151132257,
+        "horizontal_offset_m": 0.06927425980686674,
+        "vertical_offset_m": 0.354343126235495,
+        "intersection_world_m": [
+          -27.85,
+          6.400726740193134,
+          3.024343126235495
+        ],
+        "sample_interval_s": 0.01999999899999949,
+        "horizontal_clearance_after_margin_m": null,
+        "vertical_clearance_after_margin_m": null,
+        "within_assumed_clearance": null
+      },
+      {
+        "gate": 7,
+        "ordered_forward_crossing": true,
+        "sim_time_s": 11.574450865378456,
+        "horizontal_offset_m": 0.42666919073774223,
+        "vertical_offset_m": -0.35031169211457147,
+        "intersection_world_m": [
+          -32.052584357465115,
+          3.124734403703243,
+          3.2196883078854284
+        ],
+        "sample_interval_s": 0.019999999999999574,
+        "horizontal_clearance_after_margin_m": null,
+        "vertical_clearance_after_margin_m": null,
+        "within_assumed_clearance": null
+      },
+      {
+        "gate": 8,
+        "ordered_forward_crossing": true,
+        "sim_time_s": 11.836317943567732,
+        "horizontal_offset_m": 0.0596718530809144,
+        "vertical_offset_m": -0.10117188906861196,
+        "intersection_world_m": [
+          -37.629597285307426,
+          -1.2139129900551144,
+          2.098828110931388
+        ],
+        "sample_interval_s": 0.01999999899999949,
+        "horizontal_clearance_after_margin_m": null,
+        "vertical_clearance_after_margin_m": null,
+        "within_assumed_clearance": null
+      },
+      {
+        "gate": 9,
+        "ordered_forward_crossing": true,
+        "sim_time_s": 12.101436470460438,
+        "horizontal_offset_m": 0.31919728913888074,
+        "vertical_offset_m": -0.21367679922881466,
+        "intersection_world_m": [
+          -45.202353649372135,
+          0.7822701246292943,
+          2.2966102007711853
+        ],
+        "sample_interval_s": 0.019999999999999574,
+        "horizontal_clearance_after_margin_m": null,
+        "vertical_clearance_after_margin_m": null,
+        "within_assumed_clearance": null
+      },
+      {
+        "gate": 10,
+        "ordered_forward_crossing": true,
+        "sim_time_s": 12.338324168270251,
+        "horizontal_offset_m": -0.05958208439972646,
+        "vertical_offset_m": 0.15864082986533212,
+        "intersection_world_m": [
+          -46.35808564528589,
+          9.74076090705863,
+          2.668927829865332
+        ],
+        "sample_interval_s": 0.01999999899999949,
+        "horizontal_clearance_after_margin_m": null,
+        "vertical_clearance_after_margin_m": null,
+        "within_assumed_clearance": null
+      },
+      {
+        "gate": 11,
+        "ordered_forward_crossing": true,
+        "sim_time_s": 12.568975549043614,
+        "horizontal_offset_m": -0.42886739188671935,
+        "vertical_offset_m": 0.40888063077157044,
+        "intersection_world_m": [
+          -39.69447207226887,
+          14.547648072958467,
+          2.9191676307715704
+        ],
+        "sample_interval_s": 0.019999999999999574,
+        "horizontal_clearance_after_margin_m": null,
+        "vertical_clearance_after_margin_m": null,
+        "within_assumed_clearance": null
+      }
+    ],
+    "status": "OFFSETS_ONLY_DIMENSIONS_UNKNOWN",
+    "note": "User-supplied common half-width/height and scalar vehicle margin only; no measured opening or swept-body geometry is inferred."
+  },
+  "collisions": {
+    "recorded_messages": 38,
+    "true_messages": 38,
+    "by_phase": {
+      "before_trajectory_start": {
+        "message_count": 20,
+        "objects": {
+          "Floor_01": 20
+        },
+        "first_sim_time_s": 1.899999999,
+        "last_sim_time_s": 2.279999999
+      },
+      "launch_to_first_gate": {
+        "message_count": 18,
+        "objects": {
+          "Floor_01": 18
+        },
+        "first_sim_time_s": 4.62,
+        "last_sim_time_s": 4.96
+      }
+    },
+    "by_gate_interval": {},
+    "reporting_enabled_verified": null,
+    "note": "Start/launch contacts are retained. Counts are messages, not distinct impacts. Zero messages does not establish collision reporting or collision-free flight."
+  },
+  "sampled_motion": {
+    "peak_reported_linear_speed_mps": 60.01701473563818,
+    "peak_position_segment_speed_mps": 89.24858447454861,
+    "peak_tilt_deg": 126.76890094150824,
+    "note": "Sampled maxima, not proven continuous-time maxima.",
+    "min_height_m": 0.2150431
+  },
+  "loss_of_control_screen": {
+    "triggered": true,
+    "counts": {
+      "tilt_above_limit_samples": 26,
+      "speed_above_limit_samples": 0,
+      "height_below_limit_samples": 0
+    },
+    "tilt_limit_deg": 100.0,
+    "max_speed_mps": null,
+    "min_height_m": null,
+    "note": "Configurable sampled warning thresholds, not a proof or diagnosis of loss of control; pre-start samples excluded."
+  },
+  "terminal_hold": {
+    "observed": true,
+    "status": "SAMPLED_HOLD_OBSERVED",
+    "required_duration_s": 0.5,
+    "radius_m": 0.5,
+    "speed_limit_mps": 1.0,
+    "continuous_sampled_tail_s": 14.640000001,
+    "post_finish_recorded_s": 17.411024450956386,
+    "final_distance_m": 4.8478208571847414e-05,
+    "final_speed_mps": 0.0006207203491954186,
+    "desired_position_m": [
+      -34.69596129909287,
+      14.10175874783401,
+      2.7999999999995797
+    ],
+    "final_actual_position_m": [
+      -34.69599,
+      14.10172,
+      2.799995
+    ],
+    "target_source": "last recorded /desired_state desired_position",
+    "note": "Sampled tail around the last recorded desired position after the ordered finish; actual position AND speed are checked. The last gate centre is never substituted for a missing terminal reference."
+  },
+  "data_quality": {
+    "errors": [],
+    "warnings": [
+      "Gate aperture dimensions and vehicle swept geometry are unknown; no competition or clearance PASS is issued.",
+      "Infinite-plane events outside an unknown opening are not evidence of a gate passage or an out-of-order gate passage.",
+      "Zero collision messages alone do not prove collision reporting was enabled or complete; no launch contacts are discarded."
+    ],
+    "topic_message_counts": {
+      "/clock": 1449,
+      "/current_state": 1451,
+      "/tesse/collision": 38,
+      "/desired_traj_vertices": 136,
+      "/desired_state": 2538
+    },
+    "valid_odometry_samples": 1451,
+    "duplicate_odometry_samples_ignored": 0,
+    "odometry_gaps": [],
+    "max_interpolated_gap_s": 0.1,
+    "plane_sign_epsilon_m": 1e-06,
+    "max_sample_displacement_m": 1.7849716002424016,
+    "error_count": 0,
+    "skipped_rosout_messages": 0
+  },
+  "notes": [
+    "Plane intersections are credited in forward gate order by the unchanged legacy audit.",
+    "Competition PASS remains unknown even if all assumed-size screens succeed.",
+    "Wall time comes only from explicit monotonic telemetry, never bag timestamps or video length."
+  ],
+  "input": "/home/labuser/lab4_gpu_20261023/runs/MODPHYS14_VIDEO_t2491_20261106_01/race.bag"
+}

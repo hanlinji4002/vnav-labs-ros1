@@ -1,0 +1,111 @@
+--- original/controller_sprint_node.cpp
++++ controller_prehover/src/controller_prehover_node.cpp
+@@ -9,6 +9,7 @@
+ #include <algorithm>
+ #include <cmath>
+ #include <stdexcept>
++#include "prehover_gain_schedule.hpp"
+ 
+ // Isolated controller experiment. The original GitHub package stays untouched.
+ // Model, frame convention, X allocation and signed rotor speeds match LAB4.
+@@ -39,6 +40,13 @@
+     pnh_.param("omega_dot_d_filter_tau", accel_filter_tau_, 0.04);
+     pnh_.param("derivative_min_dt", min_dt_, 0.0005);
+     pnh_.param("derivative_reset_dt", reset_dt_, 0.2);
++    pnh_.param("prehover_kr", prehover_kr_, 12.0);
++    pnh_.param("prehover_komega", prehover_kw_, 1.0);
++    pnh_.param("prehover_kx", prehover_kx_, 4.0);
++    pnh_.param("prehover_kv", prehover_kv_, 3.0);
++    pnh_.param("hover_release_t", hover_release_t_, 5.0);
++    pnh_.param("gain_transition_s", gain_transition_s_, 0.3);
++    pnh_.param("race_end_plan_s", race_end_plan_s_, 60.0);
+     if (!validParameters()) {
+       ROS_FATAL("Invalid controller_sprint parameters");
+       throw std::runtime_error("Invalid controller_sprint parameters");
+@@ -63,6 +71,8 @@
+       preview_sub_ = nh_.subscribe("/sprint_acceleration_preview", 1,
+                                    &SprintController::accelerationPreview, this);
+     rotor_pub_ = nh_.advertise<mav_msgs::Actuators>("rotor_speed_cmds", 1);
++    schedule_pub_ = pnh_.advertise<geometry_msgs::Vector3Stamped>("gain_schedule", 10);
++    position_schedule_pub_ = pnh_.advertise<geometry_msgs::Vector3Stamped>("pos_gain_schedule", 10);
+     timer_ = nh_.createWallTimer(ros::WallDuration(1.0 / hz_),
+                                 &SprintController::control, this);
+     ROS_INFO("controller_sprint kx=%g kv=%g kr=%g komega=%g wall_hz=%g "
+@@ -90,6 +100,10 @@
+                                   rate_ff_gain_, accel_ff_gain_, branch_hysteresis_};
+     for (double v : nonnegative)
+       if (!std::isfinite(v) || v < 0) return false;
++    const double scheduled[] = {prehover_kr_, prehover_kw_, prehover_kx_, prehover_kv_, gain_transition_s_, race_end_plan_s_};
++    for (double v : scheduled) if (!std::isfinite(v) || v <= 0) return false;
++    if (!std::isfinite(hover_release_t_) || hover_release_t_ < 0 ||
++        race_end_plan_s_ < hover_release_t_+2*gain_transition_s_) return false;
+     return hz_ <= 10000 && reset_dt_ > min_dt_;
+   }
+ 
+@@ -119,6 +133,8 @@
+   void desiredState(const trajectory_msgs::MultiDOFJointTrajectoryPoint& msg) {
+     if (msg.transforms.empty() || msg.velocities.empty() ||
+         msg.accelerations.empty()) return;
++    const double plan_time = msg.time_from_start.toSec();
++    if (!std::isfinite(plan_time) || plan_time < 0) return;
+     const auto& t = msg.transforms[0];
+     const auto& v = msg.velocities[0].linear;
+     const auto& a = msg.accelerations[0].linear;
+@@ -137,6 +153,7 @@
+     vd_ = vd;
+     ad_ = ad;
+     yawd_ = yaw;
++    desired_plan_time_ = plan_time;
+     got_desired_ = true;
+   }
+ 
+@@ -296,8 +313,13 @@
+   void control(const ros::WallTimerEvent&) {
+     if (!got_current_ || !got_desired_) return;
+     const Eigen::Vector3d e3 = Eigen::Vector3d::UnitZ();
++    const lab4_prehover::Gains gains = lab4_prehover::scheduledGains(
++        desired_plan_time_, hover_release_t_, gain_transition_s_, race_end_plan_s_,
++        prehover_kr_, prehover_kw_, kr_, kw_);
++    const lab4_prehover::PositionGains position_gains = lab4_prehover::scheduledPositionGains(
++        gains.race_weight, prehover_kx_, prehover_kv_, kx_, kv_);
+     const Eigen::Vector3d force =
+-        -kx_ * (x_ - xd_) - kv_ * (v_ - vd_) + mass_ * gravity_ * e3 + mass_ * ad_;
++        -position_gains.kx * (x_ - xd_) - position_gains.kv * (v_ - vd_) + mass_ * gravity_ * e3 + mass_ * ad_;
+     Eigen::Vector3d attitude_acceleration = ad_;
+     if (use_attitude_preview_ && got_preview_ &&
+         freshPreview(preview_stamp_, ros::Time::now()))
+@@ -360,8 +382,20 @@
+     // Lee-style feedforward structure with an independently selected rate
+     // reference. Angular acceleration is opt-in because it is a second
+     // numerical difference. Position/velocity feedback still sets force/Rd.
++    const ros::Time gain_stamp = ros::Time::now();
++    if (gain_stamp != previous_gain_stamp_) {
++      geometry_msgs::Vector3Stamped sample;
++      sample.header.stamp = gain_stamp;
++      sample.header.frame_id = "kr_komega_race_weight";
++      sample.vector.x = gains.kr; sample.vector.y = gains.komega; sample.vector.z = gains.race_weight;
++      schedule_pub_.publish(sample);
++      sample.header.frame_id = "kx_kv_race_weight";
++      sample.vector.x = position_gains.kx; sample.vector.y = position_gains.kv;
++      position_schedule_pub_.publish(sample);
++      previous_gain_stamp_ = gain_stamp;
++    }
+     const Eigen::Vector3d torque =
+-        -kr_ * eR - kw_ * eomega + omega_.cross(inertia_ * omega_)
++        -gains.kr * eR - gains.komega * eomega + omega_.cross(inertia_ * omega_)
+         - inertia_ * (omega_.cross(reference_rate) - reference_acceleration);
+     const Eigen::Vector4d wrench(thrust, torque.x(), torque.y(), torque.z());
+     const Eigen::Vector4d signed_squares = inverse_allocation_ * wrench;
+@@ -378,6 +412,12 @@
+   ros::NodeHandle nh_, pnh_;
+   ros::Subscriber desired_sub_, current_sub_, preview_sub_;
+   ros::Publisher rotor_pub_;
++  ros::Publisher schedule_pub_;
++  ros::Publisher position_schedule_pub_;
++  ros::Time previous_gain_stamp_;
++  double prehover_kr_, prehover_kw_, hover_release_t_, gain_transition_s_, race_end_plan_s_;
++  double prehover_kx_, prehover_kv_;
++  double desired_plan_time_ = 0.0;
+   ros::WallTimer timer_;
+   double kx_, kv_, kr_, kw_, hz_, jx_, jy_, jz_;
+   double rate_ff_gain_, accel_ff_gain_, omega_limit_, alpha_limit_;

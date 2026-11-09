@@ -1,0 +1,34 @@
+{
+ "scope": "MODIFIED SIMULATOR PHYSICS STUDY. These files change Unity PhysicsManager.m_DefaultMaxAngularSpeed in lab4_Data/globalgamemanagers. Results obtained with them are NOT comparable to official-physics results and must never be presented as such without disclosure.",
+ "source_file": "lab4_Data/globalgamemanagers",
+ "source_sha256": "57c1013b47567a6bacf3fc352f7161b573f430461cf073fcc2c319c0568d7d4a",
+ "unity_version": "2019.3.9f1",
+ "object": {
+  "path_id": 10,
+  "class_id": 55,
+  "class_name": "PhysicsManager",
+  "byte_offset_in_file": 25008,
+  "field": "m_DefaultMaxAngularSpeed",
+  "original_value": 7.0
+ },
+ "variants": {
+  "10": {
+   "file": "globalgamemanagers_maxang10",
+   "sha256": "e89b94daf967759e5ce99b843700f9f92d06a22d456408f670e6968baffe4227",
+   "max_angular_speed_rad_s": 10.0,
+   "bytes_changed": 4
+  },
+  "14": {
+   "file": "globalgamemanagers_maxang14",
+   "sha256": "d6ed730809b598e22517a91871c6ab87512ae336829f5cdd65003a4cd52a509d",
+   "max_angular_speed_rad_s": 14.0,
+   "bytes_changed": 4
+  },
+  "20": {
+   "file": "globalgamemanagers_maxang20",
+   "sha256": "8d7059333b5490b718169a957b72c936acace602945c37bf10740d427e9ff319",
+   "max_angular_speed_rad_s": 20.0,
+   "bytes_changed": 4
+  }
+ }
+}

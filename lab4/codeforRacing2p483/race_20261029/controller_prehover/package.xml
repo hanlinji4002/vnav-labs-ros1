@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>controller_prehover</name>
+  <version>0.1.0</version>
+  <description>LAB4 isolated attitude gain scheduling for measured pre-race hover and terminal hold.</description>
+  <maintainer email="24020036006@invalid.example">Dezhong Chen</maintainer>
+  <license>BSD</license>
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>roscpp</depend>
+  <depend>nav_msgs</depend>
+  <depend>geometry_msgs</depend>
+  <depend>trajectory_msgs</depend>
+  <depend>mav_msgs</depend>
+  <build_depend>eigen</build_depend>
+</package>

@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "profiles": {
+    "preview20": {
+      "ros_private_parameters": {
+        "omega_d_limit": 7.0,
+        "omega_d_filter_tau": 0.01,
+        "use_attitude_preview": true
+      },
+      "reference_private_parameters": {
+        "attitude_preview_s": 0.02
+      },
+      "reference_entry": "attitude_optimization_20261030/preview_reference.py",
+      "hypothesis": "Anticipate planned force direction by one observed 20 ms state period, only after verified prehover release.",
+      "actual_flight_validated": false
+    },
+    "preview20_xy": {
+      "ros_private_parameters": {
+        "omega_d_limit": 7.0,
+        "omega_d_filter_tau": 0.01,
+        "use_attitude_preview": true
+      },
+      "reference_private_parameters": {
+        "attitude_preview_s": 0.02,
+        "preview_vertical_weight": 0.0
+      },
+      "reference_entry": "attitude_optimization_20261030/preview_reference.py",
+      "hypothesis": "Preview only planned ax/ay by 20 ms; preserve current planned az to isolate vertical-acceleration phase lead. The original desired-state p/v/a is unchanged.",
+      "actual_flight_validated": false
+    },
+    "preview40": {
+      "ros_private_parameters": {
+        "omega_d_limit": 7.0,
+        "omega_d_filter_tau": 0.01,
+        "use_attitude_preview": true
+      },
+      "reference_private_parameters": {
+        "attitude_preview_s": 0.04
+      },
+      "reference_entry": "attitude_optimization_20261030/preview_reference.py",
+      "hypothesis": "Explore a 40 ms planned force-direction lead; may worsen alignment during sharp reversals and must be judged from actual gates.",
+      "actual_flight_validated": false
+    }
+  },
+  "additional_recorded_topic": "/sprint_acceleration_preview",
+  "physical_rate_cap_changed": false
+}

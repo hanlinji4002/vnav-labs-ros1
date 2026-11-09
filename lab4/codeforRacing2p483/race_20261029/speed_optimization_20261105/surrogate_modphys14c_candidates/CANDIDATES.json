@@ -1,0 +1,139 @@
+{
+  "baseline_sha256": "e1883baf87bba068a60445275db3e70d00999303eac137dcc0b0d83486c7dad2",
+  "candidates": [
+    {
+      "climb_end_time_s": 3.0,
+      "csv": "modphys14c_t2805.csv",
+      "csv_sha256": "d06ff114e047ec1d08950f84996f5869a9154e31c9f3b681bb26311436597418",
+      "family": "prehover_replanned",
+      "hover_release_time_s": 5.0,
+      "hover_target_ros_m": [
+        0.400042,
+        8.0,
+        2.42
+      ],
+      "metrics": {
+        "complete_reference_duration_s": 9.255616857677701,
+        "flight_result": null,
+        "nominal_first_gate_absolute_s": 5.677302497881074,
+        "nominal_first_to_last_gate_s": 2.804505702568373,
+        "nominal_last_gate_absolute_s": 8.481808200449446,
+        "sampled_force_axis_rate_peak_rad_s": 16.0019424744942,
+        "sampled_peak_acceleration_mps2": 215.9975991011408,
+        "sampled_peak_speed_mps": 46.37433217821465
+      },
+      "name": "modphys14c_t2805",
+      "race_start_time_s": 5.0,
+      "speed_factor": 1.451,
+      "speed_factor_semantics": "unique manifest selection ID; see declared_changes"
+    },
+    {
+      "climb_end_time_s": 3.0,
+      "csv": "modphys14c_t2708.csv",
+      "csv_sha256": "975ae897e7524b43011b7596d66bf4a2c95f6ad938ae14e15769d06f67f453aa",
+      "family": "prehover_replanned",
+      "hover_release_time_s": 5.0,
+      "hover_target_ros_m": [
+        0.400042,
+        8.0,
+        2.42
+      ],
+      "metrics": {
+        "complete_reference_duration_s": 9.14685973065209,
+        "flight_result": null,
+        "nominal_first_gate_absolute_s": 5.66514675402917,
+        "nominal_first_to_last_gate_s": 2.7079043193946655,
+        "nominal_last_gate_absolute_s": 8.373051073423834,
+        "sampled_force_axis_rate_peak_rad_s": 15.084874012250786,
+        "sampled_peak_acceleration_mps2": 221.01223548883289,
+        "sampled_peak_speed_mps": 47.2521138075817
+      },
+      "name": "modphys14c_t2708",
+      "race_start_time_s": 5.0,
+      "speed_factor": 1.452,
+      "speed_factor_semantics": "unique manifest selection ID; see declared_changes"
+    },
+    {
+      "climb_end_time_s": 3.0,
+      "csv": "modphys14c_t2678.csv",
+      "csv_sha256": "23f4291bedf6e954a472b2a37de2de3fb38a343b59901c91afd9d0acd5f72dbf",
+      "family": "prehover_replanned",
+      "hover_release_time_s": 5.0,
+      "hover_target_ros_m": [
+        0.400042,
+        8.0,
+        2.42
+      ],
+      "metrics": {
+        "complete_reference_duration_s": 9.097663944962562,
+        "flight_result": null,
+        "nominal_first_gate_absolute_s": 5.645956772175696,
+        "nominal_first_to_last_gate_s": 2.6778985155586144,
+        "nominal_last_gate_absolute_s": 8.32385528773431,
+        "sampled_force_axis_rate_peak_rad_s": 16.25413145703999,
+        "sampled_peak_acceleration_mps2": 232.42796619889123,
+        "sampled_peak_speed_mps": 47.71018058287257
+      },
+      "name": "modphys14c_t2678",
+      "race_start_time_s": 5.0,
+      "speed_factor": 1.453,
+      "speed_factor_semantics": "unique manifest selection ID; see declared_changes"
+    },
+    {
+      "climb_end_time_s": 3.0,
+      "csv": "modphys14c_t2610.csv",
+      "csv_sha256": "c6825e78f9e5b7a176fb503569857742d4812c209fe41ca0bafd1ac0ede33fc2",
+      "family": "prehover_replanned",
+      "hover_release_time_s": 5.0,
+      "hover_target_ros_m": [
+        0.400042,
+        8.0,
+        2.42
+      ],
+      "metrics": {
+        "complete_reference_duration_s": 9.03021026950675,
+        "flight_result": null,
+        "nominal_first_gate_absolute_s": 5.646880122040094,
+        "nominal_first_to_last_gate_s": 2.6095214902384036,
+        "nominal_last_gate_absolute_s": 8.256401612278498,
+        "sampled_force_axis_rate_peak_rad_s": 20.69992616636548,
+        "sampled_peak_acceleration_mps2": 240.17047591671667,
+        "sampled_peak_speed_mps": 50.32862031323351
+      },
+      "name": "modphys14c_t2610",
+      "race_start_time_s": 5.0,
+      "speed_factor": 1.454,
+      "speed_factor_semantics": "unique manifest selection ID; see declared_changes"
+    },
+    {
+      "climb_end_time_s": 3.0,
+      "csv": "modphys14c_t2491.csv",
+      "csv_sha256": "4468fce4b01d05814d40b536c78edd3223d9dbf597eb2485a5e5151a84e4664f",
+      "family": "prehover_replanned",
+      "hover_release_time_s": 5.0,
+      "hover_target_ros_m": [
+        0.400042,
+        8.0,
+        2.42
+      ],
+      "metrics": {
+        "complete_reference_duration_s": 8.891270265926845,
+        "flight_result": null,
+        "nominal_first_gate_absolute_s": 5.626016803132314,
+        "nominal_first_to_last_gate_s": 2.4914448055662772,
+        "nominal_last_gate_absolute_s": 8.117461608698592,
+        "sampled_force_axis_rate_peak_rad_s": 24.750646834974226,
+        "sampled_peak_acceleration_mps2": 273.2618495279497,
+        "sampled_peak_speed_mps": 52.50658351804212
+      },
+      "name": "modphys14c_t2491",
+      "race_start_time_s": 5.0,
+      "speed_factor": 1.455,
+      "speed_factor_semantics": "unique manifest selection ID; see declared_changes"
+    }
+  ],
+  "family": "prehover_replanned",
+  "generation_only_not_actual_flight": true,
+  "generator_sha256": "4d1fea37d432cc2d401aebf4e749f4efe8b840fabf271396835dd06995e4ea06",
+  "source_geometry_sha256": "a49ec0d1461f13979648f995bcdebbb299daf1bc94dfa0631320321ddae8dfe8"
+}

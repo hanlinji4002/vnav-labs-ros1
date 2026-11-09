@@ -1,0 +1,1141 @@
+{
+ "date": "2026-11-05",
+ "WARNING": "MODIFIED SIMULATOR PHYSICS STUDY. Unity PhysicsManager.m_DefaultMaxAngularSpeed was changed from 7 to 14 rad/s for these runs only (file swapped in for the run and restored; original sha 57c1013b... verified after every run). Results are NOT comparable to official-physics results and must not be presented as such without disclosure.",
+ "rule": "same judge as official runs: ordered forward centre crossings in +-0.75 m square, zero race-interval collision messages, measured stable hover release, no non-floor preparation contacts",
+ "controller": "modphys14_kr90: preview20_xy law, omega_d_limit 14, kR 90, komega 4 (komega>4 unstable at 50 Hz feedback in the surrogate)",
+ "method": "closed_loop_surrogate with angular_cap=14; per-gate bias recalibrated from the modified-physics flights (modified_physics/surrogate_bias_modphys14.json); es_search without hairpin locks",
+ "evidence_archive": {
+  "path": "evidence/MODPHYS14_trials_v1_20261105.tar.gz",
+  "sha256": "6a60b543108f604c1783e25f2eb29d2fc86457b894155c640903764dc0a04c46",
+  "runs": 13
+ },
+ "trial_count": 13,
+ "verified_count": 7,
+ "race_interval_clean_count": 10,
+ "summary": "Ladder 3.037/2.876/2.795/2.711/2.679/2.611/2.486 s all completed 12 ordered in-window crossings with zero race collisions on first attempt (two rejected only by the random empty-name takeoff contact). Repeats: 2.678 passed 2/3 (one gate-3 miss), 2.611 passed 2/2 (gate-4 margin 0.043 on the second).",
+ "trials": [
+  {
+   "run": "MODPHYS14_l2_3209_20261105_01",
+   "status": "VERIFIED",
+   "race_interval_clean": true,
+   "first_to_last_sim_s": 3.203473885695706,
+   "candidate_name": "locked2_t3209",
+   "candidate_id": 1.421,
+   "control_profile": "modphys14_kr90",
+   "modified_physics": {
+    "file": "lab4_Data/globalgamemanagers",
+    "max_angular_speed_rad_s": 14.0,
+    "note": "MODIFIED SIMULATOR PHYSICS: not comparable to official-physics results",
+    "original_restored": true,
+    "original_sha256": "57c1013b47567a6bacf3fc352f7161b573f430461cf073fcc2c319c0568d7d4a",
+    "patched_sha256": "d6ed730809b598e22517a91871c6ab87512ae336829f5cdd65003a4cd52a509d"
+   },
+   "official_physics": false,
+   "failed_checks": [],
+   "preparation_contacts": {
+    "Floor_01": 39
+   },
+   "gate_offsets": [
+    {
+     "gate": 1,
+     "h_m": 0.3999269336036163,
+     "v_m": -0.3453911125074751
+    },
+    {
+     "gate": 2,
+     "h_m": -0.06833432282799777,
+     "v_m": -0.1564067966138396
+    },
+    {
+     "gate": 3,
+     "h_m": -0.5523533136744753,
+     "v_m": -0.15717389015410088
+    },
+    {
+     "gate": 4,
+     "h_m": -0.6751642422945066,
+     "v_m": -0.047880910981723535
+    },
+    {
+     "gate": 5,
+     "h_m": 0.15027744455556305,
+     "v_m": -0.3896158128432763
+    },
+    {
+     "gate": 6,
+     "h_m": -0.3650698581437162,
+     "v_m": -0.3339188026536051
+    },
+    {
+     "gate": 7,
+     "h_m": 0.06751301610897276,
+     "v_m": 0.2060552732010663
+    },
+    {
+     "gate": 8,
+     "h_m": 0.08395472252534168,
+     "v_m": -0.39474573617289144
+    },
+    {
+     "gate": 9,
+     "h_m": -0.3111287821838974,
+     "v_m": 0.33277508111784915
+    },
+    {
+     "gate": 10,
+     "h_m": -0.0034191966736612633,
+     "v_m": -0.39933888226352865
+    },
+    {
+     "gate": 11,
+     "h_m": -0.11572807391606446,
+     "v_m": 0.37040070494504684
+    },
+    {
+     "gate": 12,
+     "h_m": -0.08762577451279026,
+     "v_m": 0.36973318382856357
+    }
+   ],
+   "min_point_margin_m": 0.07483575770549344
+  },
+  {
+   "run": "MODPHYS14_t3005_20261105_01",
+   "status": "REJECTED",
+   "race_interval_clean": false,
+   "first_to_last_sim_s": 3.001033350948399,
+   "candidate_name": "modphys14_t3005",
+   "candidate_id": 1.431,
+   "control_profile": "modphys14_kr90",
+   "modified_physics": {
+    "file": "lab4_Data/globalgamemanagers",
+    "max_angular_speed_rad_s": 14.0,
+    "note": "MODIFIED SIMULATOR PHYSICS: not comparable to official-physics results",
+    "original_restored": true,
+    "original_sha256": "57c1013b47567a6bacf3fc352f7161b573f430461cf073fcc2c319c0568d7d4a",
+    "patched_sha256": "d6ed730809b598e22517a91871c6ab87512ae336829f5cdd65003a4cd52a509d"
+   },
+   "official_physics": false,
+   "failed_checks": [
+    "centre_in_visual_hole_square",
+    "online_offline_agreement_within_30ms"
+   ],
+   "preparation_contacts": {
+    "Floor_01": 40
+   },
+   "gate_offsets": [
+    {
+     "gate": 1,
+     "h_m": 0.3896325555960377,
+     "v_m": -0.10010806947214101
+    },
+    {
+     "gate": 2,
+     "h_m": 0.01622087839615345,
+     "v_m": -0.5496019365860629
+    },
+    {
+     "gate": 3,
+     "h_m": 0.07440267473582154,
+     "v_m": -0.7606776596296738
+    },
+    {
+     "gate": 4,
+     "h_m": -0.7963958652361114,
+     "v_m": -0.10805047799082113
+    },
+    {
+     "gate": 5,
+     "h_m": -0.06373315830975913,
+     "v_m": -0.2553594016139087
+    },
+    {
+     "gate": 6,
+     "h_m": -0.4562875622413394,
+     "v_m": -0.08483965617298317
+    },
+    {
+     "gate": 7,
+     "h_m": -0.21853421378243798,
+     "v_m": 0.0017186412067542456
+    },
+    {
+     "gate": 8,
+     "h_m": 0.30262795689384575,
+     "v_m": -0.12852159281876574
+    },
+    {
+     "gate": 9,
+     "h_m": -0.15690352847060016,
+     "v_m": 0.20987177728401196
+    },
+    {
+     "gate": 10,
+     "h_m": -0.01806286955650449,
+     "v_m": -0.4109699091250478
+    },
+    {
+     "gate": 11,
+     "h_m": 0.1258259452991932,
+     "v_m": 0.23638797332111183
+    },
+    {
+     "gate": 12,
+     "h_m": -0.14013815796582008,
+     "v_m": 0.3731162769338572
+    }
+   ],
+   "min_point_margin_m": -0.04639586523611139
+  },
+  {
+   "run": "MODPHYS14b_t2776_20261105_01",
+   "status": "REJECTED",
+   "race_interval_clean": false,
+   "first_to_last_sim_s": 2.7747085225314994,
+   "candidate_name": "modphys14b_t2776",
+   "candidate_id": 1.443,
+   "control_profile": "modphys14_kr90",
+   "modified_physics": {
+    "file": "lab4_Data/globalgamemanagers",
+    "max_angular_speed_rad_s": 14.0,
+    "note": "MODIFIED SIMULATOR PHYSICS: not comparable to official-physics results",
+    "original_restored": true,
+    "original_sha256": "57c1013b47567a6bacf3fc352f7161b573f430461cf073fcc2c319c0568d7d4a",
+    "patched_sha256": "d6ed730809b598e22517a91871c6ab87512ae336829f5cdd65003a4cd52a509d"
+   },
+   "official_physics": false,
+   "failed_checks": [
+    "centre_in_visual_hole_square",
+    "online_offline_agreement_within_30ms"
+   ],
+   "preparation_contacts": {
+    "Floor_01": 44
+   },
+   "gate_offsets": [
+    {
+     "gate": 1,
+     "h_m": 0.07101965488105234,
+     "v_m": -0.4544469402115303
+    },
+    {
+     "gate": 2,
+     "h_m": -0.1455491826940134,
+     "v_m": 0.4097261999765993
+    },
+    {
+     "gate": 3,
+     "h_m": -0.1661393532192048,
+     "v_m": -0.08364019582303595
+    },
+    {
+     "gate": 4,
+     "h_m": -0.14649473942908697,
+     "v_m": 0.2576751110456428
+    },
+    {
+     "gate": 5,
+     "h_m": -0.291643037313051,
+     "v_m": -0.2798274534655625
+    },
+    {
+     "gate": 6,
+     "h_m": -0.7896809664857809,
+     "v_m": -0.6080352357933578
+    },
+    {
+     "gate": 7,
+     "h_m": -0.4602856683058798,
+     "v_m": -0.05932673812178901
+    },
+    {
+     "gate": 8,
+     "h_m": 0.18066699906426242,
+     "v_m": -0.2129427056714981
+    },
+    {
+     "gate": 9,
+     "h_m": 0.024459961504551216,
+     "v_m": 0.06673458313259495
+    },
+    {
+     "gate": 10,
+     "h_m": 0.2542017717165443,
+     "v_m": -0.38780811833354445
+    },
+    {
+     "gate": 11,
+     "h_m": -0.07829162676008164,
+     "v_m": 0.3831179653539647
+    },
+    {
+     "gate": 12,
+     "h_m": 0.15050021434264338,
+     "v_m": 0.025238237211572923
+    }
+   ],
+   "min_point_margin_m": -0.0396809664857809
+  },
+  {
+   "run": "MODPHYS14b_t2880_20261105_01",
+   "status": "VERIFIED",
+   "race_interval_clean": true,
+   "first_to_last_sim_s": 2.876363330769971,
+   "candidate_name": "modphys14b_t2880",
+   "candidate_id": 1.442,
+   "control_profile": "modphys14_kr90",
+   "modified_physics": {
+    "file": "lab4_Data/globalgamemanagers",
+    "max_angular_speed_rad_s": 14.0,
+    "note": "MODIFIED SIMULATOR PHYSICS: not comparable to official-physics results",
+    "original_restored": true,
+    "original_sha256": "57c1013b47567a6bacf3fc352f7161b573f430461cf073fcc2c319c0568d7d4a",
+    "patched_sha256": "d6ed730809b598e22517a91871c6ab87512ae336829f5cdd65003a4cd52a509d"
+   },
+   "official_physics": false,
+   "failed_checks": [],
+   "preparation_contacts": {
+    "Floor_01": 41
+   },
+   "gate_offsets": [
+    {
+     "gate": 1,
+     "h_m": 0.25784391617023156,
+     "v_m": -0.5375654038408935
+    },
+    {
+     "gate": 2,
+     "h_m": 0.2761551505853429,
+     "v_m": 0.30867343706594497
+    },
+    {
+     "gate": 3,
+     "h_m": -0.19834308530823438,
+     "v_m": 0.022634228346022134
+    },
+    {
+     "gate": 4,
+     "h_m": 0.1849263737302387,
+     "v_m": 0.31883689150038164
+    },
+    {
+     "gate": 5,
+     "h_m": -0.2712019443699952,
+     "v_m": -0.30544873848328535
+    },
+    {
+     "gate": 6,
+     "h_m": -0.29272334187211513,
+     "v_m": -0.4628781980618206
+    },
+    {
+     "gate": 7,
+     "h_m": -0.371948497816339,
+     "v_m": 0.045853562340573806
+    },
+    {
+     "gate": 8,
+     "h_m": 0.23532573007496096,
+     "v_m": -0.1915466992226924
+    },
+    {
+     "gate": 9,
+     "h_m": -0.022375985558329016,
+     "v_m": 0.21117687169984523
+    },
+    {
+     "gate": 10,
+     "h_m": 0.36824595041382785,
+     "v_m": -0.29979852010327157
+    },
+    {
+     "gate": 11,
+     "h_m": -0.15720437162916104,
+     "v_m": 0.3082522200121698
+    },
+    {
+     "gate": 12,
+     "h_m": 0.064294542284979,
+     "v_m": 0.0720424957557042
+    }
+   ],
+   "min_point_margin_m": 0.21243459615910654
+  },
+  {
+   "run": "MODPHYS14b_t3043_20261105_01",
+   "status": "VERIFIED",
+   "race_interval_clean": true,
+   "first_to_last_sim_s": 3.037443787282159,
+   "candidate_name": "modphys14b_t3043",
+   "candidate_id": 1.441,
+   "control_profile": "modphys14_kr90",
+   "modified_physics": {
+    "file": "lab4_Data/globalgamemanagers",
+    "max_angular_speed_rad_s": 14.0,
+    "note": "MODIFIED SIMULATOR PHYSICS: not comparable to official-physics results",
+    "original_restored": true,
+    "original_sha256": "57c1013b47567a6bacf3fc352f7161b573f430461cf073fcc2c319c0568d7d4a",
+    "patched_sha256": "d6ed730809b598e22517a91871c6ab87512ae336829f5cdd65003a4cd52a509d"
+   },
+   "official_physics": false,
+   "failed_checks": [],
+   "preparation_contacts": {
+    "Floor_01": 37
+   },
+   "gate_offsets": [
+    {
+     "gate": 1,
+     "h_m": 0.13384676007866295,
+     "v_m": -0.5063278509459326
+    },
+    {
+     "gate": 2,
+     "h_m": -0.011502915938329023,
+     "v_m": 0.08958698493430184
+    },
+    {
+     "gate": 3,
+     "h_m": -0.15779607849738764,
+     "v_m": 0.06851335606575226
+    },
+    {
+     "gate": 4,
+     "h_m": -0.15155330519988272,
+     "v_m": 0.24164465825239967
+    },
+    {
+     "gate": 5,
+     "h_m": -0.24518869931454296,
+     "v_m": -0.37308375466217525
+    },
+    {
+     "gate": 6,
+     "h_m": -0.0707256370726137,
+     "v_m": -0.39371697722193133
+    },
+    {
+     "gate": 7,
+     "h_m": -0.44207904273153,
+     "v_m": 0.010164283507272831
+    },
+    {
+     "gate": 8,
+     "h_m": 0.16177704952137734,
+     "v_m": -0.2858662830106842
+    },
+    {
+     "gate": 9,
+     "h_m": -0.20021564981914425,
+     "v_m": 0.10917353533873797
+    },
+    {
+     "gate": 10,
+     "h_m": 0.12147488676726516,
+     "v_m": -0.3455557374612366
+    },
+    {
+     "gate": 11,
+     "h_m": -0.06783398791996695,
+     "v_m": 0.38892521770359023
+    },
+    {
+     "gate": 12,
+     "h_m": 0.069399903061802,
+     "v_m": 0.3617642080361678
+    }
+   ],
+   "min_point_margin_m": 0.24367214905406742
+  },
+  {
+   "run": "MODPHYS14c_t2491_20261105_01",
+   "status": "REJECTED",
+   "race_interval_clean": true,
+   "first_to_last_sim_s": 2.485614382968844,
+   "candidate_name": "modphys14c_t2491",
+   "candidate_id": 1.455,
+   "control_profile": "modphys14_kr90",
+   "modified_physics": {
+    "file": "lab4_Data/globalgamemanagers",
+    "max_angular_speed_rad_s": 14.0,
+    "note": "MODIFIED SIMULATOR PHYSICS: not comparable to official-physics results",
+    "original_restored": true,
+    "original_sha256": "57c1013b47567a6bacf3fc352f7161b573f430461cf073fcc2c319c0568d7d4a",
+    "patched_sha256": "d6ed730809b598e22517a91871c6ab87512ae336829f5cdd65003a4cd52a509d"
+   },
+   "official_physics": false,
+   "failed_checks": [
+    "no_nonfloor_preparation_contacts"
+   ],
+   "preparation_contacts": {
+    "": 1,
+    "Floor_01": 45
+   },
+   "gate_offsets": [
+    {
+     "gate": 1,
+     "h_m": 0.005956749738855184,
+     "v_m": -0.42836893687274236
+    },
+    {
+     "gate": 2,
+     "h_m": 0.6707925718571384,
+     "v_m": -0.016001247018420095
+    },
+    {
+     "gate": 3,
+     "h_m": -0.47593928728320933,
+     "v_m": 0.08885510346855385
+    },
+    {
+     "gate": 4,
+     "h_m": -0.23564381682777824,
+     "v_m": -0.327023768265442
+    },
+    {
+     "gate": 5,
+     "h_m": 0.10092340280228743,
+     "v_m": -0.3046880675065964
+    },
+    {
+     "gate": 6,
+     "h_m": -0.2058996068609824,
+     "v_m": -0.47730820293818876
+    },
+    {
+     "gate": 7,
+     "h_m": -0.062314149889785675,
+     "v_m": 0.2162332855416773
+    },
+    {
+     "gate": 8,
+     "h_m": 0.2526487603819938,
+     "v_m": -0.336583629267587
+    },
+    {
+     "gate": 9,
+     "h_m": -0.13178821708913674,
+     "v_m": -0.05546476757457519
+    },
+    {
+     "gate": 10,
+     "h_m": 0.32440228207339916,
+     "v_m": -0.22772345206111178
+    },
+    {
+     "gate": 11,
+     "h_m": 0.12426865335321095,
+     "v_m": 0.15394856056829376
+    },
+    {
+     "gate": 12,
+     "h_m": -0.34456094691232947,
+     "v_m": 0.3436339227508882
+    }
+   ],
+   "min_point_margin_m": 0.07920742814286164
+  },
+  {
+   "run": "MODPHYS14c_t2610_20261105_01",
+   "status": "VERIFIED",
+   "race_interval_clean": true,
+   "first_to_last_sim_s": 2.6106905034189882,
+   "candidate_name": "modphys14c_t2610",
+   "candidate_id": 1.454,
+   "control_profile": "modphys14_kr90",
+   "modified_physics": {
+    "file": "lab4_Data/globalgamemanagers",
+    "max_angular_speed_rad_s": 14.0,
+    "note": "MODIFIED SIMULATOR PHYSICS: not comparable to official-physics results",
+    "original_restored": true,
+    "original_sha256": "57c1013b47567a6bacf3fc352f7161b573f430461cf073fcc2c319c0568d7d4a",
+    "patched_sha256": "d6ed730809b598e22517a91871c6ab87512ae336829f5cdd65003a4cd52a509d"
+   },
+   "official_physics": false,
+   "failed_checks": [],
+   "preparation_contacts": {
+    "Floor_01": 42
+   },
+   "gate_offsets": [
+    {
+     "gate": 1,
+     "h_m": 0.0025243441727715314,
+     "v_m": -0.5046714276454898
+    },
+    {
+     "gate": 2,
+     "h_m": 0.08576951693921564,
+     "v_m": -0.07347623625530719
+    },
+    {
+     "gate": 3,
+     "h_m": -0.48396183483179356,
+     "v_m": 0.005336960736632257
+    },
+    {
+     "gate": 4,
+     "h_m": -0.552974173719261,
+     "v_m": 0.645158247497946
+    },
+    {
+     "gate": 5,
+     "h_m": 0.19192603695372062,
+     "v_m": -0.447163671795312
+    },
+    {
+     "gate": 6,
+     "h_m": -0.19228356897489984,
+     "v_m": -0.16459760839845883
+    },
+    {
+     "gate": 7,
+     "h_m": -0.5192659230811234,
+     "v_m": 0.14541008261724464
+    },
+    {
+     "gate": 8,
+     "h_m": 0.3843655260980731,
+     "v_m": -0.09668268104852462
+    },
+    {
+     "gate": 9,
+     "h_m": 0.048206386358786144,
+     "v_m": 0.1789895499736156
+    },
+    {
+     "gate": 10,
+     "h_m": 0.35525556129821667,
+     "v_m": -0.3587317599876756
+    },
+    {
+     "gate": 11,
+     "h_m": 0.09180833364492949,
+     "v_m": 0.24807596916059138
+    },
+    {
+     "gate": 12,
+     "h_m": -0.022402044119379544,
+     "v_m": 0.2770900496002735
+    }
+   ],
+   "min_point_margin_m": 0.10484175250205396
+  },
+  {
+   "run": "MODPHYS14c_t2610_20261105_02",
+   "status": "VERIFIED",
+   "race_interval_clean": true,
+   "first_to_last_sim_s": 2.6111933109502345,
+   "candidate_name": "modphys14c_t2610",
+   "candidate_id": 1.454,
+   "control_profile": "modphys14_kr90",
+   "modified_physics": {
+    "file": "lab4_Data/globalgamemanagers",
+    "max_angular_speed_rad_s": 14.0,
+    "note": "MODIFIED SIMULATOR PHYSICS: not comparable to official-physics results",
+    "original_restored": true,
+    "original_sha256": "57c1013b47567a6bacf3fc352f7161b573f430461cf073fcc2c319c0568d7d4a",
+    "patched_sha256": "d6ed730809b598e22517a91871c6ab87512ae336829f5cdd65003a4cd52a509d"
+   },
+   "official_physics": false,
+   "failed_checks": [],
+   "preparation_contacts": {
+    "Floor_01": 39
+   },
+   "gate_offsets": [
+    {
+     "gate": 1,
+     "h_m": 0.003903159567493931,
+     "v_m": -0.48503165764793454
+    },
+    {
+     "gate": 2,
+     "h_m": 0.19864482179320825,
+     "v_m": -0.0462017692826473
+    },
+    {
+     "gate": 3,
+     "h_m": -0.3623325821861695,
+     "v_m": 0.15569567000828322
+    },
+    {
+     "gate": 4,
+     "h_m": -0.706921326038858,
+     "v_m": 0.2791111361757155
+    },
+    {
+     "gate": 5,
+     "h_m": -0.2862467522366004,
+     "v_m": -0.4054759710651683
+    },
+    {
+     "gate": 6,
+     "h_m": -0.19977691953409948,
+     "v_m": -0.44524631789576974
+    },
+    {
+     "gate": 7,
+     "h_m": -0.406683293445262,
+     "v_m": 0.03372211670351977
+    },
+    {
+     "gate": 8,
+     "h_m": 0.5810119222802907,
+     "v_m": 0.009688484005005993
+    },
+    {
+     "gate": 9,
+     "h_m": 0.32785531024954306,
+     "v_m": 0.19466831045262634
+    },
+    {
+     "gate": 10,
+     "h_m": 0.4283188925554965,
+     "v_m": -0.34087328621718616
+    },
+    {
+     "gate": 11,
+     "h_m": 0.03895713959631188,
+     "v_m": 0.19778816774705543
+    },
+    {
+     "gate": 12,
+     "h_m": -0.009639508360081388,
+     "v_m": 0.18810813881375177
+    }
+   ],
+   "min_point_margin_m": 0.043078673961141956
+  },
+  {
+   "run": "MODPHYS14c_t2678_20261105_01",
+   "status": "VERIFIED",
+   "race_interval_clean": true,
+   "first_to_last_sim_s": 2.6792435216897346,
+   "candidate_name": "modphys14c_t2678",
+   "candidate_id": 1.453,
+   "control_profile": "modphys14_kr90",
+   "modified_physics": {
+    "file": "lab4_Data/globalgamemanagers",
+    "max_angular_speed_rad_s": 14.0,
+    "note": "MODIFIED SIMULATOR PHYSICS: not comparable to official-physics results",
+    "original_restored": true,
+    "original_sha256": "57c1013b47567a6bacf3fc352f7161b573f430461cf073fcc2c319c0568d7d4a",
+    "patched_sha256": "d6ed730809b598e22517a91871c6ab87512ae336829f5cdd65003a4cd52a509d"
+   },
+   "official_physics": false,
+   "failed_checks": [],
+   "preparation_contacts": {
+    "Floor_01": 38
+   },
+   "gate_offsets": [
+    {
+     "gate": 1,
+     "h_m": 0.08801594182106899,
+     "v_m": -0.4614802921790244
+    },
+    {
+     "gate": 2,
+     "h_m": 0.19588522205687606,
+     "v_m": 0.04454708795069262
+    },
+    {
+     "gate": 3,
+     "h_m": -0.04562418116847945,
+     "v_m": -0.042848460038875213
+    },
+    {
+     "gate": 4,
+     "h_m": 0.13884990051490487,
+     "v_m": -0.02420927695757591
+    },
+    {
+     "gate": 5,
+     "h_m": 0.05253281363200203,
+     "v_m": -0.1534405055642445
+    },
+    {
+     "gate": 6,
+     "h_m": 0.07387615997842722,
+     "v_m": -0.4643748460029906
+    },
+    {
+     "gate": 7,
+     "h_m": -0.49756804008836486,
+     "v_m": 0.14098071018553515
+    },
+    {
+     "gate": 8,
+     "h_m": 0.14895020333010583,
+     "v_m": -0.011349068961933106
+    },
+    {
+     "gate": 9,
+     "h_m": -0.324153594883847,
+     "v_m": 0.21663775848035982
+    },
+    {
+     "gate": 10,
+     "h_m": 0.29085941767493856,
+     "v_m": -0.28194248308203784
+    },
+    {
+     "gate": 11,
+     "h_m": 0.12820609785029047,
+     "v_m": 0.18503749314023832
+    },
+    {
+     "gate": 12,
+     "h_m": 0.06749523833395206,
+     "v_m": 0.48781114453597896
+    }
+   ],
+   "min_point_margin_m": 0.25243195991163514
+  },
+  {
+   "run": "MODPHYS14c_t2678_20261105_02",
+   "status": "REJECTED",
+   "race_interval_clean": true,
+   "first_to_last_sim_s": 2.678117684223718,
+   "candidate_name": "modphys14c_t2678",
+   "candidate_id": 1.453,
+   "control_profile": "modphys14_kr90",
+   "modified_physics": {
+    "file": "lab4_Data/globalgamemanagers",
+    "max_angular_speed_rad_s": 14.0,
+    "note": "MODIFIED SIMULATOR PHYSICS: not comparable to official-physics results",
+    "original_restored": true,
+    "original_sha256": "57c1013b47567a6bacf3fc352f7161b573f430461cf073fcc2c319c0568d7d4a",
+    "patched_sha256": "d6ed730809b598e22517a91871c6ab87512ae336829f5cdd65003a4cd52a509d"
+   },
+   "official_physics": false,
+   "failed_checks": [
+    "no_nonfloor_preparation_contacts"
+   ],
+   "preparation_contacts": {
+    "": 1,
+    "Floor_01": 40
+   },
+   "gate_offsets": [
+    {
+     "gate": 1,
+     "h_m": 0.050069576910598004,
+     "v_m": -0.49719393868064854
+    },
+    {
+     "gate": 2,
+     "h_m": 0.09207120412548866,
+     "v_m": 0.16140051619214146
+    },
+    {
+     "gate": 3,
+     "h_m": -0.1144439843291933,
+     "v_m": -0.2539862545659006
+    },
+    {
+     "gate": 4,
+     "h_m": 0.49989056671941845,
+     "v_m": -0.025825698754183612
+    },
+    {
+     "gate": 5,
+     "h_m": 0.06297327191129655,
+     "v_m": -0.14231102612856406
+    },
+    {
+     "gate": 6,
+     "h_m": 0.1375962537565929,
+     "v_m": -0.5215671224499951
+    },
+    {
+     "gate": 7,
+     "h_m": -0.3470195831375369,
+     "v_m": 0.1051793721308516
+    },
+    {
+     "gate": 8,
+     "h_m": 0.4113535536019727,
+     "v_m": -0.07664003281383014
+    },
+    {
+     "gate": 9,
+     "h_m": 0.3211110458588391,
+     "v_m": 0.419932183992048
+    },
+    {
+     "gate": 10,
+     "h_m": 0.3426250256567974,
+     "v_m": -0.2454139888948954
+    },
+    {
+     "gate": 11,
+     "h_m": 0.15348019495921092,
+     "v_m": 0.20335648984220667
+    },
+    {
+     "gate": 12,
+     "h_m": -0.15831838245219598,
+     "v_m": 0.4091794064521932
+    }
+   ],
+   "min_point_margin_m": 0.22843287755000485
+  },
+  {
+   "run": "MODPHYS14c_t2678_20261105_03",
+   "status": "REJECTED",
+   "race_interval_clean": false,
+   "first_to_last_sim_s": 2.6772530177879315,
+   "candidate_name": "modphys14c_t2678",
+   "candidate_id": 1.453,
+   "control_profile": "modphys14_kr90",
+   "modified_physics": {
+    "file": "lab4_Data/globalgamemanagers",
+    "max_angular_speed_rad_s": 14.0,
+    "note": "MODIFIED SIMULATOR PHYSICS: not comparable to official-physics results",
+    "original_restored": true,
+    "original_sha256": "57c1013b47567a6bacf3fc352f7161b573f430461cf073fcc2c319c0568d7d4a",
+    "patched_sha256": "d6ed730809b598e22517a91871c6ab87512ae336829f5cdd65003a4cd52a509d"
+   },
+   "official_physics": false,
+   "failed_checks": [
+    "centre_in_visual_hole_square",
+    "online_offline_agreement_within_30ms"
+   ],
+   "preparation_contacts": {
+    "Floor_01": 38
+   },
+   "gate_offsets": [
+    {
+     "gate": 1,
+     "h_m": 0.1045843844325787,
+     "v_m": -0.503541973903888
+    },
+    {
+     "gate": 2,
+     "h_m": -0.014429815839557502,
+     "v_m": 0.07204760255769571
+    },
+    {
+     "gate": 3,
+     "h_m": 0.9931463852592058,
+     "v_m": -1.5620114235904057
+    },
+    {
+     "gate": 4,
+     "h_m": 0.08351248237466435,
+     "v_m": -0.4807385171213818
+    },
+    {
+     "gate": 5,
+     "h_m": -0.03631722010482719,
+     "v_m": -0.31459688075225767
+    },
+    {
+     "gate": 6,
+     "h_m": 0.10088509994021067,
+     "v_m": -0.5037748341785329
+    },
+    {
+     "gate": 7,
+     "h_m": -0.42764158557716403,
+     "v_m": 0.08027344711866835
+    },
+    {
+     "gate": 8,
+     "h_m": 0.3391469464340619,
+     "v_m": -0.036910881851997424
+    },
+    {
+     "gate": 9,
+     "h_m": 0.07184818405247145,
+     "v_m": 0.37870971834305234
+    },
+    {
+     "gate": 10,
+     "h_m": 0.32001053307262417,
+     "v_m": -0.2712418792223472
+    },
+    {
+     "gate": 11,
+     "h_m": 0.08716576613453604,
+     "v_m": 0.2430322902105182
+    },
+    {
+     "gate": 12,
+     "h_m": -0.06863703997118739,
+     "v_m": 0.48648524422481065
+    }
+   ],
+   "min_point_margin_m": -0.8120114235904057
+  },
+  {
+   "run": "MODPHYS14c_t2708_20261105_01",
+   "status": "VERIFIED",
+   "race_interval_clean": true,
+   "first_to_last_sim_s": 2.71079526224071,
+   "candidate_name": "modphys14c_t2708",
+   "candidate_id": 1.452,
+   "control_profile": "modphys14_kr90",
+   "modified_physics": {
+    "file": "lab4_Data/globalgamemanagers",
+    "max_angular_speed_rad_s": 14.0,
+    "note": "MODIFIED SIMULATOR PHYSICS: not comparable to official-physics results",
+    "original_restored": true,
+    "original_sha256": "57c1013b47567a6bacf3fc352f7161b573f430461cf073fcc2c319c0568d7d4a",
+    "patched_sha256": "d6ed730809b598e22517a91871c6ab87512ae336829f5cdd65003a4cd52a509d"
+   },
+   "official_physics": false,
+   "failed_checks": [],
+   "preparation_contacts": {
+    "Floor_01": 45
+   },
+   "gate_offsets": [
+    {
+     "gate": 1,
+     "h_m": 0.16519186101670016,
+     "v_m": -0.3844961260829116
+    },
+    {
+     "gate": 2,
+     "h_m": 0.2906013863791473,
+     "v_m": 0.10596393368782042
+    },
+    {
+     "gate": 3,
+     "h_m": -0.3979538163455533,
+     "v_m": -0.15961100003415707
+    },
+    {
+     "gate": 4,
+     "h_m": -0.10159244234395973,
+     "v_m": -0.005940889783246028
+    },
+    {
+     "gate": 5,
+     "h_m": -0.2477935311028468,
+     "v_m": -0.27178363806846306
+    },
+    {
+     "gate": 6,
+     "h_m": -0.4300340785967478,
+     "v_m": -0.6779764112170477
+    },
+    {
+     "gate": 7,
+     "h_m": -0.46855054098105775,
+     "v_m": 0.01659314538045864
+    },
+    {
+     "gate": 8,
+     "h_m": 0.2549471903595497,
+     "v_m": 0.12696214197774225
+    },
+    {
+     "gate": 9,
+     "h_m": -0.17299595303159288,
+     "v_m": 0.378475807488861
+    },
+    {
+     "gate": 10,
+     "h_m": 0.328020434333852,
+     "v_m": -0.3114604202080864
+    },
+    {
+     "gate": 11,
+     "h_m": 0.01709495160152638,
+     "v_m": 0.15037380680452106
+    },
+    {
+     "gate": 12,
+     "h_m": 0.07586142133314996,
+     "v_m": 0.3650570164377571
+    }
+   ],
+   "min_point_margin_m": 0.07202358878295234
+  },
+  {
+   "run": "MODPHYS14c_t2805_20261105_01",
+   "status": "REJECTED",
+   "race_interval_clean": true,
+   "first_to_last_sim_s": 2.7952603714085544,
+   "candidate_name": "modphys14c_t2805",
+   "candidate_id": 1.451,
+   "control_profile": "modphys14_kr90",
+   "modified_physics": {
+    "file": "lab4_Data/globalgamemanagers",
+    "max_angular_speed_rad_s": 14.0,
+    "note": "MODIFIED SIMULATOR PHYSICS: not comparable to official-physics results",
+    "original_restored": true,
+    "original_sha256": "57c1013b47567a6bacf3fc352f7161b573f430461cf073fcc2c319c0568d7d4a",
+    "patched_sha256": "d6ed730809b598e22517a91871c6ab87512ae336829f5cdd65003a4cd52a509d"
+   },
+   "official_physics": false,
+   "failed_checks": [
+    "no_nonfloor_preparation_contacts"
+   ],
+   "preparation_contacts": {
+    "": 1,
+    "Floor_01": 41
+   },
+   "gate_offsets": [
+    {
+     "gate": 1,
+     "h_m": 0.16171069935939,
+     "v_m": -0.39110674345257523
+    },
+    {
+     "gate": 2,
+     "h_m": 0.23243832582060986,
+     "v_m": 0.5072045190972028
+    },
+    {
+     "gate": 3,
+     "h_m": 0.1068600649298502,
+     "v_m": -0.12752852629043154
+    },
+    {
+     "gate": 4,
+     "h_m": 0.6196512146311781,
+     "v_m": 0.537538629450923
+    },
+    {
+     "gate": 5,
+     "h_m": -0.09398718022030653,
+     "v_m": -0.2558472155266167
+    },
+    {
+     "gate": 6,
+     "h_m": -0.4615717527302987,
+     "v_m": -0.467976802301977
+    },
+    {
+     "gate": 7,
+     "h_m": -0.4861991439987685,
+     "v_m": -0.016295433379437174
+    },
+    {
+     "gate": 8,
+     "h_m": 0.27355474464091156,
+     "v_m": -0.23362387695962283
+    },
+    {
+     "gate": 9,
+     "h_m": 0.08596393044018147,
+     "v_m": 0.381897116221527
+    },
+    {
+     "gate": 10,
+     "h_m": 0.4391746804544207,
+     "v_m": -0.3418770501937298
+    },
+    {
+     "gate": 11,
+     "h_m": -0.054594839822316596,
+     "v_m": 0.17805806675746272
+    },
+    {
+     "gate": 12,
+     "h_m": -0.010356814428172129,
+     "v_m": 0.11387455307503691
+    }
+   ],
+   "min_point_margin_m": 0.13034878536882188
+  }
+ ]
+}

@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "scope": "Controller parameters only. Simulator inertia, force model, gates, clocks, stable-hover criteria and race acceptance remain unchanged. Profiles are hypotheses, not validated flight improvements.",
+  "baseline": {
+    "kx": 36.0,
+    "kv": 12.0,
+    "kr": 60.0,
+    "komega": 4.0,
+    "omega_d_limit": 10.0,
+    "omega_d_filter_tau": 0.01,
+    "free_heading": true,
+    "signed_attitude": true,
+    "use_rate_feedforward": true,
+    "use_accel_feedforward": false,
+    "log_attitude_error": false
+  },
+  "profiles": {
+    "observed_rate_limit": {
+      "ros_private_parameters": {
+        "omega_d_limit": 7.0,
+        "omega_d_filter_tau": 0.01
+      },
+      "hypothesis": "Match feedforward rate to the observed approximately 7 rad/s actual-rate plateau; avoid requesting an unavailable reference-rate component.",
+      "priority": 1
+    },
+    "damped_turns": {
+      "ros_private_parameters": {
+        "omega_d_limit": 7.0,
+        "omega_d_filter_tau": 0.005,
+        "komega": 5.0
+      },
+      "hypothesis": "Slightly faster nominal-rate filtering and greater angular-rate damping may reduce reversal overshoot without increasing position or attitude stiffness.",
+      "priority": 2
+    },
+    "large_angle_log": {
+      "ros_private_parameters": {
+        "omega_d_limit": 7.0,
+        "omega_d_filter_tau": 0.01,
+        "kr": 50.0,
+        "komega": 4.5,
+        "log_attitude_error": true
+      },
+      "hypothesis": "Existing SO(3) log error avoids the sine error weakening near large attitude discrepancies; reduced stiffness limits additional torque demand. This may still be worse under sampled-state feedback.",
+      "priority": 3
+    },
+    "bounded_angular_acceleration": {
+      "ros_private_parameters": {
+        "omega_d_limit": 7.0,
+        "omega_d_filter_tau": 0.01,
+        "use_accel_feedforward": true,
+        "accel_feedforward_gain": 0.2,
+        "omega_dot_d_limit": 30.0,
+        "omega_dot_d_filter_tau": 0.04
+      },
+      "hypothesis": "Small bounded angular-acceleration feedforward may anticipate braking and reversal. Its second numerical derivative makes this lower priority than route shaping.",
+      "priority": 4
+    }
+  },
+  "recommended_comparison": "Run original prehover 1.20 first with each profile, compare gate offsets, axis error, saturation and repeated pass rate; only then combine the best unchanged-control candidate with new geometry and increase speed.",
+  "physical_rate_cap_changed": false,
+  "actual_flight_validated": false
+}
